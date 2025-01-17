@@ -1,0 +1,75 @@
+[ {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Carla",
+    "lastName" : "Dobre",
+    "email" : "Carla_Dobre@yahoo.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Leslie",
+    "lastName" : "Turner",
+    "email" : "Leslie_Turner@outlook.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Niculina",
+    "lastName" : "Popa",
+    "email" : "Niculina_Popa@outlook.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Tami",
+    "lastName" : "Hughes",
+    "email" : "Tami_Hughes@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Jessica",
+    "lastName" : "Chandler",
+    "email" : "Jessica_Chandler@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Simone-Christiane",
+    "lastName" : "Poulain",
+    "email" : "Simone-Christiane_Poulain@gmail.fr",
+    "accounts" : [ ]
+  } ],
+  "timestamp" : 1
+}, {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Carla",
+    "lastName" : "Dobre",
+    "email" : "Carla_Dobre@yahoo.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Leslie",
+    "lastName" : "Turner",
+    "email" : "Leslie_Turner@outlook.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Niculina",
+    "lastName" : "Popa",
+    "email" : "Niculina_Popa@outlook.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Tami",
+    "lastName" : "Hughes",
+    "email" : "Tami_Hughes@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Jessica",
+    "lastName" : "Chandler",
+    "email" : "Jessica_Chandler@hotmail.us",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 0.0,
+      "currency" : "USD",
+      "cards" : [ ],
+      "IBAN" : "RO58POOB7344468893732422"
+    } ]
+  }, {
+    "firstName" : "Simone-Christiane",
+    "lastName" : "Poulain",
+    "email" : "Simone-Christiane_Poulain@gmail.fr",
+    "accounts" : [ ]
+  } ],
+  "timestamp" : 3
+} ]

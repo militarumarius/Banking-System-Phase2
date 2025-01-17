@@ -1,0 +1,144 @@
+[ {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Aimee",
+    "lastName" : "Pruvost",
+    "email" : "Aimee_Pruvost@outlook.fr",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 685.0,
+      "currency" : "EUR",
+      "cards" : [ ],
+      "IBAN" : "RO58POOB2721178218599590"
+    } ]
+  }, {
+    "firstName" : "Amelie",
+    "lastName" : "Hoareau Le Courtois",
+    "email" : "Amelie_Hoareau_Le_Courtois@yahoo.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Michael",
+    "lastName" : "Richmond",
+    "email" : "Michael_Richmond@gmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Brandi",
+    "lastName" : "Schultz",
+    "email" : "Brandi_Schultz@outlook.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Laurent",
+    "lastName" : "Chauvet",
+    "email" : "Laurent_Chauvet@hotmail.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Nathalie",
+    "lastName" : "Weiss",
+    "email" : "Nathalie_Weiss@yahoo.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Philippe-Georges",
+    "lastName" : "Da Silva",
+    "email" : "Philippe-Georges_Da_Silva@yahoo.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Zenovia",
+    "lastName" : "Nemes",
+    "email" : "Zenovia_Nemes@outlook.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Rafael",
+    "lastName" : "Gheorghiu",
+    "email" : "Rafael_Gheorghiu@yahoo.ro",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 156.0,
+      "currency" : "RON",
+      "cards" : [ ],
+      "IBAN" : "RO90POOB5450777208072365"
+    } ]
+  }, {
+    "firstName" : "Jason",
+    "lastName" : "Carpenter",
+    "email" : "Jason_Carpenter@hotmail.us",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 977.0,
+      "currency" : "USD",
+      "cards" : [ ],
+      "IBAN" : "RO58POOB7344468893732422"
+    } ]
+  }, {
+    "firstName" : "Cynthia",
+    "lastName" : "Turner",
+    "email" : "Cynthia_Turner@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Salomea",
+    "lastName" : "Mocanu",
+    "email" : "Salomea_Mocanu@gmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Melanie",
+    "lastName" : "Garcia",
+    "email" : "Melanie_Garcia@gmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Suzanne",
+    "lastName" : "Benard",
+    "email" : "Suzanne_Benard@hotmail.fr",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 34.0,
+      "currency" : "EUR",
+      "cards" : [ ],
+      "IBAN" : "RO65POOB8944016386845896"
+    } ]
+  }, {
+    "firstName" : "Dennis",
+    "lastName" : "Norris",
+    "email" : "Dennis_Norris@yahoo.us",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 0.0,
+      "currency" : "USD",
+      "cards" : [ {
+        "cardNumber" : "8207906978464446",
+        "status" : "active"
+      } ],
+      "IBAN" : "RO76POOB4035116042454483"
+    } ]
+  }, {
+    "firstName" : "Jeana",
+    "lastName" : "Nistor",
+    "email" : "Jeana_Nistor@gmail.ro",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 513.0,
+      "currency" : "RON",
+      "cards" : [ ],
+      "IBAN" : "RO69POOB6209498372540635"
+    } ]
+  }, {
+    "firstName" : "Catalin",
+    "lastName" : "Toma",
+    "email" : "Catalin_Toma@outlook.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Billy",
+    "lastName" : "Greene",
+    "email" : "Billy_Greene@gmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Kelly",
+    "lastName" : "Kelley",
+    "email" : "Kelly_Kelley@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Dorli",
+    "lastName" : "Albu",
+    "email" : "Dorli_Albu@hotmail.ro",
+    "accounts" : [ ]
+  } ],
+  "timestamp" : 39
+} ]

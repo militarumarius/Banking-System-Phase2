@@ -1,0 +1,55 @@
+[ {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Chad",
+    "lastName" : "Robinson",
+    "email" : "Chad_Robinson@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Madeleine",
+    "lastName" : "De Oliveira",
+    "email" : "Madeleine_De_Oliveira@hotmail.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Nae",
+    "lastName" : "Mazilescu",
+    "email" : "Nae_Mazilescu@hotmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Nicusor",
+    "lastName" : "Ene",
+    "email" : "Nicusor_Ene@outlook.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Melanie",
+    "lastName" : "Hickman",
+    "email" : "Melanie_Hickman@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Wendy",
+    "lastName" : "Lambert",
+    "email" : "Wendy_Lambert@gmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Smaranda",
+    "lastName" : "Stan",
+    "email" : "Smaranda_Stan@hotmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Laura",
+    "lastName" : "Reeves",
+    "email" : "Laura_Reeves@yahoo.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Timothee",
+    "lastName" : "Le Jacquet",
+    "email" : "Timothee_Le_Jacquet@outlook.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "John",
+    "lastName" : "Fowler",
+    "email" : "John_Fowler@gmail.us",
+    "accounts" : [ ]
+  } ],
+  "timestamp" : 1
+} ]

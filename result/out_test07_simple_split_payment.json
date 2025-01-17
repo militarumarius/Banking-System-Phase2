@@ -1,0 +1,97 @@
+[ {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Julieta",
+    "lastName" : "Aane",
+    "email" : "Julieta_Aane@outlook.ro",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 1177.0,
+      "currency" : "RON",
+      "cards" : [ ],
+      "IBAN" : "RO58POOB7344468893732422"
+    } ]
+  }, {
+    "firstName" : "Manuel",
+    "lastName" : "Lawrence",
+    "email" : "Manuel_Lawrence@yahoo.us",
+    "accounts" : [ {
+      "type" : "classic",
+      "balance" : 908.0,
+      "currency" : "USD",
+      "cards" : [ ],
+      "IBAN" : "RO69POOB6209498372540635"
+    } ]
+  }, {
+    "firstName" : "Mark",
+    "lastName" : "Roberts",
+    "email" : "Mark_Roberts@outlook.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Odette-Alex",
+    "lastName" : "Pasquier",
+    "email" : "Odette-Alex_Pasquier@gmail.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Victoria",
+    "lastName" : "Love",
+    "email" : "Victoria_Love@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Narcis",
+    "lastName" : "Dochioiu",
+    "email" : "Narcis_Dochioiu@hotmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Jesus",
+    "lastName" : "Molina",
+    "email" : "Jesus_Molina@gmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Gina",
+    "lastName" : "Clayton",
+    "email" : "Gina_Clayton@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Dominique",
+    "lastName" : "Gay",
+    "email" : "Dominique_Gay@yahoo.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Joseph",
+    "lastName" : "Horn",
+    "email" : "Joseph_Horn@yahoo.us",
+    "accounts" : [ ]
+  } ],
+  "timestamp" : 7
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 1,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 5,
+    "description" : "Split payment of 168.00 RON",
+    "amount" : 84.0,
+    "currency" : "RON",
+    "involvedAccounts" : [ "RO69POOB6209498372540635", "RO58POOB7344468893732422" ]
+  } ],
+  "timestamp" : 8
+}, {
+  "command" : "spendingsReport",
+  "output" : {
+    "commerciants" : [ ],
+    "balance" : 1177.0,
+    "currency" : "RON",
+    "IBAN" : "RO58POOB7344468893732422",
+    "transactions" : [ ]
+  },
+  "timestamp" : 9
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "timestamp" : 10
+  },
+  "timestamp" : 10
+} ]
