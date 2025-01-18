@@ -2,6 +2,7 @@ package org.poo.bank.accounts;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 import lombok.Setter;
 import org.poo.bank.cards.Card;
 import org.poo.transaction.Commerciant;
@@ -22,6 +23,10 @@ public abstract class Account {
     private double interestRate;
     @JsonIgnore @Setter
     private double minAmount = 0.0;
+    @JsonIgnore @Getter
+    private int totalTransaction = 0;
+    @JsonIgnore @Getter
+    private double totalAmount = 0.0;
 
     /** */
     @JsonIgnore
@@ -41,6 +46,8 @@ public abstract class Account {
         this.type = account.type;
         this.balance = account.balance;
         this.currency = account.currency;
+        this.totalTransaction = account.totalTransaction;
+        this.totalAmount = account.totalAmount;
         this.cards = new ArrayList<>(account.cards);
     }
 
@@ -102,6 +109,12 @@ public abstract class Account {
         }
     }
 
+    public void addTransaction(){
+        totalTransaction += 1;
+    }
+    public void addAmount(final double amount) {
+        totalAmount += amount;
+    }
     /**
      * method that add an amount in the balanced of the account
      */
@@ -161,7 +174,8 @@ public abstract class Account {
     /**
      * method that add a transaction in the list of the transactions
      */
-    public void addTransaction(final Transaction transaction) {
+    public void addTransactionList(final Transaction transaction) {
+
         this.getTransactions().add(transaction);
     }
 

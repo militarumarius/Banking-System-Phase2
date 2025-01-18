@@ -1,1 +1,495 @@
-[ ]
+[ {
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 64,
+    "description" : "Card not found"
+  },
+  "timestamp" : 64
+}, {
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 65,
+    "description" : "Card not found"
+  },
+  "timestamp" : 65
+}, {
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 66,
+    "description" : "Card not found"
+  },
+  "timestamp" : 66
+}, {
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 67,
+    "description" : "Card not found"
+  },
+  "timestamp" : 67
+}, {
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 68,
+    "description" : "Card not found"
+  },
+  "timestamp" : 68
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 200
+  },
+  "timestamp" : 200
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 201
+  },
+  "timestamp" : 201
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 202
+  },
+  "timestamp" : 202
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 203
+  },
+  "timestamp" : 203
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 204
+  },
+  "timestamp" : 204
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 205
+  },
+  "timestamp" : 205
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 206
+  },
+  "timestamp" : 206
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 207
+  },
+  "timestamp" : 207
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 208
+  },
+  "timestamp" : 208
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 209
+  },
+  "timestamp" : 209
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 210
+  },
+  "timestamp" : 210
+}, {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Juliette-Gabrielle",
+    "lastName" : "Le Gall",
+    "email" : "Juliette-Gabrielle_Le_Gall@yahoo.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Nicolas",
+    "lastName" : "de Leduc",
+    "email" : "Nicolas_de_Leduc@hotmail.fr",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 1126.0,
+      "currency" : "EUR",
+      "cards" : [ ],
+      "IBAN" : "RO90POOB5450777208072365"
+    } ]
+  }, {
+    "firstName" : "Gregoire",
+    "lastName" : "Chretien",
+    "email" : "Gregoire_Chretien@gmail.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Nicoleta",
+    "lastName" : "Popa",
+    "email" : "Nicoleta_Popa@hotmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "John",
+    "lastName" : "Shields",
+    "email" : "John_Shields@outlook.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Michael",
+    "lastName" : "Ashley",
+    "email" : "Michael_Ashley@yahoo.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "George",
+    "lastName" : "Popa",
+    "email" : "George_Popa@gmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Norbert",
+    "lastName" : "Dochioiu",
+    "email" : "Norbert_Dochioiu@gmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Christina",
+    "lastName" : "Hudson",
+    "email" : "Christina_Hudson@outlook.us",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 1672.0,
+      "currency" : "USD",
+      "cards" : [ ],
+      "IBAN" : "RO58POOB7344468893732422"
+    } ]
+  }, {
+    "firstName" : "Michael",
+    "lastName" : "Miles",
+    "email" : "Michael_Miles@hotmail.us",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 1313.0,
+      "currency" : "USD",
+      "cards" : [ ],
+      "IBAN" : "RO58POOB2721178218599590"
+    } ]
+  }, {
+    "firstName" : "Kelly",
+    "lastName" : "Webb",
+    "email" : "Kelly_Webb@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Kevin",
+    "lastName" : "Edwards",
+    "email" : "Kevin_Edwards@outlook.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Barbu",
+    "lastName" : "Suciu",
+    "email" : "Barbu_Suciu@outlook.ro",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 3452.0,
+      "currency" : "RON",
+      "cards" : [ ],
+      "IBAN" : "RO65POOB8944016386845896"
+    } ]
+  }, {
+    "firstName" : "Floarea",
+    "lastName" : "Dobre",
+    "email" : "Floarea_Dobre@hotmail.ro",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 1746.0,
+      "currency" : "RON",
+      "cards" : [ ],
+      "IBAN" : "RO69POOB6209498372540635"
+    } ]
+  } ],
+  "timestamp" : 216
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 217,
+    "description" : "Card not found"
+  },
+  "timestamp" : 217
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 218,
+    "description" : "Card not found"
+  },
+  "timestamp" : 218
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 219,
+    "description" : "Card not found"
+  },
+  "timestamp" : 219
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 220,
+    "description" : "Card not found"
+  },
+  "timestamp" : 220
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 221,
+    "description" : "Card not found"
+  },
+  "timestamp" : 221
+}, {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Juliette-Gabrielle",
+    "lastName" : "Le Gall",
+    "email" : "Juliette-Gabrielle_Le_Gall@yahoo.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Nicolas",
+    "lastName" : "de Leduc",
+    "email" : "Nicolas_de_Leduc@hotmail.fr",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 1126.0,
+      "currency" : "EUR",
+      "cards" : [ ],
+      "IBAN" : "RO90POOB5450777208072365"
+    } ]
+  }, {
+    "firstName" : "Gregoire",
+    "lastName" : "Chretien",
+    "email" : "Gregoire_Chretien@gmail.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Nicoleta",
+    "lastName" : "Popa",
+    "email" : "Nicoleta_Popa@hotmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "John",
+    "lastName" : "Shields",
+    "email" : "John_Shields@outlook.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Michael",
+    "lastName" : "Ashley",
+    "email" : "Michael_Ashley@yahoo.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "George",
+    "lastName" : "Popa",
+    "email" : "George_Popa@gmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Norbert",
+    "lastName" : "Dochioiu",
+    "email" : "Norbert_Dochioiu@gmail.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Christina",
+    "lastName" : "Hudson",
+    "email" : "Christina_Hudson@outlook.us",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 1672.0,
+      "currency" : "USD",
+      "cards" : [ ],
+      "IBAN" : "RO58POOB7344468893732422"
+    } ]
+  }, {
+    "firstName" : "Michael",
+    "lastName" : "Miles",
+    "email" : "Michael_Miles@hotmail.us",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 1313.0,
+      "currency" : "USD",
+      "cards" : [ ],
+      "IBAN" : "RO58POOB2721178218599590"
+    } ]
+  }, {
+    "firstName" : "Kelly",
+    "lastName" : "Webb",
+    "email" : "Kelly_Webb@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Kevin",
+    "lastName" : "Edwards",
+    "email" : "Kevin_Edwards@outlook.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Barbu",
+    "lastName" : "Suciu",
+    "email" : "Barbu_Suciu@outlook.ro",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 3452.0,
+      "currency" : "RON",
+      "cards" : [ ],
+      "IBAN" : "RO65POOB8944016386845896"
+    } ]
+  }, {
+    "firstName" : "Floarea",
+    "lastName" : "Dobre",
+    "email" : "Floarea_Dobre@hotmail.ro",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 1746.0,
+      "currency" : "RON",
+      "cards" : [ ],
+      "IBAN" : "RO69POOB6209498372540635"
+    } ]
+  } ],
+  "timestamp" : 222
+}, {
+  "command" : "spendingsReport",
+  "output" : {
+    "error" : "This kind of report is not supported for a saving account"
+  },
+  "timestamp" : 225
+}, {
+  "command" : "report",
+  "output" : {
+    "balance" : 3452.0,
+    "currency" : "RON",
+    "IBAN" : "RO65POOB8944016386845896",
+    "transactions" : [ {
+      "timestamp" : 55,
+      "description" : "New account created"
+    }, {
+      "timestamp" : 72,
+      "description" : "You don't have the minimum age required."
+    }, {
+      "timestamp" : 198,
+      "description" : "You don't have the minimum age required."
+    }, {
+      "timestamp" : 212,
+      "description" : "Upgrade plan",
+      "newPlanType" : "silver",
+      "accountIBAN" : "RO65POOB8944016386845896"
+    }, {
+      "timestamp" : 214,
+      "description" : "Upgrade plan",
+      "newPlanType" : "silver",
+      "accountIBAN" : "RO65POOB8944016386845896"
+    }, {
+      "timestamp" : 223,
+      "description" : "Interest rate of the account changed to 0.17"
+    } ]
+  },
+  "timestamp" : 226
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 1,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 69,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 195,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 227,
+    "description" : "Split payment of 1423.00 RON",
+    "amount" : 355.75,
+    "currency" : "RON",
+    "involvedAccounts" : [ "RO69POOB6209498372540635", "RO58POOB2721178218599590", "RO65POOB8944016386845896", "RO58POOB7344468893732422" ]
+  } ],
+  "timestamp" : 228
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 17,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 70,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 196,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 227,
+    "description" : "Split payment of 1423.00 RON",
+    "amount" : 355.75,
+    "currency" : "RON",
+    "involvedAccounts" : [ "RO69POOB6209498372540635", "RO58POOB2721178218599590", "RO65POOB8944016386845896", "RO58POOB7344468893732422" ]
+  } ],
+  "timestamp" : 229
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 39,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 71,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 197,
+    "description" : "You don't have the minimum age required."
+  } ],
+  "timestamp" : 230
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 55,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 72,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 198,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 212,
+    "description" : "Upgrade plan",
+    "newPlanType" : "silver",
+    "accountIBAN" : "RO65POOB8944016386845896"
+  }, {
+    "timestamp" : 214,
+    "description" : "Upgrade plan",
+    "newPlanType" : "silver",
+    "accountIBAN" : "RO65POOB8944016386845896"
+  }, {
+    "timestamp" : 223,
+    "description" : "Interest rate of the account changed to 0.17"
+  }, {
+    "timestamp" : 227,
+    "description" : "Split payment of 1423.00 RON",
+    "amount" : 355.75,
+    "currency" : "RON",
+    "involvedAccounts" : [ "RO69POOB6209498372540635", "RO58POOB2721178218599590", "RO65POOB8944016386845896", "RO58POOB7344468893732422" ]
+  } ],
+  "timestamp" : 231
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 60,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 73,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 199,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 227,
+    "description" : "Split payment of 1423.00 RON",
+    "amount" : 355.75,
+    "currency" : "RON",
+    "involvedAccounts" : [ "RO69POOB6209498372540635", "RO58POOB2721178218599590", "RO65POOB8944016386845896", "RO58POOB7344468893732422" ]
+  } ],
+  "timestamp" : 232
+} ]

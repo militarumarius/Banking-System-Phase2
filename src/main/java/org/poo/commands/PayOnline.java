@@ -2,14 +2,15 @@ package org.poo.commands;
 
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.poo.actionHandler.ErrorDescription;
-import org.poo.actionHandler.ErrorOutput;
-import org.poo.actionHandler.PrintOutput;
+import org.poo.actionhandler.ErrorDescription;
+import org.poo.actionhandler.ErrorOutput;
+import org.poo.actionhandler.PrintOutput;
 import org.poo.bank.BankDatabase;
 import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.cards.Card;
 import org.poo.fileio.CommandInput;
+import org.poo.transaction.Commerciant;
 import org.poo.transaction.Transaction;
 import org.poo.transaction.TransactionBuilder;
 import org.poo.transaction.TransactionDescription;
@@ -39,6 +40,8 @@ public class PayOnline implements Commands {
             return;
         }
         Account account = user.getCardAccountMap().get(commandInput.getCardNumber());
+        if (commandInput.getAmount() == 0.0)
+            return;
         if (account == null) {
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
                     CARD_NOT_FOUND.getMessage(), commandInput.getTimestamp());
@@ -72,7 +75,9 @@ public class PayOnline implements Commands {
         if (exchangeRate <= 0) {
             return;
         }
-        account.subBalance(commandInput.getAmount() * exchangeRate);
+        double totalAmount = commandInput.getAmount() * exchangeRate;
+        account.subBalance(totalAmount);
+        accountSubCommision(account, user);
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                 TransactionDescription.CARD_PAYMENT.getMessage())
                 .amount(exchangeRate * commandInput.getAmount())
@@ -86,5 +91,21 @@ public class PayOnline implements Commands {
                     account.getIBAN());
             command.execute();
         }
+        Commerciant commerciant = bank.findCommerciant(commandInput.getCommerciant());
+        account.addBalance(totalAmount * commerciant.getCashbackStrategy().calculateCashback(bank, account, commandInput.getAmount()));
     }
+
+    public double calculateExchangeRate(Account account){
+        List<String> visited = new ArrayList<>();
+        return bank.findExchangeRate(account.getCurrency(),
+                "RON", visited);
+    }
+
+    public void accountSubCommision(Account account, User user) {
+        double exchangeRateForCommision = calculateExchangeRate(account);
+        double amountForCommisionCalculate = commandInput.getAmount() * exchangeRateForCommision;
+        double commision = user.calculateCommision(amountForCommisionCalculate) * commandInput.getAmount();
+        account.subBalance(commision);
+    }
+
 }

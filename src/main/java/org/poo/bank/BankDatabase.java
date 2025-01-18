@@ -2,10 +2,8 @@ package org.poo.bank;
 
 import org.poo.bank.accounts.Account;
 import org.poo.bank.cards.Card;
-import org.poo.fileio.CommandInput;
-import org.poo.fileio.ExchangeInput;
-import org.poo.fileio.ObjectInput;
-import org.poo.fileio.UserInput;
+import org.poo.fileio.*;
+import org.poo.transaction.Commerciant;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +17,7 @@ public class BankDatabase {
     private final List<ExchangeRate> exchangeRates;
     private final Map<String, User> userMap = new HashMap<>();
     private final Map<String, Account> aliasMap = new HashMap<>();
+    private final List<Commerciant> commerciants = new ArrayList<>();
 
     public BankDatabase(final ObjectInput input) {
         resetRandom();
@@ -29,6 +28,9 @@ public class BankDatabase {
         }
         for (ExchangeInput rate : input.getExchangeRates()) {
             addExchangeRate(rate);
+        }
+        for (CommerciantInput commerciant : input.getCommerciants()) {
+            commerciants.add(new Commerciant(commerciant));
         }
         createEmailMap();
     }
@@ -115,6 +117,19 @@ public class BankDatabase {
         return null;
     }
 
+    /**
+     * method that find the user by is iban
+     */
+    public User findUserByIban(final String iban) {
+        for (User user : users) {
+            Account account = user.findAccount(iban);
+            if (account != null) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     /** */
     public Map<String, Account> getAliasMap() {
         return aliasMap;
@@ -169,5 +184,12 @@ public class BankDatabase {
             accounts.add(this.findAccountByIban(iban));
         }
         return accounts;
+    }
+
+    public Commerciant findCommerciant(String name){
+        for (Commerciant commerciant : commerciants)
+            if(commerciant.getCommerciant().equals(name))
+                return commerciant;
+        return null;
     }
 }

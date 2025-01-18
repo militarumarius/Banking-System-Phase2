@@ -61,4 +61,134 @@
     "accounts" : [ ]
   } ],
   "timestamp" : 613
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 1,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 50,
+    "description" : "New card created",
+    "cardHolder" : "Caroline_Leleu@outlook.fr",
+    "account" : "RO58POOB7344468893732422",
+    "card" : "8207906978464446"
+  }, {
+    "timestamp" : 614,
+    "description" : "Cash withdrawal of 639.0",
+    "amount" : 639.0
+  } ],
+  "timestamp" : 615
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 1,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 50,
+    "description" : "New card created",
+    "cardHolder" : "Caroline_Leleu@outlook.fr",
+    "account" : "RO58POOB7344468893732422",
+    "card" : "8207906978464446"
+  }, {
+    "timestamp" : 614,
+    "description" : "Cash withdrawal of 639.0",
+    "amount" : 639.0
+  }, {
+    "timestamp" : 616,
+    "description" : "You don't have the minimum age required."
+  } ],
+  "timestamp" : 617
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 1,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 50,
+    "description" : "New card created",
+    "cardHolder" : "Caroline_Leleu@outlook.fr",
+    "account" : "RO58POOB7344468893732422",
+    "card" : "8207906978464446"
+  }, {
+    "timestamp" : 614,
+    "description" : "Cash withdrawal of 639.0",
+    "amount" : 639.0
+  }, {
+    "timestamp" : 616,
+    "description" : "You don't have the minimum age required."
+  }, {
+    "timestamp" : 619,
+    "description" : "You don't have the minimum age required."
+  } ],
+  "timestamp" : 620
+}, {
+  "command" : "deleteAccount",
+  "output" : {
+    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "timestamp" : 621
+  },
+  "timestamp" : 621
+}, {
+  "command" : "printUsers",
+  "output" : [ {
+    "firstName" : "Hugues",
+    "lastName" : "Thierry",
+    "email" : "Hugues_Thierry@gmail.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Caroline",
+    "lastName" : "Leleu",
+    "email" : "Caroline_Leleu@outlook.fr",
+    "accounts" : [ {
+      "type" : "savings",
+      "balance" : 573.9444,
+      "currency" : "EUR",
+      "cards" : [ {
+        "cardNumber" : "8207906978464446",
+        "status" : "active"
+      } ],
+      "IBAN" : "RO58POOB7344468893732422"
+    } ]
+  }, {
+    "firstName" : "Georges-Isaac",
+    "lastName" : "Lemoine",
+    "email" : "Georges-Isaac_Lemoine@outlook.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Marie",
+    "lastName" : "Davis",
+    "email" : "Marie_Davis@yahoo.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Simi",
+    "lastName" : "Pop",
+    "email" : "Simi_Pop@outlook.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Emily",
+    "lastName" : "Walker",
+    "email" : "Emily_Walker@gmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Kyle",
+    "lastName" : "Evans",
+    "email" : "Kyle_Evans@hotmail.us",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Olimpiu",
+    "lastName" : "Suciu",
+    "email" : "Olimpiu_Suciu@outlook.ro",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Dorothee",
+    "lastName" : "Marchal",
+    "email" : "Dorothee_Marchal@gmail.fr",
+    "accounts" : [ ]
+  }, {
+    "firstName" : "Roland",
+    "lastName" : "Pottier",
+    "email" : "Roland_Pottier@gmail.fr",
+    "accounts" : [ ]
+  } ],
+  "timestamp" : 622
 } ]

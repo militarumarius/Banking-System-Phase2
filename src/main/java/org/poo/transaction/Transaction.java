@@ -17,6 +17,8 @@ public  class Transaction {
     private String transferType;
     private String cardHolder;
     private String account;
+    private String newPlanType;
+    private String accountIBAN;
     private String card;
     private String commerciant;
     private String currency;
@@ -37,6 +39,8 @@ public  class Transaction {
         this.involvedAccounts = builder.getInvolvedAccounts();
         this.currency = builder.getCurrency();
         this.error = builder.getError();
+        this.accountIBAN = builder.getAccountIBAN();
+        this.newPlanType = builder.getNewPlanType();
     }
 
     public Transaction(final Transaction transaction) {
@@ -53,6 +57,8 @@ public  class Transaction {
         this.involvedAccounts = transaction.getInvolvedAccounts();
         this.currency = transaction.getCurrency();
         this.error = transaction.getError();
+        this.newPlanType = transaction.getNewPlanType();
+        this.accountIBAN = transaction.getAccountIBAN();
     }
 
 }

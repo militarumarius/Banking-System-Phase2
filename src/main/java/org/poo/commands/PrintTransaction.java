@@ -1,7 +1,7 @@
 package org.poo.commands;
 
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import org.poo.actionHandler.PrintOutput;
+import org.poo.actionhandler.PrintOutput;
 import org.poo.bank.BankDatabase;
 import org.poo.bank.User;
 import org.poo.fileio.CommandInput;

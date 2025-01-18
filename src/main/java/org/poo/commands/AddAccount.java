@@ -35,7 +35,7 @@ public class AddAccount implements Commands {
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                 TransactionDescription.ACCOUNT_CREATION_SUCCESS.getMessage())
                 .build();
-        account.addTransaction(transaction);
+        account.addTransactionList(transaction);
     }
 }
 

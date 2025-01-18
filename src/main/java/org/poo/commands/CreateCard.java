@@ -41,7 +41,7 @@ public class CreateCard implements Commands {
                 .cardHolder(user.getEmail())
                 .card(newCard.getCardNumber())
                 .build();
-        account.addTransaction(transaction);
+        account.addTransactionList(transaction);
     }
 }
 

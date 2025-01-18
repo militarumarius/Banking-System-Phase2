@@ -1,5 +1,10 @@
 package org.poo.commands;
 
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.poo.actionhandler.ErrorDescription;
+import org.poo.actionhandler.ErrorOutput;
+import org.poo.actionhandler.PrintOutput;
 import org.poo.bank.BankDatabase;
 import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
@@ -14,10 +19,13 @@ import java.util.List;
 public class SendMoney implements Commands {
     private final BankDatabase bank;
     private final CommandInput commandInput;
+    private final ArrayNode output;
 
-    public SendMoney(final BankDatabase bank, final CommandInput commandInput) {
+    public SendMoney(final BankDatabase bank,
+                           final CommandInput commandInput, final ArrayNode output) {
         this.bank = bank;
         this.commandInput = commandInput;
+        this.output = output;
     }
 
     /**
@@ -31,6 +39,12 @@ public class SendMoney implements Commands {
         }
         Account receiver = bank.findAccountByIban(commandInput.getReceiver());
         if (receiver == null) {
+            ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
+                    USER_NOT_FOUND.getMessage(), commandInput.getTimestamp());
+            ObjectNode node = errorOutput.toObjectNodeDescription();
+            PrintOutput sendMoney = new PrintOutput("sendMoney",
+                    node, commandInput.getTimestamp());
+            sendMoney.printCommand(output);
             return;
         }
         Account sender = user.findAccount(commandInput.getAccount());
@@ -55,6 +69,7 @@ public class SendMoney implements Commands {
             return;
         }
         sender.subBalance(commandInput.getAmount());
+        accountSubCommision(sender, user);
         receiver.addBalance(exchangeRate * commandInput.getAmount());
         String amountSender = String.valueOf(commandInput.getAmount())
                 + " " + sender.getCurrency();
@@ -65,7 +80,7 @@ public class SendMoney implements Commands {
                 .amount(amountSender)
                 .transferType("sent")
                 .build();
-        sender.addTransaction(transactionSender);
+        sender.addTransactionList(transactionSender);
         String amountReceiver = String.valueOf(exchangeRate
                 * commandInput.getAmount()) + " " + receiver.getCurrency();
         Transaction transactionReceiver = new TransactionBuilder(commandInput.getTimestamp(),
@@ -75,6 +90,18 @@ public class SendMoney implements Commands {
                 .amount(amountReceiver)
                 .transferType("received")
                 .build();
-        receiver.addTransaction(transactionReceiver);
+        receiver.addTransactionList(transactionReceiver);
+    }
+    public double calculateExchangeRate(Account account){
+        List<String> visited = new ArrayList<>();
+        return bank.findExchangeRate(account.getCurrency(),
+                "RON", visited);
+    }
+
+    public void accountSubCommision(Account account, User user) {
+        double exchangeRateForCommision = calculateExchangeRate(account);
+        double amountForCommisionCalculate = commandInput.getAmount() * exchangeRateForCommision;
+        double commision = user.calculateCommision(amountForCommisionCalculate) * commandInput.getAmount();
+        account.subBalance(commision);
     }
 }

@@ -43,6 +43,6 @@ public class CreateOneTimeCard implements Commands {
                 .cardHolder(user.getEmail())
                 .card(newCard.getCardNumber())
                 .build();
-        account.addTransaction(transaction);
+        account.addTransactionList(transaction);
     }
 }

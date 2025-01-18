@@ -1,9 +1,10 @@
-package org.poo.actionHandler;
+package org.poo.actionhandler;
 
 public enum ErrorDescription {
 
     ACCOUNT_NOT_FOUND("Account not found"),
     CARD_NOT_FOUND("Card not found"),
+    USER_NOT_FOUND("User not found"),
     INVALID_ACCOUNT("This is not a savings account"),
     ACCOUNT_DELETED("Account deleted"),
     ACCOUNT_COULD_NOT_BE_DELETED("Account couldn't be deleted "

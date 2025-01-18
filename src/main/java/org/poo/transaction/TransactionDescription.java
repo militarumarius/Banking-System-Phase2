@@ -9,7 +9,10 @@ public enum TransactionDescription {
     INSUFFICIENT_FUNDS("Insufficient funds"),
     INVALID_DELETE_ACCOUNT("Account couldn't be deleted - there are funds remaining"),
     MINIMUM_FUNDS_REACHED("You have reached the minimum amount of funds, the card will be frozen"),
-    INTEREST_RATE_CHANGE("Interest rate of the account changed to ");
+    INTEREST_RATE_CHANGE("Interest rate of the account changed to "),
+    UPGRADE_PLAN("Upgrade plan"),
+    CASH_WITHDRAWAL("Cash withdrawal of "),
+    INVALID_AGE("You don't have the minimum age required.");
 
     private final String message;
 

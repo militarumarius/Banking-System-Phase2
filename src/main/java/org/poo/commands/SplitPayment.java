@@ -45,7 +45,7 @@ public class SplitPayment implements Commands {
                         .amount(amountToPay)
                         .currency(commandInput.getCurrency())
                         .build();
-                account.addTransaction(transaction);
+                account.addTransactionList(transaction);
             } else {
                 account.subBalance(amountToPayThisAccount);
                 Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
@@ -54,7 +54,7 @@ public class SplitPayment implements Commands {
                         .amount(amountToPay)
                         .currency(commandInput.getCurrency())
                         .build();
-                account.addTransaction(transaction);
+                account.addTransactionList(transaction);
             }
         }
     }

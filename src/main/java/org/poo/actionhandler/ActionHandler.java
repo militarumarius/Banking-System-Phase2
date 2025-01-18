@@ -1,4 +1,4 @@
-package org.poo.actionHandler;
+package org.poo.actionhandler;
 
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.poo.bank.BankDatabase;
@@ -56,7 +56,7 @@ public final class ActionHandler {
                     payOnline.execute();
                 }
                 case "sendMoney" -> {
-                    SendMoney sendMoney = new SendMoney(bank, commandInput);
+                    SendMoney sendMoney = new SendMoney(bank, commandInput, output);
                     sendMoney.execute();
                 }
                 case "printTransactions" -> {
@@ -99,6 +99,19 @@ public final class ActionHandler {
                     SpendingsReport spendingsReport = new SpendingsReport(bank,
                             commandInput, output);
                     spendingsReport.execute();
+                }
+                case "withdrawSavings" -> {
+                    WithdrawSavings withdrawSavings = new WithdrawSavings(bank,
+                            commandInput, output);
+                    withdrawSavings.execute();
+                }
+                case "upgradePlan" -> {
+                    UpgradePlan upgradePlan = new UpgradePlan(bank, commandInput);
+                    upgradePlan.execute();
+                }
+                case "cashWithdrawal" -> {
+                    CashWithdrawal cashWithdrawal = new CashWithdrawal(bank, commandInput, output);
+                    cashWithdrawal.execute();
                 }
                 default -> {
                     return;

@@ -20,6 +20,8 @@ public class TransactionBuilder {
     private String card;
     private String commerciant;
     private String currency;
+    private String newPlanType;
+    private String accountIBAN;
     private String error;
     private List<String> involvedAccounts = new ArrayList<>();
 
@@ -81,6 +83,16 @@ public class TransactionBuilder {
     /** */
     public TransactionBuilder error(final String newError) {
         this.error = newError;
+        return this;
+    }
+    /** */
+    public TransactionBuilder accountIBAN(final String accountIBAN) {
+        this.accountIBAN = accountIBAN;
+        return this;
+    }
+    /** */
+    public TransactionBuilder newPlanType(final String newPlanType) {
+        this.newPlanType = newPlanType;
         return this;
     }
     /** */

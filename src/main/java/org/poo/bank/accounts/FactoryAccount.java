@@ -14,6 +14,7 @@ public final class FactoryAccount {
      * method that create an account
      */
     public static Account createAccount(final CommandInput input) {
+
         switch (input.getAccountType()) {
             case "classic" -> {
                 return new BasicAccount(generateIBAN(),

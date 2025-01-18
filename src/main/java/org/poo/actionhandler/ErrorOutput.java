@@ -1,4 +1,4 @@
-package org.poo.actionHandler;
+package org.poo.actionhandler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;

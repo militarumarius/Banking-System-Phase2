@@ -2,9 +2,9 @@ package org.poo.commands;
 
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.poo.actionHandler.ErrorDescription;
-import org.poo.actionHandler.ErrorOutput;
-import org.poo.actionHandler.PrintOutput;
+import org.poo.actionhandler.ErrorDescription;
+import org.poo.actionhandler.ErrorOutput;
+import org.poo.actionhandler.PrintOutput;
 import org.poo.bank.BankDatabase;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.cards.Card;
@@ -46,7 +46,7 @@ public class CheckCardStatus implements Commands {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.MINIMUM_FUNDS_REACHED.getMessage())
                     .build();
-            account.addTransaction(transaction);
+            account.addTransactionList(transaction);
         }
     }
 }

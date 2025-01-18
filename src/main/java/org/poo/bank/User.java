@@ -1,9 +1,13 @@
 package org.poo.bank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.accounts.FactoryAccount;
 import org.poo.bank.cards.Card;
+import org.poo.bank.plans.Plan;
+import org.poo.bank.plans.StandardPlan;
+import org.poo.bank.plans.StudentPlan;
 import org.poo.fileio.UserInput;
 
 import java.util.ArrayList;
@@ -16,20 +20,34 @@ public class User {
     private final String firstName;
     private final String lastName;
     private final String email;
+    @JsonIgnore
+    private final String birthDate;
+    @JsonIgnore
+    private final String occupation;
     private final List<Account> accounts;
     @JsonIgnore
     private final Map<String, Account> cardAccountMap = new HashMap<>();
+
+    @JsonIgnore
+    private Plan plan;
 
     public User(final UserInput user) {
         accounts = new ArrayList<>();
         this.email = user.getEmail();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
+        this.birthDate = user.getBirthDate();
+        this.occupation = user.getOccupation();
+        this.plan = occupation.equals("student") ? new StudentPlan() : new StandardPlan();
     }
 
     /** */
     public String getLastName() {
         return lastName;
+    }
+
+    public Plan getPlan() {
+        return plan;
     }
 
     /** */
@@ -40,6 +58,22 @@ public class User {
     /** */
     public List<Account> getAccounts() {
         return accounts;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void upgradePlan(Plan newPlan) {
+        this.plan = newPlan;
+    }
+
+    public double calculateCommision(double transactionAmount) {
+        return plan.calculateFee(transactionAmount);
     }
 
     /** */
@@ -60,6 +94,9 @@ public class User {
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
         this.email = user.getEmail();
+        this.occupation = user.getOccupation();
+        this.birthDate = user.getBirthDate();
+        this.plan = user.getPlan();
         this.accounts = new ArrayList<>();
         for (Account account: user.getAccounts()) {
             accounts.add(FactoryAccount.createCopyAccount(account));
