@@ -23,7 +23,9 @@ public  class Transaction {
     private String commerciant;
     private String currency;
     private String error;
+    private String splitPaymentType;
     private List<String> involvedAccounts = new ArrayList<>();
+    private List<Double> amountForUsers = new ArrayList<>();
 
     public Transaction(final TransactionBuilder builder) {
         this.timestamp = builder.getTimestamp();
@@ -41,6 +43,8 @@ public  class Transaction {
         this.error = builder.getError();
         this.accountIBAN = builder.getAccountIBAN();
         this.newPlanType = builder.getNewPlanType();
+        this.amountForUsers = builder.getAmountForUsers();
+        this.splitPaymentType =builder.getSplitPaymentType();
     }
 
     public Transaction(final Transaction transaction) {
@@ -59,6 +63,8 @@ public  class Transaction {
         this.error = transaction.getError();
         this.newPlanType = transaction.getNewPlanType();
         this.accountIBAN = transaction.getAccountIBAN();
+        this.amountForUsers = transaction.getAmountForUsers();
+        this.splitPaymentType = transaction.getSplitPaymentType();
     }
 
 }

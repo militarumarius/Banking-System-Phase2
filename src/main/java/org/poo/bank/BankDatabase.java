@@ -1,9 +1,11 @@
 package org.poo.bank;
 
+import lombok.Getter;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.cards.Card;
 import org.poo.fileio.*;
 import org.poo.transaction.Commerciant;
+import org.poo.transaction.SplitPaymentTransaction;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +19,10 @@ public class BankDatabase {
     private final List<ExchangeRate> exchangeRates;
     private final Map<String, User> userMap = new HashMap<>();
     private final Map<String, Account> aliasMap = new HashMap<>();
+    @Getter
     private final List<Commerciant> commerciants = new ArrayList<>();
+    @Getter
+    private final List<SplitPaymentTransaction> splitPayments = new ArrayList<>();
 
     public BankDatabase(final ObjectInput input) {
         resetRandom();
@@ -160,16 +165,16 @@ public class BankDatabase {
      */
     public Account checkSplitPayment(final List<Account> accounts,
                                      final BankDatabase bank,
-                                     final CommandInput commandInput,
-                                     final double amountToPay) {
-        for (Account account : accounts.reversed()) {
+                                     final String currency,
+                                     final List<Double> amountToPay) {
+        for (int i =0; i < accounts.reversed().size(); i++) {
             List<String> visited = new ArrayList<>();
-            double exchangeRate = bank.findExchangeRate(commandInput.getCurrency(),
-                    account.getCurrency(), visited);
+            double exchangeRate = bank.findExchangeRate(currency,
+                    accounts.get(i).getCurrency(), visited);
             visited.clear();
-            double amountToPayThisAccount = amountToPay * exchangeRate;
-            if (account.getBalance() < amountToPayThisAccount) {
-                return account;
+            double amountToPayThisAccount = amountToPay.get(i) * exchangeRate;
+            if (accounts.get(i).getBalance() < amountToPayThisAccount) {
+                return accounts.get(i);
             }
         }
         return null;
@@ -190,6 +195,23 @@ public class BankDatabase {
         for (Commerciant commerciant : commerciants)
             if(commerciant.getCommerciant().equals(name))
                 return commerciant;
+        return null;
+    }
+
+    public SplitPaymentTransaction findSplitPaymentByUser(User user, String type){
+        for (SplitPaymentTransaction splitPaymentTransaction : splitPayments) {
+            for (Account account : splitPaymentTransaction.getAccountsNotAccept())
+                if (user.findAccount(account.getIBAN()) != null && splitPaymentTransaction.getType().equals(type))
+                    return splitPaymentTransaction;
+        }
+        return null;
+    }
+    public Account findAccountForSplitPayment(User user, String type) {
+        for (SplitPaymentTransaction splitPaymentTransaction : splitPayments) {
+            for (Account account : splitPaymentTransaction.getAccountsNotAccept())
+                if (user.findAccount(account.getIBAN()) != null && splitPaymentTransaction.getType().equals(type))
+                    return account;
+        }
         return null;
     }
 }

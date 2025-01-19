@@ -36,8 +36,13 @@ public class DeleteAccount implements Commands {
         if (user == null) {
             return;
         }
-        boolean check = user.getAccounts().removeIf(account ->
-                account.getIBAN().equals(commandInput.getAccount()) && account.getBalance() == 0);
+        Account account = bank.findAccountByIban(commandInput.getAccount());
+        if (account == null) {
+            return;
+        }
+        boolean check = user.getAccounts().removeIf(accountToRemove ->
+                accountToRemove.getIBAN().equals(commandInput.getAccount()) && accountToRemove.getBalance() == 0);
+
         if (check) {
             errorOutput = new ErrorOutput(ErrorDescription.ACCOUNT_DELETED.getMessage(),
                     commandInput.getTimestamp());
@@ -46,7 +51,6 @@ public class DeleteAccount implements Commands {
             errorOutput = new ErrorOutput(ErrorDescription.
                     ACCOUNT_COULD_NOT_BE_DELETED.getMessage(), commandInput.getTimestamp());
             node = errorOutput.toObjectNodeErrorWithTimestamp();
-            Account account = bank.findAccountByIban(commandInput.getAccount());
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.INVALID_DELETE_ACCOUNT.getMessage())
                     .build();

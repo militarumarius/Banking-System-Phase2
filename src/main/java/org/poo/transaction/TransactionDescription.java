@@ -12,6 +12,8 @@ public enum TransactionDescription {
     INTEREST_RATE_CHANGE("Interest rate of the account changed to "),
     UPGRADE_PLAN("Upgrade plan"),
     CASH_WITHDRAWAL("Cash withdrawal of "),
+    INTEREST_RATE_INCOME("Interest rate income"),
+    INVALID_WITHDRAW_SAVINGS("You do not have a classic account."),
     INVALID_AGE("You don't have the minimum age required.");
 
     private final String message;

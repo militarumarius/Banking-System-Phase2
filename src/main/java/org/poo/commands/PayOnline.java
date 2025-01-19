@@ -77,10 +77,10 @@ public class PayOnline implements Commands {
         }
         double totalAmount = commandInput.getAmount() * exchangeRate;
         account.subBalance(totalAmount);
-        accountSubCommision(account, user);
+        accountSubCommision(account, user, totalAmount);
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                 TransactionDescription.CARD_PAYMENT.getMessage())
-                .amount(exchangeRate * commandInput.getAmount())
+                .amount(totalAmount)
                 .commerciant(commandInput.getCommerciant())
                 .build();
         account.getTransactions().add(transaction);
@@ -91,21 +91,30 @@ public class PayOnline implements Commands {
                     account.getIBAN());
             command.execute();
         }
-        Commerciant commerciant = bank.findCommerciant(commandInput.getCommerciant());
-        account.addBalance(totalAmount * commerciant.getCashbackStrategy().calculateCashback(bank, account, commandInput.getAmount()));
+        accoundAddCashback(account, totalAmount);
+        account.addTransaction();
     }
 
-    public double calculateExchangeRate(Account account){
+    public double calculateExchangeRate(){
         List<String> visited = new ArrayList<>();
-        return bank.findExchangeRate(account.getCurrency(),
+        return bank.findExchangeRate(commandInput.getCurrency(),
                 "RON", visited);
     }
 
-    public void accountSubCommision(Account account, User user) {
-        double exchangeRateForCommision = calculateExchangeRate(account);
-        double amountForCommisionCalculate = commandInput.getAmount() * exchangeRateForCommision;
-        double commision = user.calculateCommision(amountForCommisionCalculate) * commandInput.getAmount();
+    public void accountSubCommision(Account account, User user, double amount) {
+        double exchangeRateForCommision = calculateExchangeRate();
+        double amountForCommisionCalculate = amount * exchangeRateForCommision;
+        double commision = user.calculateCommision(amountForCommisionCalculate) * amount;
         account.subBalance(commision);
+    }
+
+    public void accoundAddCashback(Account account, double totalAmount){
+        Commerciant commerciant = bank.findCommerciant(commandInput.getCommerciant());
+        double exchangeRateForCommision = calculateExchangeRate();
+        double amountForCommisionCalculate = commandInput.getAmount() * exchangeRateForCommision;
+        account.addBalance(commerciant.getCashbackStrategy()
+                .calculateCashback(bank, account,
+                        amountForCommisionCalculate, totalAmount, commerciant.getType()));
     }
 
 }

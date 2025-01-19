@@ -266,4 +266,146 @@
     "accounts" : [ ]
   } ],
   "timestamp" : 177
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 44,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 63,
+    "description" : "New card created",
+    "cardHolder" : "Marcel_Ionita@hotmail.ro",
+    "account" : "RO90POOB5450777208072365",
+    "card" : "7004757825892043"
+  }, {
+    "timestamp" : 65,
+    "description" : "New account created"
+  } ],
+  "timestamp" : 180
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 115,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 124,
+    "description" : "New card created",
+    "cardHolder" : "Jonathan_Wright@hotmail.us",
+    "account" : "RO30POOB9523423715747796",
+    "card" : "0466992784477761"
+  } ],
+  "timestamp" : 182
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 73,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 84,
+    "description" : "New card created",
+    "cardHolder" : "Alix_Brunel@outlook.fr",
+    "account" : "RO58POOB2721178218599590",
+    "card" : "6796819982034243"
+  } ],
+  "timestamp" : 184
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 151,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 158,
+    "description" : "New card created",
+    "cardHolder" : "Matthew_Hernandez@gmail.us",
+    "account" : "RO96POOB6738272785416988",
+    "card" : "7317745095154687"
+  }, {
+    "timestamp" : 160,
+    "description" : "New account created"
+  } ],
+  "timestamp" : 186
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 91,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 108,
+    "description" : "New card created",
+    "cardHolder" : "Laurian_Barbu@yahoo.ro",
+    "account" : "RO37POOB7013767509830666",
+    "card" : "1322658752653937"
+  }, {
+    "timestamp" : 110,
+    "description" : "New account created"
+  } ],
+  "timestamp" : 188
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 86,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 89,
+    "description" : "New card created",
+    "cardHolder" : "Melania_Mocanu@hotmail.ro",
+    "account" : "RO76POOB4035116042454483",
+    "card" : "4686471658318359"
+  } ],
+  "timestamp" : 190
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 1,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 21,
+    "description" : "New card created",
+    "cardHolder" : "Lauren_Schultz@gmail.us",
+    "account" : "RO58POOB7344468893732422",
+    "card" : "8207906978464446"
+  } ],
+  "timestamp" : 192
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 23,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 42,
+    "description" : "New card created",
+    "cardHolder" : "Alexe_Dima@gmail.ro",
+    "account" : "RO69POOB6209498372540635",
+    "card" : "7901879264253296"
+  } ],
+  "timestamp" : 194
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 168,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 175,
+    "description" : "New card created",
+    "cardHolder" : "Christopher_Jones@gmail.us",
+    "account" : "RO69POOB9846198978826791",
+    "card" : "3951521356076921"
+  } ],
+  "timestamp" : 197
+}, {
+  "command" : "printTransactions",
+  "output" : [ {
+    "timestamp" : 126,
+    "description" : "New account created"
+  }, {
+    "timestamp" : 136,
+    "description" : "New card created",
+    "cardHolder" : "Octaviu_Diaconescu@yahoo.ro",
+    "account" : "RO79POOB3616857825600958",
+    "card" : "5088727507344799"
+  }, {
+    "timestamp" : 138,
+    "description" : "New account created"
+  } ],
+  "timestamp" : 199
 } ]

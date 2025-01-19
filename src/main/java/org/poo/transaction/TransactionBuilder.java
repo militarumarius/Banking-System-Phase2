@@ -23,7 +23,9 @@ public class TransactionBuilder {
     private String newPlanType;
     private String accountIBAN;
     private String error;
+    private String splitPaymentType;
     private List<String> involvedAccounts = new ArrayList<>();
+    private List<Double> amountForUsers = new ArrayList<>();
 
     public TransactionBuilder(final int timestamp,
                               final String description) {
@@ -93,6 +95,14 @@ public class TransactionBuilder {
     /** */
     public TransactionBuilder newPlanType(final String newPlanType) {
         this.newPlanType = newPlanType;
+        return this;
+    }
+    public TransactionBuilder amountForUsers(final List<Double> amountForUsers) {
+        this.amountForUsers = amountForUsers;
+        return this;
+    }
+    public TransactionBuilder splitPaymentType(final String splitPaymentType) {
+        this.splitPaymentType = splitPaymentType;
         return this;
     }
     /** */

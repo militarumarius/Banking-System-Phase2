@@ -5,5 +5,6 @@ import org.poo.bank.accounts.Account;
 import org.poo.transaction.Transaction;
 
 public interface CashbackStrategy {
-    double calculateCashback(BankDatabase bank, Account account, double amount);
+    double calculateCashback(BankDatabase bank, Account account, double amount, double totalAmount, String type);
+    String getName();
 }

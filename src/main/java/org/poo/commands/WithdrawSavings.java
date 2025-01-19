@@ -39,11 +39,22 @@ public class WithdrawSavings implements Commands{
     @Override
     public void execute() {
         User user = bank.findUserByIban(commandInput.getAccount());
+        if (user == null)
+            return;
         Account account = user.findAccount(commandInput.getAccount());
+        if (account == null)
+            return;
         LocalDate birthdayDate = LocalDate.parse(user.getBirthDate());
-        if (Period.between(LocalDate.now(), birthdayDate).getYears() < AGE_REQUIRED) {
+        if (Period.between(birthdayDate, LocalDate.now()).getYears() < AGE_REQUIRED) {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.INVALID_AGE.getMessage())
+                    .build();
+            account.getTransactions().add(transaction);
+        }
+        Account withdrawAccount = user.findAccountForWithdrawSavings(account.getCurrency());
+        if (withdrawAccount == null) {
+            Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
+                    TransactionDescription.INVALID_WITHDRAW_SAVINGS.getMessage())
                     .build();
             account.getTransactions().add(transaction);
         }

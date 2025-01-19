@@ -11,8 +11,7 @@ import org.poo.fileio.CommandInput;
 import org.poo.transaction.Commerciant;
 import org.poo.transaction.Transaction;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class SpendingsReport implements Commands {
     private final BankDatabase bank;
@@ -53,13 +52,29 @@ public class SpendingsReport implements Commands {
         List<Transaction> filteredTransactions = account.
                 getSpendingTransaction(commandInput.getStartTimestamp(),
                         commandInput.getEndTimestamp());
-        List<Commerciant> commerciants = account.
-                getCommerciants(filteredTransactions);
-        commerciants.sort(Comparator.comparing(Commerciant::getCommerciant));
+        List<Commerciant> commerciantsFiltered
+                = createFilteredCommerciants(account,filteredTransactions);
         PrintOutput spendingsReport = new PrintOutput("spendingsReport",
                 PrintOutput.createOutputSpendingTransactionObject(filteredTransactions,
-                        commerciants, account),
+                        commerciantsFiltered, account),
                 commandInput.getTimestamp());
         spendingsReport.printCommand(output);
+    }
+    public List<Commerciant> createFilteredCommerciants(Account account, List<Transaction> filteredTransactions){
+        List<Commerciant> commerciants = account.
+                getCommerciants(filteredTransactions);
+        Map<String, Double> commerciantsMap = new HashMap<>();
+        for (Commerciant commerciant : commerciants) {
+            commerciantsMap.put(
+                    commerciant.getCommerciant(),
+                    commerciantsMap.getOrDefault(commerciant.getCommerciant(), 0.0) + commerciant.getTotal()
+            );
+        }
+        List<Commerciant> commerciantsFiltered = new ArrayList<>();
+        for (Map.Entry<String, Double> entry : commerciantsMap.entrySet()) {
+            commerciantsFiltered.add(new Commerciant(entry.getKey(), entry.getValue()));
+        }
+        commerciantsFiltered.sort(Comparator.comparing(Commerciant::getCommerciant));
+        return commerciantsFiltered;
     }
 }

@@ -11,7 +11,7 @@
     "email" : "Caroline_Leleu@outlook.fr",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 599.0,
+      "balance" : 646.92,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "8207906978464446",
@@ -73,6 +73,11 @@
     "account" : "RO58POOB7344468893732422",
     "card" : "8207906978464446"
   }, {
+    "timestamp" : 612,
+    "description" : "Interest rate income",
+    "amount" : 47.92,
+    "currency" : "EUR"
+  }, {
     "timestamp" : 614,
     "description" : "Cash withdrawal of 639.0",
     "amount" : 639.0
@@ -90,12 +95,17 @@
     "account" : "RO58POOB7344468893732422",
     "card" : "8207906978464446"
   }, {
+    "timestamp" : 612,
+    "description" : "Interest rate income",
+    "amount" : 47.92,
+    "currency" : "EUR"
+  }, {
     "timestamp" : 614,
     "description" : "Cash withdrawal of 639.0",
     "amount" : 639.0
   }, {
     "timestamp" : 616,
-    "description" : "You don't have the minimum age required."
+    "description" : "You do not have a classic account."
   } ],
   "timestamp" : 617
 }, {
@@ -110,15 +120,20 @@
     "account" : "RO58POOB7344468893732422",
     "card" : "8207906978464446"
   }, {
+    "timestamp" : 612,
+    "description" : "Interest rate income",
+    "amount" : 47.92,
+    "currency" : "EUR"
+  }, {
     "timestamp" : 614,
     "description" : "Cash withdrawal of 639.0",
     "amount" : 639.0
   }, {
     "timestamp" : 616,
-    "description" : "You don't have the minimum age required."
+    "description" : "You do not have a classic account."
   }, {
     "timestamp" : 619,
-    "description" : "You don't have the minimum age required."
+    "description" : "You do not have a classic account."
   } ],
   "timestamp" : 620
 }, {
@@ -141,7 +156,7 @@
     "email" : "Caroline_Leleu@outlook.fr",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 573.9444,
+      "balance" : 621.8643999999999,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "8207906978464446",

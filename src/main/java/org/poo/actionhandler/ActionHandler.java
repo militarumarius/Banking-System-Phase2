@@ -113,6 +113,10 @@ public final class ActionHandler {
                     CashWithdrawal cashWithdrawal = new CashWithdrawal(bank, commandInput, output);
                     cashWithdrawal.execute();
                 }
+                case "acceptSplitPayment" -> {
+                    AcceptSplitPayment acceptSplitPayment = new AcceptSplitPayment(bank, commandInput);
+                    acceptSplitPayment.execute();
+                }
                 default -> {
                     return;
                 }

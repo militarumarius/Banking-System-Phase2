@@ -27,6 +27,12 @@ public abstract class Account {
     private int totalTransaction = 0;
     @JsonIgnore @Getter
     private double totalAmount = 0.0;
+    @JsonIgnore @Getter @Setter
+    private double foodCashback = 0.0;
+    @JsonIgnore @Getter @Setter
+    private double techCashback = 0.0;
+    @JsonIgnore @Getter @Setter
+    private double clothesCashback = 0.0;
 
     /** */
     @JsonIgnore

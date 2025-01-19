@@ -167,4 +167,10 @@ public class User {
         this.accounts.add(account);
     }
 
+    public Account findAccountForWithdrawSavings(String currency){
+        for (Account account : accounts)
+            if(account.getType().equals("classic") && account.getCurrency().equals(currency))
+                return account;
+        return null;
+    }
 }

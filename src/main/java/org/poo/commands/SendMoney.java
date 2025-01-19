@@ -58,7 +58,8 @@ public class SendMoney implements Commands {
         double exchangeRate = bank.findExchangeRate(sender.getCurrency(),
                 receiver.getCurrency(), visited);
         visited.clear();
-        if (sender.getBalance() < commandInput.getAmount()) {
+        double commision = accountSubCommision(sender, user);
+        if (sender.getBalance() - commision < commandInput.getAmount()) {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.INSUFFICIENT_FUNDS.getMessage())
                     .build();
@@ -69,7 +70,7 @@ public class SendMoney implements Commands {
             return;
         }
         sender.subBalance(commandInput.getAmount());
-        accountSubCommision(sender, user);
+        sender.subBalance(commision);
         receiver.addBalance(exchangeRate * commandInput.getAmount());
         String amountSender = String.valueOf(commandInput.getAmount())
                 + " " + sender.getCurrency();
@@ -98,10 +99,9 @@ public class SendMoney implements Commands {
                 "RON", visited);
     }
 
-    public void accountSubCommision(Account account, User user) {
+    public double accountSubCommision(Account account, User user) {
         double exchangeRateForCommision = calculateExchangeRate(account);
         double amountForCommisionCalculate = commandInput.getAmount() * exchangeRateForCommision;
-        double commision = user.calculateCommision(amountForCommisionCalculate) * commandInput.getAmount();
-        account.subBalance(commision);
+        return user.calculateCommision(amountForCommisionCalculate) * commandInput.getAmount();
     }
 }

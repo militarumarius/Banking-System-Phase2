@@ -6,18 +6,9 @@
       "total" : 114.0
     }, {
       "commerciant" : "H&M",
-      "total" : 487.0
-    }, {
-      "commerciant" : "H&M",
-      "total" : 531.25
-    }, {
-      "commerciant" : "H&M",
-      "total" : 319.0
-    }, {
-      "commerciant" : "H&M",
-      "total" : 1011.1
+      "total" : 2348.35
     } ],
-    "balance" : 487.46734000000043,
+    "balance" : 485.72529999999983,
     "currency" : "USD",
     "IBAN" : "RO58POOB7344468893732422",
     "transactions" : [ {
@@ -56,7 +47,7 @@
     "email" : "Tiffany_Leonard@hotmail.us",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 529.134006666667,
+      "balance" : 527.3919666666665,
       "currency" : "USD",
       "cards" : [ {
         "cardNumber" : "8207906978464446",
@@ -94,18 +85,9 @@
       "total" : 114.0
     }, {
       "commerciant" : "H&M",
-      "total" : 487.0
-    }, {
-      "commerciant" : "H&M",
-      "total" : 531.25
-    }, {
-      "commerciant" : "H&M",
-      "total" : 319.0
-    }, {
-      "commerciant" : "H&M",
-      "total" : 1011.1
+      "total" : 2348.35
     } ],
-    "balance" : 529.134006666667,
+    "balance" : 527.3919666666665,
     "currency" : "USD",
     "IBAN" : "RO58POOB7344468893732422",
     "transactions" : [ {
