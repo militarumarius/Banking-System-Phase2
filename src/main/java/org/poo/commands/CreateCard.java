@@ -34,7 +34,11 @@ public class CreateCard implements Commands {
         if (account == null)
             return;
         Card newCard = new DebitCard(generateCardNumber(), "DebitCard", account);
-        user.addCard(account, newCard);
+        if (account.isBusinessAccount())
+            for (User u : account.getUsersList())
+                u.addCard(account, newCard);
+        else
+            user.addCard(account, newCard);
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                 TransactionDescription.CARD_CREATION_SUCCESS.getMessage())
                 .account(account.getIBAN())

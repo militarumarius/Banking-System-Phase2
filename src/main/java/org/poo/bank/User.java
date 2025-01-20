@@ -2,6 +2,7 @@ package org.poo.bank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+import lombok.Setter;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.accounts.FactoryAccount;
 import org.poo.bank.cards.Card;
@@ -27,9 +28,10 @@ public class User {
     private final List<Account> accounts;
     @JsonIgnore
     private final Map<String, Account> cardAccountMap = new HashMap<>();
-
     @JsonIgnore
     private Plan plan;
+    @JsonIgnore @Getter @Setter
+    private String role = "";
 
     public User(final UserInput user) {
         accounts = new ArrayList<>();
@@ -142,6 +144,10 @@ public class User {
             return;
         }
         account.getCards().add(card);
+        cardAccountMap.put(card.getCardNumber(), account);
+    }
+
+    public void addCardforBusiness(final Account account, final Card card) {
         cardAccountMap.put(card.getCardNumber(), account);
     }
 

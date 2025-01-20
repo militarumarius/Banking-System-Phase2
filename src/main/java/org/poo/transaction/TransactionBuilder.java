@@ -20,6 +20,7 @@ public class TransactionBuilder {
     private String card;
     private String commerciant;
     private String currency;
+    private String role;
     private String newPlanType;
     private String accountIBAN;
     private String error;
@@ -103,6 +104,10 @@ public class TransactionBuilder {
     }
     public TransactionBuilder splitPaymentType(final String splitPaymentType) {
         this.splitPaymentType = splitPaymentType;
+        return this;
+    }
+    public TransactionBuilder role(final String role) {
+        this.role = role;
         return this;
     }
     /** */

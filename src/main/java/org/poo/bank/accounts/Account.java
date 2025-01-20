@@ -1,9 +1,12 @@
 package org.poo.bank.accounts;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.poo.actionhandler.UserOutput;
+import org.poo.bank.User;
 import org.poo.bank.cards.Card;
 import org.poo.transaction.Commerciant;
 import org.poo.transaction.Transaction;
@@ -33,6 +36,8 @@ public abstract class Account {
     private double techCashback = 0.0;
     @JsonIgnore @Getter @Setter
     private double clothesCashback = 0.0;
+    @JsonIgnore @Setter
+    private double spendingLimits = 0.0;
 
     /** */
     @JsonIgnore
@@ -148,6 +153,16 @@ public abstract class Account {
         return filteredTransactions;
     }
 
+    @JsonIgnore
+    public List<UserOutput> getEmployees(){
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public List<UserOutput> getManagers(){
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
     /**
      * method that get the list of the spending transactions in the given interval
      */
@@ -184,5 +199,65 @@ public abstract class Account {
 
         this.getTransactions().add(transaction);
     }
+
+    @JsonIgnore
+    public boolean isBusinessAccount(){
+        return false;
+    }
+
+    @JsonIgnore
+    public List<User> getUsersList() {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public double getSpendingLimits() {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public double getDepositLimits() {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    public void setSpendingLimits(double limit) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    public void setDepositLimits(double limit) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public List<Transaction> getTransactionsForBusiness() {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public  Map<String, Double> calculateTotalSent(List<Transaction> transactions) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+
+    }
+
+    @JsonIgnore
+    public  Map<String, Double> calculateTotalDeposited(List<Transaction> transactions) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public double totalSentForReport() {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public double totalDepositForReport() {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public boolean checkPayment(double amount, String type) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
 
 }

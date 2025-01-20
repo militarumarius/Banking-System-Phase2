@@ -27,7 +27,7 @@ public class AddAccount implements Commands {
         if (user == null) {
             return;
         }
-        Account account = FactoryAccount.createAccount(commandInput);
+        Account account = FactoryAccount.createAccount(commandInput, bank);
         if (account == null) {
             return;
         }

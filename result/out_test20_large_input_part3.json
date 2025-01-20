@@ -1530,6 +1530,13 @@
   } ],
   "timestamp" : 610
 }, {
+  "command" : "deleteAccount",
+  "output" : {
+    "success" : "Account deleted",
+    "timestamp" : 764
+  },
+  "timestamp" : 764
+}, {
   "command" : "printUsers",
   "output" : [ {
     "firstName" : "Jennifer",
@@ -2086,4 +2093,303 @@
     } ]
   } ],
   "timestamp" : 777
+}, {
+  "command" : "changeSpendingLimit",
+  "output" : {
+    "timestamp" : 794,
+    "description" : "You must be owner in order to change spending limit."
+  },
+  "timestamp" : 794
+}, {
+  "command" : "changeSpendingLimit",
+  "output" : {
+    "timestamp" : 795,
+    "description" : "You must be owner in order to change spending limit."
+  },
+  "timestamp" : 795
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 799,
+    "description" : "Card not found"
+  },
+  "timestamp" : 799
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 801,
+    "description" : "Card not found"
+  },
+  "timestamp" : 801
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 802,
+    "description" : "User not found"
+  },
+  "timestamp" : 802
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 803,
+    "description" : "Card not found"
+  },
+  "timestamp" : 803
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 805,
+    "description" : "Card not found"
+  },
+  "timestamp" : 805
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 806,
+    "description" : "User not found"
+  },
+  "timestamp" : 806
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 807,
+    "description" : "Card not found"
+  },
+  "timestamp" : 807
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 809,
+    "description" : "Card not found"
+  },
+  "timestamp" : 809
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 810,
+    "description" : "User not found"
+  },
+  "timestamp" : 810
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 811,
+    "description" : "Card not found"
+  },
+  "timestamp" : 811
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 813,
+    "description" : "Card not found"
+  },
+  "timestamp" : 813
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 814,
+    "description" : "User not found"
+  },
+  "timestamp" : 814
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 815,
+    "description" : "Card not found"
+  },
+  "timestamp" : 815
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 817,
+    "description" : "Card not found"
+  },
+  "timestamp" : 817
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 818,
+    "description" : "User not found"
+  },
+  "timestamp" : 818
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 819,
+    "description" : "Card not found"
+  },
+  "timestamp" : 819
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 821,
+    "description" : "Card not found"
+  },
+  "timestamp" : 821
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 822,
+    "description" : "User not found"
+  },
+  "timestamp" : 822
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 823,
+    "description" : "Card not found"
+  },
+  "timestamp" : 823
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 825,
+    "description" : "Card not found"
+  },
+  "timestamp" : 825
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 826,
+    "description" : "User not found"
+  },
+  "timestamp" : 826
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 827,
+    "description" : "Card not found"
+  },
+  "timestamp" : 827
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 829,
+    "description" : "Card not found"
+  },
+  "timestamp" : 829
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 830,
+    "description" : "User not found"
+  },
+  "timestamp" : 830
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 831,
+    "description" : "Card not found"
+  },
+  "timestamp" : 831
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 833,
+    "description" : "Card not found"
+  },
+  "timestamp" : 833
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 834,
+    "description" : "User not found"
+  },
+  "timestamp" : 834
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 835,
+    "description" : "Card not found"
+  },
+  "timestamp" : 835
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 837,
+    "description" : "Card not found"
+  },
+  "timestamp" : 837
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 838,
+    "description" : "User not found"
+  },
+  "timestamp" : 838
+}, {
+  "command" : "businessReport",
+  "output" : {
+    "balance" : 4711.0,
+    "currency" : "CHF",
+    "IBAN" : "RO73POOB7862625166958832",
+    "spending limit" : 122.22222222222223,
+    "deposit limit" : 211.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Charette Gregoire",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "del Ripoll Nicodemo",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Arana Trillo Mamen",
+      "spent" : 0.0,
+      "deposited" : 3337.0
+    }, {
+      "username" : "Sheppard Heather",
+      "spent" : 0.0,
+      "deposited" : 923.0
+    }, {
+      "username" : "del Ripoll Nicodemo",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "du Mendes Thibault",
+      "spent" : 0.0,
+      "deposited" : 451.0
+    }, {
+      "username" : "Charette Gregoire",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "employees" : [ {
+      "username" : "Manuel Baez Anaya Victor",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Barer-Gehringer Juan",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Camiscione-Rugger Emilio",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Farrell Heather",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Kaiser Hulda",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Stone Elizabeth",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Villa Dorothy",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Carey Frank",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 4711.0
+  },
+  "timestamp" : 839
 } ]

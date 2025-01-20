@@ -1,241 +1,88 @@
 [ {
-  "command" : "sendMoney",
+  "command" : "businessReport",
   "output" : {
-    "timestamp" : 6,
-    "description" : "User not found"
-  },
-  "timestamp" : 6
-}, {
-  "command" : "printUsers",
-  "output" : [ {
-    "firstName" : "Julieta",
-    "lastName" : "Aane",
-    "email" : "Julieta_Aane@outlook.ro",
-    "accounts" : [ {
-      "type" : "classic",
-      "balance" : 1261.0,
-      "currency" : "RON",
-      "cards" : [ ],
-      "IBAN" : "RO58POOB7344468893732422"
-    } ]
-  }, {
-    "firstName" : "Manuel",
-    "lastName" : "Lawrence",
-    "email" : "Manuel_Lawrence@yahoo.us",
-    "accounts" : [ {
-      "type" : "classic",
-      "balance" : 926.0,
-      "currency" : "USD",
-      "cards" : [ ],
-      "IBAN" : "RO69POOB6209498372540635"
-    } ]
-  }, {
-    "firstName" : "Mark",
-    "lastName" : "Roberts",
-    "email" : "Mark_Roberts@outlook.us",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Odette-Alex",
-    "lastName" : "Pasquier",
-    "email" : "Odette-Alex_Pasquier@gmail.fr",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Victoria",
-    "lastName" : "Love",
-    "email" : "Victoria_Love@hotmail.us",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Narcis",
-    "lastName" : "Dochioiu",
-    "email" : "Narcis_Dochioiu@hotmail.ro",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Jesus",
-    "lastName" : "Molina",
-    "email" : "Jesus_Molina@gmail.us",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Gina",
-    "lastName" : "Clayton",
-    "email" : "Gina_Clayton@hotmail.us",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Dominique",
-    "lastName" : "Gay",
-    "email" : "Dominique_Gay@yahoo.fr",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Joseph",
-    "lastName" : "Horn",
-    "email" : "Joseph_Horn@yahoo.us",
-    "accounts" : [ ]
-  } ],
-  "timestamp" : 7
-}, {
-  "command" : "printTransactions",
-  "output" : [ {
-    "timestamp" : 1,
-    "description" : "New account created"
-  } ],
-  "timestamp" : 8
-}, {
-  "command" : "spendingsReport",
-  "output" : {
-    "commerciants" : [ ],
-    "balance" : 1261.0,
-    "currency" : "RON",
-    "IBAN" : "RO58POOB7344468893732422",
-    "transactions" : [ ]
-  },
-  "timestamp" : 9
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 10
-  },
-  "timestamp" : 10
-}, {
-  "command" : "printTransactions",
-  "output" : [ {
-    "timestamp" : 2,
-    "description" : "New account created"
-  }, {
-    "timestamp" : 13,
-    "description" : "Insufficient funds"
-  } ],
-  "timestamp" : 14
-}, {
-  "command" : "deleteAccount",
-  "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
-    "timestamp" : 15
-  },
-  "timestamp" : 15
-}, {
-  "command" : "printUsers",
-  "output" : [ {
-    "firstName" : "Julieta",
-    "lastName" : "Aane",
-    "email" : "Julieta_Aane@outlook.ro",
-    "accounts" : [ {
-      "type" : "classic",
-      "balance" : 1261.0,
-      "currency" : "RON",
-      "cards" : [ ],
-      "IBAN" : "RO58POOB7344468893732422"
+    "balance" : 9543.999499999998,
+    "currency" : "EUR",
+    "IBAN" : "RO58POOB2721178218599590",
+    "spending limit" : 339.0,
+    "deposit limit" : 119.04761904761904,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Diaconu Artemisa",
+      "spent" : 0.0,
+      "deposited" : 0.0
     }, {
-      "type" : "classic",
-      "balance" : 0.0,
-      "currency" : "RON",
-      "cards" : [ ],
-      "IBAN" : "RO90POOB5450777208072365"
-    } ]
-  }, {
-    "firstName" : "Manuel",
-    "lastName" : "Lawrence",
-    "email" : "Manuel_Lawrence@yahoo.us",
-    "accounts" : [ {
-      "type" : "classic",
-      "balance" : 926.0,
-      "currency" : "USD",
-      "cards" : [ ],
-      "IBAN" : "RO69POOB6209498372540635"
+      "username" : "Coulon Christophe-Adrien",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "employees" : [ {
+      "username" : "Becker Antoine",
+      "spent" : 0.0,
+      "deposited" : 0.0
     }, {
-      "type" : "classic",
-      "balance" : 1088.0,
-      "currency" : "USD",
-      "cards" : [ ],
-      "IBAN" : "RO65POOB8944016386845896"
+      "username" : "Johnson John",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0,
+    "t" : [ {
+      "timestamp" : 56,
+      "description" : "Add funds",
+      "amount" : 3842.0,
+      "cardHolder" : "Roux du Breton Pauline"
+    }, {
+      "timestamp" : 159,
+      "description" : "Card payment",
+      "amount" : 109.0,
+      "cardHolder" : "Diaconu Artemisa",
+      "commerciant" : "H&M"
+    }, {
+      "timestamp" : 160,
+      "description" : "Add funds",
+      "amount" : 1816.0,
+      "cardHolder" : "Diaconu Artemisa"
+    }, {
+      "timestamp" : 181,
+      "description" : "Add funds",
+      "amount" : 1079.0,
+      "cardHolder" : "Coulon Christophe-Adrien"
+    }, {
+      "timestamp" : 203,
+      "description" : "Card payment",
+      "amount" : 116.0,
+      "cardHolder" : "Roux du Breton Pauline",
+      "commerciant" : "Zara"
+    }, {
+      "timestamp" : 223,
+      "description" : "Card payment",
+      "amount" : 214.0,
+      "cardHolder" : "Coulon Christophe-Adrien",
+      "commerciant" : "McDonalds"
+    }, {
+      "timestamp" : 224,
+      "description" : "Add funds",
+      "amount" : 1541.0,
+      "cardHolder" : "Diaconu Artemisa"
+    }, {
+      "timestamp" : 245,
+      "description" : "Add funds",
+      "amount" : 1926.0,
+      "cardHolder" : "Coulon Christophe-Adrien"
+    }, {
+      "timestamp" : 254,
+      "description" : "Card payment",
+      "amount" : 144.0,
+      "cardHolder" : "Roux du Breton Pauline",
+      "commerciant" : "Burger King"
+    }, {
+      "timestamp" : 261,
+      "description" : "Card payment",
+      "amount" : 77.0,
+      "cardHolder" : "Diaconu Artemisa",
+      "commerciant" : "Zara"
     } ]
-  }, {
-    "firstName" : "Mark",
-    "lastName" : "Roberts",
-    "email" : "Mark_Roberts@outlook.us",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Odette-Alex",
-    "lastName" : "Pasquier",
-    "email" : "Odette-Alex_Pasquier@gmail.fr",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Victoria",
-    "lastName" : "Love",
-    "email" : "Victoria_Love@hotmail.us",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Narcis",
-    "lastName" : "Dochioiu",
-    "email" : "Narcis_Dochioiu@hotmail.ro",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Jesus",
-    "lastName" : "Molina",
-    "email" : "Jesus_Molina@gmail.us",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Gina",
-    "lastName" : "Clayton",
-    "email" : "Gina_Clayton@hotmail.us",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Dominique",
-    "lastName" : "Gay",
-    "email" : "Dominique_Gay@yahoo.fr",
-    "accounts" : [ ]
-  }, {
-    "firstName" : "Joseph",
-    "lastName" : "Horn",
-    "email" : "Joseph_Horn@yahoo.us",
-    "accounts" : [ ]
-  } ],
-  "timestamp" : 18
-}, {
-  "command" : "payOnline",
-  "output" : {
-    "timestamp" : 19,
-    "description" : "Card not found"
   },
-  "timestamp" : 19
-}, {
-  "command" : "printTransactions",
-  "output" : [ {
-    "timestamp" : 1,
-    "description" : "New account created"
-  }, {
-    "timestamp" : 5,
-    "description" : "Split payment of 168.00 RON",
-    "currency" : "RON",
-    "involvedAccounts" : [ "RO69POOB6209498372540635", "RO58POOB7344468893732422" ],
-    "amountForUsers" : [ 90.0, 78.0 ]
-  }, {
-    "timestamp" : 10,
-    "description" : "Account couldn't be deleted - there are funds remaining"
-  }, {
-    "timestamp" : 11,
-    "description" : "New account created"
-  } ],
-  "timestamp" : 21
-}, {
-  "command" : "printTransactions",
-  "output" : [ {
-    "timestamp" : 2,
-    "description" : "New account created"
-  }, {
-    "timestamp" : 5,
-    "description" : "Split payment of 168.00 RON",
-    "currency" : "RON",
-    "involvedAccounts" : [ "RO69POOB6209498372540635", "RO58POOB7344468893732422" ],
-    "amountForUsers" : [ 90.0, 78.0 ]
-  }, {
-    "timestamp" : 13,
-    "description" : "Insufficient funds"
-  }, {
-    "timestamp" : 15,
-    "description" : "Account couldn't be deleted - there are funds remaining"
-  }, {
-    "timestamp" : 16,
-    "description" : "New account created"
-  } ],
-  "timestamp" : 22
+  "timestamp" : 280
 } ]

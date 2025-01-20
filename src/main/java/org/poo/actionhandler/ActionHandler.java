@@ -117,6 +117,22 @@ public final class ActionHandler {
                     AcceptSplitPayment acceptSplitPayment = new AcceptSplitPayment(bank, commandInput);
                     acceptSplitPayment.execute();
                 }
+                case "addNewBusinessAssociate" -> {
+                    AddNewBusinessAssociate addNewBusinessAssociate = new AddNewBusinessAssociate(bank, commandInput);
+                    addNewBusinessAssociate.execute();
+                }
+                case "changeSpendingLimit" -> {
+                    ChangeSpendingLimit changeSpendingLimit = new ChangeSpendingLimit(bank, commandInput, output);
+                    changeSpendingLimit.execute();
+                }
+                case "businessReport" -> {
+                    BusinessReport businessReport = new BusinessReport(bank, commandInput, output);
+                    businessReport.execute();
+                }
+                case "changeDepositLimit" -> {
+                    ChangeDepositLimit changeDepositLimit = new ChangeDepositLimit(bank, commandInput, output);
+                    changeDepositLimit.execute();
+                }
                 default -> {
                     return;
                 }

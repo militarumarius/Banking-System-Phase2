@@ -3,6 +3,8 @@ package org.poo.actionhandler;
 public enum ErrorDescription {
 
     ACCOUNT_NOT_FOUND("Account not found"),
+    ACCOUNT_IS_NOT_BUSINESS_TYPE("Account is not of type business"),
+    ERROR_BUSINESS_LIMIT_CHANGE("You must be owner in order to change spending limit."),
     CARD_NOT_FOUND("Card not found"),
     USER_NOT_FOUND("User not found"),
     INVALID_ACCOUNT("This is not a savings account"),

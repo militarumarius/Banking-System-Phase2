@@ -93,6 +93,16 @@ public class PayOnline implements Commands {
         }
         accoundAddCashback(account, totalAmount);
         account.addTransaction();
+        if (account.isBusinessAccount()) {
+            Transaction businessTransaction = new TransactionBuilder(commandInput.getTimestamp(),
+                    TransactionDescription.CARD_PAYMENT.getMessage())
+                    .cardHolder(user.getLastName() + " " + user.getFirstName())
+                    .amount(totalAmount)
+                    .role(user.getRole())
+                    .commerciant(commandInput.getCommerciant())
+                    .build();
+            account.getTransactionsForBusiness().add(businessTransaction);
+        }
     }
 
     public double calculateExchangeRate(){

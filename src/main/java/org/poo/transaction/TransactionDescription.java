@@ -2,6 +2,7 @@ package org.poo.transaction;
 
 public enum TransactionDescription {
     ACCOUNT_CREATION_SUCCESS("New account created"),
+    ADD_FUND("Add funds"),
     CARD_CREATION_SUCCESS("New card created"),
     CARD_DESTROYED("The card has been destroyed"),
     CARD_FROZEN("The card is frozen"),

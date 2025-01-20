@@ -99,4 +99,25 @@ public class PrintOutput {
         node.putPOJO("transactions", filteredTransactions);
         return node;
     }
+    public static ObjectNode createOutputBusinessReportTransactions(
+            final List<UserOutput> managers,
+            final List<UserOutput> employees,
+            final Account account,
+            final double totalSent,
+            final double totalDeposited) {
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+        node.put("balance", account.getBalance());
+        node.put("currency", account.getCurrency());
+        node.put("IBAN", account.getIBAN());
+        node.put("spending limit", account.getSpendingLimits());
+        node.put("deposit limit", account.getDepositLimits());
+        node.put("statistics type", "transaction");
+        node.putPOJO("managers", managers);
+        node.putPOJO("employees", employees);
+        node.put("total spent", totalSent);
+        node.put("total deposited", totalDeposited);
+        return node;
+    }
+
 }

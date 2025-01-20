@@ -17,6 +17,7 @@ public  class Transaction {
     private String transferType;
     private String cardHolder;
     private String account;
+    private String role;
     private String newPlanType;
     private String accountIBAN;
     private String card;
@@ -44,7 +45,8 @@ public  class Transaction {
         this.accountIBAN = builder.getAccountIBAN();
         this.newPlanType = builder.getNewPlanType();
         this.amountForUsers = builder.getAmountForUsers();
-        this.splitPaymentType =builder.getSplitPaymentType();
+        this.splitPaymentType = builder.getSplitPaymentType();
+        this.role = builder.getRole();
     }
 
     public Transaction(final Transaction transaction) {
@@ -65,6 +67,7 @@ public  class Transaction {
         this.accountIBAN = transaction.getAccountIBAN();
         this.amountForUsers = transaction.getAmountForUsers();
         this.splitPaymentType = transaction.getSplitPaymentType();
+        this.role = transaction.getRole();
     }
 
 }

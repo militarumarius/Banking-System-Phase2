@@ -1,5 +1,6 @@
 package org.poo.bank.accounts;
 
+import org.poo.bank.BankDatabase;
 import org.poo.fileio.CommandInput;
 
 import static org.poo.utils.Utils.generateIBAN;
@@ -13,7 +14,7 @@ public final class FactoryAccount {
     /**
      * method that create an account
      */
-    public static Account createAccount(final CommandInput input) {
+    public static Account createAccount(final CommandInput input, final BankDatabase bank) {
 
         switch (input.getAccountType()) {
             case "classic" -> {
@@ -23,6 +24,11 @@ public final class FactoryAccount {
             case "savings" -> {
                 return new EconomyAccount(generateIBAN(), input.getAccountType(),
                         input.getCurrency(), input.getInterestRate());
+            }
+            case "business" -> {
+                return new BusinessAccount(generateIBAN(),
+                        input.getAccountType(), input.getCurrency(),
+                        input.getEmail(), bank);
             }
             default -> {
                 return null;
@@ -40,6 +46,9 @@ public final class FactoryAccount {
             }
             case "savings" -> {
                 return new EconomyAccount((EconomyAccount) account);
+            }
+            case "business" -> {
+                return new BusinessAccount((BusinessAccount) account);
             }
             default -> {
                 return null;
