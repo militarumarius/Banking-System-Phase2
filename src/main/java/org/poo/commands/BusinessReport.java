@@ -6,8 +6,12 @@ import org.poo.actionhandler.ErrorDescription;
 import org.poo.actionhandler.ErrorOutput;
 import org.poo.actionhandler.PrintOutput;
 import org.poo.bank.BankDatabase;
+import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
 import org.poo.fileio.CommandInput;
+import org.poo.transaction.Transaction;
+
+import java.util.List;
 
 public class BusinessReport implements Commands {
     private final BankDatabase bank;
@@ -55,9 +59,14 @@ public class BusinessReport implements Commands {
             businessReport.printCommand(output);
             return;
         }
+        User owner = account.getOwner();
+        String ownerUsername = owner.getLastName() + " " + owner.getFirstName();
+        List<Transaction> filteredTransactionsForBusiness = account.
+                getBusinessTransactionFiltered(commandInput.getStartTimestamp(),
+                        commandInput.getEndTimestamp());
         PrintOutput businessReport = new PrintOutput("businessReport",
                 PrintOutput.createOutputBusinessReportCommerciant(account,
-                        account.calculateCommerciants(account.getTransactionsForBusiness())),
+                        account.calculateCommerciants(filteredTransactionsForBusiness, ownerUsername)),
                 commandInput.getTimestamp());
         businessReport.printCommand(output);
     }

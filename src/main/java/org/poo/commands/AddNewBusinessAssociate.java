@@ -40,12 +40,6 @@ public class AddNewBusinessAssociate implements Commands {
             for (Card card : account.getCards())
                 user.addCardforBusiness(account, card);
         }
-        if (commandInput.getTimestamp() > 300 && commandInput.getTimestamp() < 480) {
-            for (User user1 : account.getUsersList())
-                System.out.println(user1.getEmail());
-            System.out.println(commandInput.getTimestamp());
-            System.out.println(" ");
-        }
 
     }
 }

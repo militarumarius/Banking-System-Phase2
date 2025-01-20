@@ -32,11 +32,11 @@ public abstract class Account {
     @JsonIgnore @Getter
     private double totalAmount = 0.0;
     @JsonIgnore @Getter @Setter
-    private double foodCashback = 0.0;
+    private boolean foodCashback = false;
     @JsonIgnore @Getter @Setter
-    private double techCashback = 0.0;
+    private boolean techCashback = false;
     @JsonIgnore @Getter @Setter
-    private double clothesCashback = 0.0;
+    private boolean clothesCashback = false;
     @JsonIgnore @Setter
     private double spendingLimits = 0.0;
 
@@ -271,12 +271,25 @@ public abstract class Account {
     }
 
     @JsonIgnore
-    public List<CommerciantOutput> calculateCommerciants(List<Transaction> transactions) {
+    public List<CommerciantOutput> calculateCommerciants(List<Transaction> transactions, String owner) {
         throw new UnsupportedOperationException("Nu este un BusinessAccount");
     }
 
     @JsonIgnore
     public User getOwner() {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    /**
+     */
+    @JsonIgnore
+    public List<Transaction> getBusinessTransactionFiltered(final int startTimestamp,
+                                                       final int endTimestamp) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public  List<String> getAllUserForCommerciantReport(List<String> users, Map<String, Integer> userPayments) {
         throw new UnsupportedOperationException("Nu este un BusinessAccount");
     }
 

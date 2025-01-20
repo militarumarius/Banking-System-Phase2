@@ -33,6 +33,12 @@ public class ChangeSpendingLimit implements Commands {
             return;
         }
         if (!account.isBusinessAccount()) {
+            ErrorOutput errorOutput = new ErrorOutput(ErrorDescription
+                    .ACCOUNT_IS_NOT_BUSINESS_TYPE.getMessage(), commandInput.getTimestamp());
+            ObjectNode node = errorOutput.toObjectNodeDescription();
+            PrintOutput report = new PrintOutput("businessReport", node,
+                    commandInput.getTimestamp());
+            report.printCommand(output);
             return;
         }
         if (!user.getRole().equals("owner")) {

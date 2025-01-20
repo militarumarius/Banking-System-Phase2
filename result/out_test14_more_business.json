@@ -1,7 +1,7 @@
 [ {
   "command" : "businessReport",
   "output" : {
-    "balance" : 737.0,
+    "balance" : 0.0,
     "currency" : "RON",
     "IBAN" : "RO69POOB6209498372540635",
     "spending limit" : 500.0,
@@ -26,13 +26,27 @@
       "deposited" : 0.0
     } ],
     "total spent" : 0.0,
-    "total deposited" : 737.0
+    "total deposited" : 0.0
   },
   "timestamp" : 75
 }, {
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 79,
+    "description" : "User not found"
+  },
+  "timestamp" : 79
+}, {
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 80,
+    "description" : "User not found"
+  },
+  "timestamp" : 80
+}, {
   "command" : "businessReport",
   "output" : {
-    "balance" : 3365.063,
+    "balance" : 2628.063,
     "currency" : "RON",
     "IBAN" : "RO69POOB6209498372540635",
     "spending limit" : 500.0,
@@ -42,11 +56,11 @@
     "employees" : [ {
       "username" : "Stanescu Damian",
       "spent" : 253.0,
-      "deposited" : 253.0
+      "deposited" : 0.0
     }, {
       "username" : "Voinea Valentin",
       "spent" : 342.0,
-      "deposited" : 342.0
+      "deposited" : 0.0
     }, {
       "username" : "Albu Pompilia",
       "spent" : 0.0,
@@ -57,7 +71,7 @@
       "deposited" : 0.0
     } ],
     "total spent" : 595.0,
-    "total deposited" : 737.0
+    "total deposited" : 0.0
   },
   "timestamp" : 84
 }, {
@@ -126,7 +140,7 @@
 }, {
   "command" : "businessReport",
   "output" : {
-    "balance" : 6713.8886250000005,
+    "balance" : 5976.8886250000005,
     "currency" : "RON",
     "IBAN" : "RO69POOB6209498372540635",
     "spending limit" : 500.0,
@@ -136,11 +150,11 @@
     "employees" : [ {
       "username" : "Stanescu Damian",
       "spent" : 253.0,
-      "deposited" : 253.0
+      "deposited" : 0.0
     }, {
       "username" : "Voinea Valentin",
       "spent" : 854.05,
-      "deposited" : 854.05
+      "deposited" : 0.0
     }, {
       "username" : "Albu Pompilia",
       "spent" : 0.0,
@@ -151,74 +165,39 @@
       "deposited" : 0.0
     } ],
     "total spent" : 1107.05,
-    "total deposited" : 737.0
+    "total deposited" : 0.0
   },
   "timestamp" : 161
 }, {
   "command" : "businessReport",
   "output" : {
-    "balance" : 6713.8886250000005,
+    "balance" : 5976.8886250000005,
     "currency" : "RON",
     "IBAN" : "RO69POOB6209498372540635",
     "spending limit" : 500.0,
     "deposit limit" : 135.0,
     "statistics type" : "commerciant",
     "commerciants" : [ {
-      "commerciant" : "Samsung",
-      "totalReceived" : 342.0,
-      "managers" : [ ],
-      "employees" : [ "Voinea Valentin" ]
-    }, {
-      "commerciant" : "Zara",
-      "totalReceived" : 292.0,
-      "managers" : [ ],
-      "employees" : [ "Voinea Valentin" ]
-    }, {
       "commerciant" : "Amazon",
-      "totalReceived" : 3639.3,
       "managers" : [ ],
-      "employees" : [ "Voinea Valentin" ]
+      "employees" : [ "Voinea Valentin" ],
+      "total received" : 220.04999999999998
     }, {
       "commerciant" : "H&M",
-      "totalReceived" : 253.0,
       "managers" : [ ],
-      "employees" : [ "Stanescu Damian" ]
+      "employees" : [ "Stanescu Damian" ],
+      "total received" : 253.0
+    }, {
+      "commerciant" : "Samsung",
+      "managers" : [ ],
+      "employees" : [ "Voinea Valentin" ],
+      "total received" : 342.0
+    }, {
+      "commerciant" : "Zara",
+      "managers" : [ ],
+      "employees" : [ "Voinea Valentin", "Voinea Valentin" ],
+      "total received" : 292.0
     } ]
   },
   "timestamp" : 162
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 395,
-    "description" : "User not found"
-  },
-  "timestamp" : 395
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 396,
-    "description" : "User not found"
-  },
-  "timestamp" : 396
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 398,
-    "description" : "User not found"
-  },
-  "timestamp" : 398
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 399,
-    "description" : "User not found"
-  },
-  "timestamp" : 399
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 400,
-    "description" : "User not found"
-  },
-  "timestamp" : 400
 } ]

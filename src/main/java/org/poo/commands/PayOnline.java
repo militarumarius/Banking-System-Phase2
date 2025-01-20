@@ -9,6 +9,8 @@ import org.poo.bank.BankDatabase;
 import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.cards.Card;
+import org.poo.bank.plans.Plan;
+import org.poo.bank.plans.PlansFactory;
 import org.poo.fileio.CommandInput;
 import org.poo.transaction.Commerciant;
 import org.poo.transaction.Transaction;
@@ -104,6 +106,7 @@ public class PayOnline implements Commands {
                     .build();
             account.getTransactionsForBusiness().add(businessTransaction);
         }
+        upgradeGoldPlan(account, user, totalAmount);
     }
 
     public double calculateExchangeRate(String currency) {
@@ -126,6 +129,23 @@ public class PayOnline implements Commands {
         account.addBalance(commerciant.getCashbackStrategy()
                 .calculateCashback(bank, account,
                         amountForCommisionCalculate, totalAmount, commerciant.getType()));
+    }
+
+    public void upgradeGoldPlan(Account account, User user, double amount){
+        double exchangeRateForCommision = calculateExchangeRate(commandInput.getCurrency());
+        double amountForCommisionCalculate = amount * exchangeRateForCommision;
+        if (user.checkUpgradeGoldPlan(amountForCommisionCalculate)){
+            Plan newPlan = PlansFactory.createPlan("gold");
+            if (newPlan == null)
+                return;
+            user.upgradePlan(newPlan);
+            Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
+                    TransactionDescription.UPGRADE_PLAN.getMessage())
+                    .newPlanType("gold")
+                    .accountIBAN(account.getIBAN())
+                    .build();
+            account.addTransactionList(transaction);
+        }
     }
 
 }

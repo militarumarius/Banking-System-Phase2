@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.accounts.FactoryAccount;
 import org.poo.bank.cards.Card;
+import org.poo.bank.plans.GoldPlan;
 import org.poo.bank.plans.Plan;
 import org.poo.bank.plans.StandardPlan;
 import org.poo.bank.plans.StudentPlan;
@@ -30,10 +31,10 @@ public class User {
     private final Map<String, Account> cardAccountMap = new HashMap<>();
     @JsonIgnore
     private Plan plan;
-    @JsonIgnore
-    @Getter
-    @Setter
+    @JsonIgnore @Getter @Setter
     private String role = "";
+    @JsonIgnore @Getter @Setter
+    private int numberOfPayments = 0;
 
     public User(final UserInput user) {
         accounts = new ArrayList<>();
@@ -163,7 +164,7 @@ public class User {
             return;
         }
         account.getCards().add(card);
-        cardAccountMap.put(card.getCardNumber(), account);
+        cardAccountMap.putIfAbsent(card.getCardNumber(), account);
     }
 
     public void addCardforBusiness(final Account account, final Card card) {
@@ -206,5 +207,14 @@ public class User {
         if (plan.getName().equals("silver") && (newPlan.equals("student") || newPlan.equals("standard")))
             return false;
         return true;
+    }
+
+    public boolean checkUpgradeGoldPlan(double amount){
+        if (plan.getName().equals("silver") && amount >= 300)
+            numberOfPayments ++;
+        if (numberOfPayments == 5 && plan.getName().equals("silver")) {
+            return true;
+        }
+        return false;
     }
 }

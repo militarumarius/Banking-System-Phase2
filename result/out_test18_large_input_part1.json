@@ -283,6 +283,13 @@
   } ],
   "timestamp" : 349
 }, {
+  "command" : "businessReport",
+  "output" : {
+    "timestamp" : 350,
+    "description" : "Account is not of type business"
+  },
+  "timestamp" : 350
+}, {
   "command" : "cashWithdrawal",
   "output" : {
     "timestamp" : 355,
@@ -4923,31 +4930,31 @@
     "employees" : [ {
       "username" : "Boyer Bernadette",
       "spent" : 2.4921,
-      "deposited" : 2.4921
+      "deposited" : 0.0
     }, {
       "username" : "Zavala Donna",
       "spent" : 0.0,
-      "deposited" : 0.0
+      "deposited" : 303.0
     }, {
       "username" : "Tapia Vinicio",
       "spent" : 0.0,
-      "deposited" : 0.0
+      "deposited" : 322.0
     }, {
       "username" : "Johnson MD Anthony",
       "spent" : 410.65515,
-      "deposited" : 410.65515
+      "deposited" : 0.0
     }, {
       "username" : "del Andres Lisandro",
       "spent" : 153.67757142857144,
-      "deposited" : 153.67757142857144
+      "deposited" : 0.0
     }, {
       "username" : "van de Veen-Verhoeven Nick",
       "spent" : 5.112,
-      "deposited" : 5.112
+      "deposited" : 0.0
     }, {
       "username" : "Picard Alain",
       "spent" : 226.41054545454546,
-      "deposited" : 226.41054545454546
+      "deposited" : 0.0
     } ],
     "total spent" : 798.3473668831168,
     "total deposited" : 899.0

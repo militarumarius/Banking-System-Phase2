@@ -38,6 +38,9 @@ public class SendMoney implements Commands {
         if (user == null) {
             return;
         }
+        if (!commandInput.getAccount().startsWith("RO")) {
+            return;
+        }
         Account receiver = bank.findAccountByIban(commandInput.getReceiver());
         if (receiver == null && !bank.checkCommerciantAccount(commandInput.getReceiver())) {
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.

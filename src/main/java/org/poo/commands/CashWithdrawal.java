@@ -34,6 +34,12 @@ public class CashWithdrawal implements Commands {
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());
         if (user == null) {
+            ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
+                    USER_NOT_FOUND.getMessage(), commandInput.getTimestamp());
+            ObjectNode node = errorOutput.toObjectNodeDescription();
+            PrintOutput upgradePlan = new PrintOutput("cashWithdrawal",
+                    node, commandInput.getTimestamp());
+            upgradePlan.printCommand(output);
             return;
         }
         Account account = user.getCardAccountMap().get(commandInput.getCardNumber());

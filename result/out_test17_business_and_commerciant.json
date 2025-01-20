@@ -267,7 +267,7 @@
 }, {
   "command" : "businessReport",
   "output" : {
-    "balance" : 1238.0,
+    "balance" : 819.0,
     "currency" : "USD",
     "IBAN" : "RO98POOB8412955460158769",
     "spending limit" : 868.0,
@@ -308,13 +308,13 @@
       "deposited" : 0.0
     } ],
     "total spent" : 0.0,
-    "total deposited" : 1119.0
+    "total deposited" : 700.0
   },
   "timestamp" : 429
 }, {
   "command" : "businessReport",
   "output" : {
-    "balance" : 857.0,
+    "balance" : 556.0,
     "currency" : "USD",
     "IBAN" : "RO32POOB0130532963818359",
     "spending limit" : 896.0,
@@ -347,7 +347,7 @@
       "deposited" : 0.0
     } ],
     "total spent" : 0.0,
-    "total deposited" : 818.0
+    "total deposited" : 517.0
   },
   "timestamp" : 430
 }, {
@@ -431,7 +431,7 @@
 }, {
   "command" : "businessReport",
   "output" : {
-    "balance" : 1266.27,
+    "balance" : 847.27,
     "currency" : "USD",
     "IBAN" : "RO98POOB8412955460158769",
     "spending limit" : 868.0,
@@ -443,7 +443,7 @@
 }, {
   "command" : "businessReport",
   "output" : {
-    "balance" : 857.0,
+    "balance" : 556.0,
     "currency" : "USD",
     "IBAN" : "RO32POOB0130532963818359",
     "spending limit" : 896.0,

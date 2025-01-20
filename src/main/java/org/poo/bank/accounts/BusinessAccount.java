@@ -90,7 +90,7 @@ public class BusinessAccount extends Account {
     @Override
     public List<UserOutput> getEmployees() {
         Map<String, Double> totalSpent = calculateTotalSent(transactionsForBusiness);
-        Map<String, Double> totalDeposit = calculateTotalSent(transactionsForBusiness);
+        Map<String, Double> totalDeposit = calculateTotalDeposited(transactionsForBusiness);
         List<UserOutput> employees = new ArrayList<>();
         for (User user : users) {
             if (user.getRole().equals("employee")) {
@@ -182,7 +182,7 @@ public class BusinessAccount extends Account {
 
     @Override
     public boolean checkPaymentBusiness(double amount, String type) {
-        if (type.equals("employee") && amount * 1 / exchangeRate > 500) {
+        if (type.equals("employee") && amount * 1 / exchangeRate > depositLimits) {
             return false;
         }
         return true;
@@ -213,16 +213,20 @@ public class BusinessAccount extends Account {
     }
 
     @Override
-    public List<CommerciantOutput> calculateCommerciants(List<Transaction> transactions) {
+    public List<CommerciantOutput> calculateCommerciants(List<Transaction> transactions, String owner) {
         Map<String, Double> commerciantTotalReceived = new HashMap<>();
         Map<String, List<String>> userCommerciant = new HashMap<>();
+        Map<String, Map<String, Integer>> userPaymentsCount = new HashMap<>();
         for (Transaction transaction : transactions) {
-            if ("Card payment".equals(transaction.getDescription())) {
+            if (transaction.getDescription().equals("Card payment") && !transaction.getCardHolder().equals(owner)) {
                 String commerciant = transaction.getCommerciant();
                 commerciantTotalReceived.put(commerciant,
                         commerciantTotalReceived.getOrDefault(commerciant, 0.0)
                                 + (double) transaction.getAmount());
                 String username = transaction.getCardHolder();
+                userPaymentsCount.computeIfAbsent(commerciant, k -> new HashMap<>());
+                Map<String, Integer> userPayments = userPaymentsCount.get(commerciant);
+                userPayments.put(username, userPayments.getOrDefault(username, 0) + 1);
                 userCommerciant.computeIfAbsent(commerciant, k -> new ArrayList<>()).add(username);
             }
         }
@@ -231,15 +235,44 @@ public class BusinessAccount extends Account {
             List<String> users = entry.getValue();
             List<String> managers = getManagersUsername(users);
             List<String> employees = getEmployeesUsername(users);
+            Map<String, Integer> userPayments = userPaymentsCount.get(entry.getKey());
             double totalReceived = commerciantTotalReceived.getOrDefault(entry.getKey(), 0.0);
 
-            Collections.sort(managers);
-            Collections.sort(employees);
-            CommerciantOutput output = new CommerciantOutput(totalReceived, managers, employees, entry.getKey());
+            List<String> allManagers = getAllUserForCommerciantReport(managers, userPayments);
+            List<String> allEmployees = getAllUserForCommerciantReport(employees, userPayments);
+
+            Collections.sort(allManagers);
+            Collections.sort(allEmployees);
+            CommerciantOutput output = new CommerciantOutput(totalReceived, allManagers, allEmployees, entry.getKey());
             outputList.add(output);
         }
+        outputList.sort((a, b) -> a.getCommerciant().compareTo(b.getCommerciant()));
         return outputList;
+    }
 
+    @Override
+    public List<Transaction> getBusinessTransactionFiltered(final int startTimestamp,
+                                                            final int endTimestamp) {
+        List<Transaction> filteredTransactions = new ArrayList<>();
+        for (Transaction transaction : transactionsForBusiness) {
+            if (transaction.getTimestamp() >= startTimestamp
+                    && transaction.getTimestamp() <= endTimestamp) {
+                filteredTransactions.add(transaction);
+            }
+        }
+        return filteredTransactions;
+    }
+
+    @Override
+    public  List<String> getAllUserForCommerciantReport(List<String> users, Map<String, Integer> userPayments) {
+        List<String> allUsers = new ArrayList<>();
+        for (String manager : users) {
+            int paymentCount = userPayments.getOrDefault(manager, 0);
+            for (int i = 0; i < paymentCount; i++) {
+                allUsers.add(manager);
+            }
+        }
+        return allUsers;
     }
 
 }
