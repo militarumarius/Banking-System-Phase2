@@ -9,7 +9,8 @@ import org.poo.transaction.cashback.CashbackStrategy;
 import org.poo.transaction.cashback.NrOfTransactions;
 import org.poo.transaction.cashback.SpendingThreshold;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Commerciant {
     private String commerciant;
     private double total;
@@ -27,7 +28,7 @@ public class Commerciant {
         this.total = total;
     }
 
-    public Commerciant(final CommerciantInput commerciantInput){
+    public Commerciant(final CommerciantInput commerciantInput) {
         this.commerciant = commerciantInput.getCommerciant();
         this.id = commerciantInput.getId();
         this.account = commerciantInput.getAccount();

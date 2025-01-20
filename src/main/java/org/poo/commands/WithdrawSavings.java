@@ -20,14 +20,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class WithdrawSavings implements Commands{
+public class WithdrawSavings implements Commands {
     private final BankDatabase bank;
     private final CommandInput commandInput;
     private final ArrayNode output;
     private static final int AGE_REQUIRED = 21;
 
     public WithdrawSavings(final BankDatabase bank,
-                     final CommandInput commandInput, final ArrayNode output) {
+                           final CommandInput commandInput, final ArrayNode output) {
         this.bank = bank;
         this.commandInput = commandInput;
         this.output = output;
@@ -42,22 +42,56 @@ public class WithdrawSavings implements Commands{
         if (user == null)
             return;
         Account account = user.findAccount(commandInput.getAccount());
-        if (account == null)
+        if (account == null) {
+            ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
+                    ACCOUNT_NOT_FOUND.getMessage(), commandInput.getTimestamp());
+            ObjectNode node = errorOutput.toObjectNodeDescription();
+            PrintOutput acceptSplitPayment = new PrintOutput("withdrawSavings",
+                    node, commandInput.getTimestamp());
+            acceptSplitPayment.printCommand(output);
             return;
+        }
         LocalDate birthdayDate = LocalDate.parse(user.getBirthDate());
         if (Period.between(birthdayDate, LocalDate.now()).getYears() < AGE_REQUIRED) {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.INVALID_AGE.getMessage())
                     .build();
             account.getTransactions().add(transaction);
+            return;
         }
-        Account withdrawAccount = user.findAccountForWithdrawSavings(account.getCurrency());
+        Account withdrawAccount = user.findAccountForWithdrawSavings(commandInput.getCurrency());
         if (withdrawAccount == null) {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.INVALID_WITHDRAW_SAVINGS.getMessage())
                     .build();
             account.getTransactions().add(transaction);
+            return;
         }
+        double exchangeRate = calculateExchangeRate(account.getCurrency());
+        if (exchangeRate < 0)
+            return;
+        if (account.getBalance() < commandInput.getAmount()) {
+            Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
+                    TransactionDescription.INSUFFICIENT_FUNDS.getMessage())
+                    .build();
+            account.getTransactions().add(transaction);
+            return;
+        }
+        account.subBalance(commandInput.getAmount());
+        withdrawAccount.addBalance(exchangeRate * commandInput.getAmount());
+        Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
+                TransactionDescription.SAVINGS_WITHDRAW.getMessage())
+                .amount(commandInput.getAmount())
+                .classicAccountIBAN(withdrawAccount.getIBAN())
+                .savingsAccountIBAN(account.getIBAN())
+                .build();
+        account.getTransactions().add(transaction);
+        withdrawAccount.getTransactions().add(transaction);
 
+    }
+    public double calculateExchangeRate(String currency) {
+        List<String> visited = new ArrayList<>();
+        return bank.findExchangeRate(currency,
+                 commandInput.getCurrency(), visited);
     }
 }

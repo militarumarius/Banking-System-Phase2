@@ -7,8 +7,10 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter @Setter @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public  class Transaction {
+@Getter
+@Setter
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+public class Transaction {
     private int timestamp;
     private String description;
     private String senderIBAN;
@@ -20,6 +22,8 @@ public  class Transaction {
     private String role;
     private String newPlanType;
     private String accountIBAN;
+    private String classicAccountIBAN;
+    private String savingsAccountIBAN;
     private String card;
     private String commerciant;
     private String currency;
@@ -47,6 +51,8 @@ public  class Transaction {
         this.amountForUsers = builder.getAmountForUsers();
         this.splitPaymentType = builder.getSplitPaymentType();
         this.role = builder.getRole();
+        this.classicAccountIBAN = builder.getClassicAccountIBAN();
+        this.savingsAccountIBAN = builder.getSavingsAccountIBAN();
     }
 
     public Transaction(final Transaction transaction) {
@@ -68,6 +74,8 @@ public  class Transaction {
         this.amountForUsers = transaction.getAmountForUsers();
         this.splitPaymentType = transaction.getSplitPaymentType();
         this.role = transaction.getRole();
+        this.savingsAccountIBAN = transaction.getSavingsAccountIBAN();
+        this.classicAccountIBAN = transaction.getClassicAccountIBAN();
     }
 
 }

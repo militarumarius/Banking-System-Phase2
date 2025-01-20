@@ -1963,7 +1963,7 @@
     "email" : "Baljiwan_Pa@icloud.in",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 4.444444444444343,
+      "balance" : 25.444444444444343,
       "currency" : "INR",
       "cards" : [ {
         "cardNumber" : "6052309891235892",
@@ -1972,7 +1972,7 @@
       "IBAN" : "RO52POOB6271107854467609"
     }, {
       "type" : "savings",
-      "balance" : 702.0,
+      "balance" : 681.0,
       "currency" : "INR",
       "cards" : [ {
         "cardNumber" : "7678041819946354",
@@ -1986,7 +1986,7 @@
     "email" : "Lilia_Maria_Bernal_Florez@outlook.mx",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 440.0,
+      "balance" : 492.0,
       "currency" : "MXN",
       "cards" : [ {
         "cardNumber" : "3892114815135845",
@@ -1995,7 +1995,7 @@
       "IBAN" : "RO98POOB7190609943699593"
     }, {
       "type" : "savings",
-      "balance" : 575.0,
+      "balance" : 523.0,
       "currency" : "MXN",
       "cards" : [ {
         "cardNumber" : "4090756032993928",
@@ -2122,13 +2122,6 @@
   },
   "timestamp" : 801
 }, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 802,
-    "description" : "User not found"
-  },
-  "timestamp" : 802
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 803,
@@ -2142,13 +2135,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 805
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 806,
-    "description" : "User not found"
-  },
-  "timestamp" : 806
 }, {
   "command" : "payOnline",
   "output" : {
@@ -2164,13 +2150,6 @@
   },
   "timestamp" : 809
 }, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 810,
-    "description" : "User not found"
-  },
-  "timestamp" : 810
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 811,
@@ -2184,13 +2163,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 813
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 814,
-    "description" : "User not found"
-  },
-  "timestamp" : 814
 }, {
   "command" : "payOnline",
   "output" : {
@@ -2206,13 +2178,6 @@
   },
   "timestamp" : 817
 }, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 818,
-    "description" : "User not found"
-  },
-  "timestamp" : 818
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 819,
@@ -2226,13 +2191,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 821
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 822,
-    "description" : "User not found"
-  },
-  "timestamp" : 822
 }, {
   "command" : "payOnline",
   "output" : {
@@ -2248,13 +2206,6 @@
   },
   "timestamp" : 825
 }, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 826,
-    "description" : "User not found"
-  },
-  "timestamp" : 826
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 827,
@@ -2268,13 +2219,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 829
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 830,
-    "description" : "User not found"
-  },
-  "timestamp" : 830
 }, {
   "command" : "payOnline",
   "output" : {
@@ -2290,13 +2234,6 @@
   },
   "timestamp" : 833
 }, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 834,
-    "description" : "User not found"
-  },
-  "timestamp" : 834
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 835,
@@ -2310,13 +2247,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 837
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 838,
-    "description" : "User not found"
-  },
-  "timestamp" : 838
 }, {
   "command" : "businessReport",
   "output" : {
@@ -2343,17 +2273,9 @@
       "spent" : 0.0,
       "deposited" : 923.0
     }, {
-      "username" : "del Ripoll Nicodemo",
-      "spent" : 0.0,
-      "deposited" : 0.0
-    }, {
       "username" : "du Mendes Thibault",
       "spent" : 0.0,
       "deposited" : 451.0
-    }, {
-      "username" : "Charette Gregoire",
-      "spent" : 0.0,
-      "deposited" : 0.0
     } ],
     "employees" : [ {
       "username" : "Manuel Baez Anaya Victor",
@@ -2392,6 +2314,18 @@
     "total deposited" : 4711.0
   },
   "timestamp" : 839
+}, {
+  "command" : "businessReport",
+  "output" : {
+    "balance" : 4711.0,
+    "currency" : "CHF",
+    "IBAN" : "RO73POOB7862625166958832",
+    "spending limit" : 122.22222222222223,
+    "deposit limit" : 211.0,
+    "statistics type" : "commerciant",
+    "commerciants" : [ ]
+  },
+  "timestamp" : 840
 }, {
   "command" : "spendingsReport",
   "output" : {
@@ -2454,27 +2388,6 @@
   },
   "timestamp" : 854
 }, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 856,
-    "description" : "User not found"
-  },
-  "timestamp" : 856
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 857,
-    "description" : "User not found"
-  },
-  "timestamp" : 857
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 859,
-    "description" : "User not found"
-  },
-  "timestamp" : 859
-}, {
   "command" : "cashWithdrawal",
   "output" : {
     "timestamp" : 860,
@@ -2488,13 +2401,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 861
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 862,
-    "description" : "User not found"
-  },
-  "timestamp" : 862
 }, {
   "command" : "cashWithdrawal",
   "output" : {
@@ -2531,13 +2437,6 @@
   },
   "timestamp" : 871
 }, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 873,
-    "description" : "User not found"
-  },
-  "timestamp" : 873
-}, {
   "command" : "cashWithdrawal",
   "output" : {
     "timestamp" : 874,
@@ -2551,13 +2450,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 876
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 877,
-    "description" : "User not found"
-  },
-  "timestamp" : 877
 }, {
   "command" : "cashWithdrawal",
   "output" : {
@@ -2573,7 +2465,7 @@
     "email" : "Jennifer_Gould@mail.com.ca",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 6242.981428571428,
+      "balance" : 3294.3814285714284,
       "currency" : "CAD",
       "cards" : [ {
         "cardNumber" : "7644059707106503",
@@ -2599,7 +2491,6 @@
       "balance" : 4711.0,
       "currency" : "CHF",
       "cards" : [ ],
-      "users" : [ ],
       "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
@@ -2629,13 +2520,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO65POOB8944016386845896"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Zilmil",
@@ -2706,13 +2590,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO30POOB9523423715747796"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Frank",
@@ -2727,13 +2604,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO79POOB3616857825600958"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Elizabeth",
@@ -2748,13 +2618,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO00POOB5687892910835215"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Dorothy",
@@ -2769,13 +2632,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO96POOB6738272785416988"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Alexandra",
@@ -2818,20 +2674,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO98POOB8412955460158769"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Hulda",
@@ -2846,13 +2688,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO32POOB0130532963818359"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Pauline",
@@ -2881,13 +2716,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO10POOB4354933866366881"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Veronica",
@@ -2990,20 +2818,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO93POOB6760303931698665"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Mamen",
@@ -3018,13 +2832,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO47POOB5866490978033060"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Juan",
@@ -3039,13 +2846,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Heather",
@@ -3069,13 +2869,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO01POOB3925326637526572"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   }, {
     "firstName" : "Gabino",
@@ -3097,7 +2890,7 @@
     "email" : "Baljiwan_Pa@icloud.in",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 4.444444444444343,
+      "balance" : 25.444444444444343,
       "currency" : "INR",
       "cards" : [ {
         "cardNumber" : "6052309891235892",
@@ -3106,7 +2899,7 @@
       "IBAN" : "RO52POOB6271107854467609"
     }, {
       "type" : "savings",
-      "balance" : 702.0,
+      "balance" : 681.0,
       "currency" : "INR",
       "cards" : [ {
         "cardNumber" : "7678041819946354",
@@ -3120,7 +2913,7 @@
     "email" : "Lilia_Maria_Bernal_Florez@outlook.mx",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 440.0,
+      "balance" : 492.0,
       "currency" : "MXN",
       "cards" : [ {
         "cardNumber" : "3892114815135845",
@@ -3129,7 +2922,7 @@
       "IBAN" : "RO98POOB7190609943699593"
     }, {
       "type" : "savings",
-      "balance" : 575.0,
+      "balance" : 523.0,
       "currency" : "MXN",
       "cards" : [ {
         "cardNumber" : "4090756032993928",
@@ -3217,20 +3010,13 @@
     "email" : "Thibault_du_Mendes@zoho.fr",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1403.0,
+      "balance" : 120.94199999999988,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "0687036602426775",
         "status" : "active"
       } ],
       "IBAN" : "RO01POOB9893132718323396"
-    }, {
-      "type" : "business",
-      "balance" : 4711.0,
-      "currency" : "CHF",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO73POOB7862625166958832"
     } ]
   } ],
   "timestamp" : 880
@@ -3241,7 +3027,7 @@
       "commerciant" : "Apple",
       "total" : 0.018571428571428572
     } ],
-    "balance" : 6242.981428571428,
+    "balance" : 3294.3814285714284,
     "currency" : "CAD",
     "IBAN" : "RO58POOB7344468893732422",
     "transactions" : [ {

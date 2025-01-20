@@ -214,4 +214,18 @@ public class BankDatabase {
         }
         return null;
     }
+
+    public boolean checkCommerciantAccount(String iban){
+        for (Commerciant commerciant : commerciants)
+            if (commerciant.getAccount().equals(iban))
+                return true;
+        return false;
+    }
+
+    public Commerciant getCommerciantByIban(String iban){
+        for (Commerciant commerciant : commerciants)
+            if (commerciant.getAccount().equals(iban))
+                return commerciant;
+        return null;
+    }
 }

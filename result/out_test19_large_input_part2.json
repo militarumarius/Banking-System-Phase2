@@ -2060,20 +2060,6 @@
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Angel",
@@ -2094,20 +2080,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO75POOB1098983729823992"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Karen",
@@ -2174,20 +2146,6 @@
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO00POOB5687892910835215"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Owen",
@@ -2226,13 +2184,13 @@
     "email" : "Chanakya_Dua@hushmail.in",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 712.0,
+      "balance" : 1953.8,
       "currency" : "INR",
       "cards" : [ ],
       "IBAN" : "RO69POOB9846198978826791"
     }, {
       "type" : "savings",
-      "balance" : 5509.266,
+      "balance" : 3683.8199999999997,
       "currency" : "INR",
       "cards" : [ {
         "cardNumber" : "5254952026068544",
@@ -2261,20 +2219,6 @@
       "currency" : "INR",
       "cards" : [ ],
       "IBAN" : "RO32POOB0130532963818359"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Isabel",
@@ -2300,20 +2244,6 @@
       "currency" : "AUD",
       "cards" : [ ],
       "IBAN" : "RO10POOB4354933866366881"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Iris",
@@ -2342,7 +2272,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -2352,7 +2281,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -2362,36 +2290,7 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     }, {
       "type" : "business",
       "balance" : 940.0,
@@ -2400,7 +2299,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -2410,7 +2308,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -2420,7 +2317,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -2430,7 +2326,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -2440,7 +2335,6 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
     }, {
       "type" : "business",
@@ -2450,7 +2344,6 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
     } ]
   }, {
@@ -2463,20 +2356,6 @@
       "currency" : "NZD",
       "cards" : [ ],
       "IBAN" : "RO38POOB0964823730995794"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Lucy",
@@ -2533,14 +2412,12 @@
       "balance" : 7159.239999999998,
       "currency" : "USD",
       "cards" : [ ],
-      "users" : [ ],
       "IBAN" : "RO45POOB6505529013808948"
     }, {
       "type" : "business",
       "balance" : 6436.6799999999985,
       "currency" : "USD",
       "cards" : [ ],
-      "users" : [ ],
       "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
@@ -2570,20 +2447,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO89POOB4455583483378897"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Aurelio",
@@ -2598,20 +2461,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO36POOB6500477412147025"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Isabella",
@@ -2654,20 +2503,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO52POOB6271107854467609"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Juana",
@@ -2682,20 +2517,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO98POOB7190609943699593"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Yolanda",
@@ -2738,20 +2559,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO37POOB8653914479106806"
-    }, {
-      "type" : "business",
-      "balance" : 7159.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 6436.6799999999985,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Erdogan",
@@ -2862,10 +2669,6 @@
       "username" : "Sanders-Kramer Iris",
       "spent" : 0.0,
       "deposited" : 0.0
-    }, {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 0.0,
-      "deposited" : 0.0
     } ],
     "total spent" : 0.0,
     "total deposited" : 10419.240000000002
@@ -2929,10 +2732,6 @@
       "username" : "Sanders-Kramer Iris",
       "spent" : 0.0,
       "deposited" : 0.0
-    }, {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 0.0,
-      "deposited" : 0.0
     } ],
     "total spent" : 0.0,
     "total deposited" : 12078.68
@@ -2949,14 +2748,6 @@
     "statistics type" : "transaction",
     "managers" : [ ],
     "employees" : [ {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 854.9078285714286,
-      "deposited" : 854.9078285714286
-    }, {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 854.9078285714286,
-      "deposited" : 854.9078285714286
-    }, {
       "username" : "Sanders-Kramer Iris",
       "spent" : 854.9078285714286,
       "deposited" : 854.9078285714286
@@ -2979,14 +2770,6 @@
       "username" : "Sanders-Kramer Iris",
       "spent" : 0.0,
       "deposited" : 0.0
-    }, {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 0.0,
-      "deposited" : 0.0
-    }, {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 0.0,
-      "deposited" : 0.0
     } ],
     "total spent" : 0.0,
     "total deposited" : 70.0
@@ -3006,19 +2789,23 @@
       "username" : "Sanders-Kramer Iris",
       "spent" : 0.0,
       "deposited" : 0.0
-    }, {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 0.0,
-      "deposited" : 0.0
-    }, {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 0.0,
-      "deposited" : 0.0
     } ],
     "total spent" : 0.0,
     "total deposited" : 335.0
   },
   "timestamp" : 924
+}, {
+  "command" : "businessReport",
+  "output" : {
+    "balance" : 540.0,
+    "currency" : "EUR",
+    "IBAN" : "RO19POOB5993192794373940",
+    "spending limit" : 100.0,
+    "deposit limit" : 100.0,
+    "statistics type" : "commerciant",
+    "commerciants" : [ ]
+  },
+  "timestamp" : 925
 }, {
   "command" : "payOnline",
   "output" : {
@@ -3288,10 +3075,6 @@
       "spent" : 0.0,
       "deposited" : 0.0
     }, {
-      "username" : "Sanders-Kramer Iris",
-      "spent" : 0.0,
-      "deposited" : 0.0
-    }, {
       "username" : "Hovel Erdogan",
       "spent" : 0.0,
       "deposited" : 0.0
@@ -3301,10 +3084,6 @@
       "deposited" : 0.0
     }, {
       "username" : "Raju Owen",
-      "spent" : 0.0,
-      "deposited" : 0.0
-    }, {
-      "username" : "Magana Zepeda Juana",
       "spent" : 0.0,
       "deposited" : 0.0
     }, {
@@ -3353,13 +3132,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO90POOB5450777208072365"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Alwin",
@@ -3371,20 +3143,6 @@
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Angel",
@@ -3405,20 +3163,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO75POOB1098983729823992"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Karen",
@@ -3452,13 +3196,6 @@
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO19POOB4981055641668812"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Karina",
@@ -3492,20 +3229,6 @@
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO00POOB5687892910835215"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Owen",
@@ -3517,13 +3240,6 @@
       "currency" : "INR",
       "cards" : [ ],
       "IBAN" : "RO96POOB6738272785416988"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Briana",
@@ -3551,13 +3267,13 @@
     "email" : "Chanakya_Dua@hushmail.in",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 712.0,
+      "balance" : 1953.8,
       "currency" : "INR",
       "cards" : [ ],
       "IBAN" : "RO69POOB9846198978826791"
     }, {
       "type" : "savings",
-      "balance" : 5509.266,
+      "balance" : 3683.8199999999997,
       "currency" : "INR",
       "cards" : [ {
         "cardNumber" : "5254952026068544",
@@ -3586,20 +3302,6 @@
       "currency" : "INR",
       "cards" : [ ],
       "IBAN" : "RO32POOB0130532963818359"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Isabel",
@@ -3625,20 +3327,6 @@
       "currency" : "AUD",
       "cards" : [ ],
       "IBAN" : "RO10POOB4354933866366881"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Iris",
@@ -3667,7 +3355,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -3677,7 +3364,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -3687,36 +3373,7 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     }, {
       "type" : "business",
       "balance" : 85.14497142857138,
@@ -3725,7 +3382,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -3735,7 +3391,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -3745,7 +3400,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -3755,7 +3409,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -3765,7 +3418,6 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
     }, {
       "type" : "business",
@@ -3775,7 +3427,6 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
     } ]
   }, {
@@ -3788,20 +3439,6 @@
       "currency" : "NZD",
       "cards" : [ ],
       "IBAN" : "RO38POOB0964823730995794"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Lucy",
@@ -3858,14 +3495,12 @@
       "balance" : 10419.239999999998,
       "currency" : "USD",
       "cards" : [ ],
-      "users" : [ ],
       "IBAN" : "RO45POOB6505529013808948"
     }, {
       "type" : "business",
       "balance" : 12078.679999999998,
       "currency" : "USD",
       "cards" : [ ],
-      "users" : [ ],
       "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
@@ -3895,20 +3530,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO89POOB4455583483378897"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Aurelio",
@@ -3923,20 +3544,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO36POOB6500477412147025"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Isabella",
@@ -3979,20 +3586,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO52POOB6271107854467609"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Juana",
@@ -4007,27 +3600,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO98POOB7190609943699593"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Yolanda",
@@ -4070,20 +3642,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO37POOB8653914479106806"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Erdogan",
@@ -4098,13 +3656,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO73POOB0363118755441573"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Natalia",
@@ -4159,13 +3710,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO90POOB5450777208072365"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Alwin",
@@ -4177,20 +3721,6 @@
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Angel",
@@ -4211,20 +3741,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO75POOB1098983729823992"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Karen",
@@ -4258,13 +3774,6 @@
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO19POOB4981055641668812"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Karina",
@@ -4298,20 +3807,6 @@
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO00POOB5687892910835215"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Owen",
@@ -4323,13 +3818,6 @@
       "currency" : "INR",
       "cards" : [ ],
       "IBAN" : "RO96POOB6738272785416988"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Briana",
@@ -4357,13 +3845,13 @@
     "email" : "Chanakya_Dua@hushmail.in",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 712.0,
+      "balance" : 1953.8,
       "currency" : "INR",
       "cards" : [ ],
       "IBAN" : "RO69POOB9846198978826791"
     }, {
       "type" : "savings",
-      "balance" : 5509.266,
+      "balance" : 3683.8199999999997,
       "currency" : "INR",
       "cards" : [ {
         "cardNumber" : "5254952026068544",
@@ -4392,20 +3880,6 @@
       "currency" : "INR",
       "cards" : [ ],
       "IBAN" : "RO32POOB0130532963818359"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Isabel",
@@ -4431,20 +3905,6 @@
       "currency" : "AUD",
       "cards" : [ ],
       "IBAN" : "RO10POOB4354933866366881"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Iris",
@@ -4473,7 +3933,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -4483,7 +3942,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -4493,36 +3951,7 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     }, {
       "type" : "business",
       "balance" : 85.14497142857138,
@@ -4531,7 +3960,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -4541,7 +3969,6 @@
         "cardNumber" : "2803408755782048",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
@@ -4551,7 +3978,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -4561,7 +3987,6 @@
         "cardNumber" : "0692077318511511",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO66POOB1088683052483887"
     }, {
       "type" : "business",
@@ -4571,7 +3996,6 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
     }, {
       "type" : "business",
@@ -4581,7 +4005,6 @@
         "cardNumber" : "4435533800578624",
         "status" : "active"
       } ],
-      "users" : [ ],
       "IBAN" : "RO19POOB5993192794373940"
     } ]
   }, {
@@ -4594,20 +4017,6 @@
       "currency" : "NZD",
       "cards" : [ ],
       "IBAN" : "RO38POOB0964823730995794"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Lucy",
@@ -4664,14 +4073,12 @@
       "balance" : 10419.239999999998,
       "currency" : "USD",
       "cards" : [ ],
-      "users" : [ ],
       "IBAN" : "RO45POOB6505529013808948"
     }, {
       "type" : "business",
       "balance" : 12078.679999999998,
       "currency" : "USD",
       "cards" : [ ],
-      "users" : [ ],
       "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
@@ -4701,20 +4108,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO89POOB4455583483378897"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Aurelio",
@@ -4729,20 +4122,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO36POOB6500477412147025"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Isabella",
@@ -4785,20 +4164,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO52POOB6271107854467609"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Juana",
@@ -4813,27 +4178,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO98POOB7190609943699593"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Yolanda",
@@ -4876,20 +4220,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO37POOB8653914479106806"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
-    }, {
-      "type" : "business",
-      "balance" : 12078.679999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO01POOB3925326637526572"
     } ]
   }, {
     "firstName" : "Erdogan",
@@ -4904,13 +4234,6 @@
         "status" : "active"
       } ],
       "IBAN" : "RO73POOB0363118755441573"
-    }, {
-      "type" : "business",
-      "balance" : 10419.239999999998,
-      "currency" : "USD",
-      "cards" : [ ],
-      "users" : [ ],
-      "IBAN" : "RO45POOB6505529013808948"
     } ]
   }, {
     "firstName" : "Natalia",
@@ -5078,7 +4401,7 @@
   "command" : "spendingsReport",
   "output" : {
     "commerciants" : [ ],
-    "balance" : 712.0,
+    "balance" : 1953.8,
     "currency" : "INR",
     "IBAN" : "RO69POOB9846198978826791",
     "transactions" : [ ]

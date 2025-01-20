@@ -118,7 +118,7 @@ public final class ActionHandler {
                     acceptSplitPayment.execute();
                 }
                 case "addNewBusinessAssociate" -> {
-                    AddNewBusinessAssociate addNewBusinessAssociate = new AddNewBusinessAssociate(bank, commandInput);
+                    AddNewBusinessAssociate addNewBusinessAssociate = new AddNewBusinessAssociate(bank, commandInput, output);
                     addNewBusinessAssociate.execute();
                 }
                 case "changeSpendingLimit" -> {

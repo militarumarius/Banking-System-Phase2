@@ -25,7 +25,7 @@ public class AddFunds implements Commands {
         User user = bank.getUserMap().get(commandInput.getEmail());
         Account account = user.findAccount(commandInput.getAccount());
         if (account != null) {
-            if (account.isBusinessAccount() && account.checkPayment(commandInput.getAmount(), user.getRole())) {
+            if (account.isBusinessAccount() && account.checkPaymentBusiness(commandInput.getAmount(), user.getRole())) {
                 Transaction businessTransaction = new TransactionBuilder(commandInput.getTimestamp(),
                         TransactionDescription.ADD_FUND.getMessage())
                         .cardHolder(user.getLastName() + " " + user.getFirstName())

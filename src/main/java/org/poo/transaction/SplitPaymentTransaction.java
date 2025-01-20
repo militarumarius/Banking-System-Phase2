@@ -15,6 +15,7 @@ public class SplitPaymentTransaction {
     private String type;
     private double amount;
     private Transaction transaction;
+
     public SplitPaymentTransaction(List<Account> accountsInvolved,
                                    List<Account> accountsNotAccept,
                                    String currency,
@@ -28,12 +29,13 @@ public class SplitPaymentTransaction {
         this.amount = amount;
         this.transaction = transaction;
     }
+
     public void addTransaction(BankDatabase bank) {
         List<Double> amountsPerUser = getAmountPerUser();
         Account errorAccount = bank.checkSplitPayment(accountsInvolved, bank, currency,
-                    amountsPerUser);
+                amountsPerUser);
         if (errorAccount == null) {
-            for (int i =0; i < accountsInvolved.reversed().size(); i++) {
+            for (int i = 0; i < accountsInvolved.reversed().size(); i++) {
                 List<String> visited = new ArrayList<>();
                 double exchangeRate = bank.findExchangeRate(currency,
                         accountsInvolved.get(i).getCurrency(), visited);
@@ -57,7 +59,7 @@ public class SplitPaymentTransaction {
         }
     }
 
-    public void rejectTransaction(BankDatabase bank){
+    public void rejectTransaction(BankDatabase bank) {
         List<Double> amountsPerUser = getAmountPerUser();
         for (Account account : accountsInvolved) {
             String description = "Split payment of "
@@ -69,13 +71,13 @@ public class SplitPaymentTransaction {
         }
     }
 
-    public Transaction createTransactionError(String description, String error){
+    public Transaction createTransactionError(String description, String error) {
         Transaction errorTransaction = null;
         if (type.equals("custom")) {
-             errorTransaction = new TransactionBuilder(transaction.getTimestamp(),
+            errorTransaction = new TransactionBuilder(transaction.getTimestamp(),
                     description)
                     .involvedAccounts(transaction.getInvolvedAccounts())
-                     .amountForUsers(transaction.getAmountForUsers())
+                    .amountForUsers(transaction.getAmountForUsers())
                     .error(error)
                     .currency(currency)
                     .splitPaymentType(type)
@@ -92,7 +94,8 @@ public class SplitPaymentTransaction {
         }
         return errorTransaction;
     }
-    public List<Double> getAmountPerUser(){
+
+    public List<Double> getAmountPerUser() {
         double amountToPay = amount / accountsInvolved.size();
         List<Double> amountsPerUser = new ArrayList<>();
         if (type.equals("equal")) {

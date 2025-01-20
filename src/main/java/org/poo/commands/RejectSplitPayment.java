@@ -11,17 +11,18 @@ import org.poo.bank.accounts.Account;
 import org.poo.fileio.CommandInput;
 import org.poo.transaction.SplitPaymentTransaction;
 
-public class RejectSplitPayment implements Commands{
+public class RejectSplitPayment implements Commands {
     private final BankDatabase bank;
     private final CommandInput commandInput;
     private final ArrayNode output;
 
     public RejectSplitPayment(final BankDatabase bank,
-                     final CommandInput commandInput, final ArrayNode output) {
+                              final CommandInput commandInput, final ArrayNode output) {
         this.bank = bank;
         this.commandInput = commandInput;
         this.output = output;
     }
+
     @Override
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());

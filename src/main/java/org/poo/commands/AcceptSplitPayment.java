@@ -11,7 +11,7 @@ import org.poo.bank.accounts.Account;
 import org.poo.fileio.CommandInput;
 import org.poo.transaction.SplitPaymentTransaction;
 
-public class AcceptSplitPayment implements Commands{
+public class AcceptSplitPayment implements Commands {
     private final BankDatabase bank;
     private final CommandInput commandInput;
     private final ArrayNode output;
@@ -22,6 +22,7 @@ public class AcceptSplitPayment implements Commands{
         this.commandInput = commandInput;
         this.output = output;
     }
+
     @Override
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());
@@ -43,7 +44,7 @@ public class AcceptSplitPayment implements Commands{
             return;
         }
         splitPaymentTransaction.getAccountsNotAccept().remove(account);
-        if(splitPaymentTransaction.getAccountsNotAccept().isEmpty()) {
+        if (splitPaymentTransaction.getAccountsNotAccept().isEmpty()) {
             splitPaymentTransaction.addTransaction(bank);
             bank.getSplitPayments().remove(splitPaymentTransaction);
         }

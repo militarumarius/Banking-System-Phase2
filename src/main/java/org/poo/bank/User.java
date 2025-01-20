@@ -30,7 +30,9 @@ public class User {
     private final Map<String, Account> cardAccountMap = new HashMap<>();
     @JsonIgnore
     private Plan plan;
-    @JsonIgnore @Getter @Setter
+    @JsonIgnore
+    @Getter
+    @Setter
     private String role = "";
 
     public User(final UserInput user) {
@@ -43,7 +45,9 @@ public class User {
         this.plan = occupation.equals("student") ? new StudentPlan() : new StandardPlan();
     }
 
-    /** */
+    /**
+     *
+     */
     public String getLastName() {
         return lastName;
     }
@@ -52,12 +56,16 @@ public class User {
         return plan;
     }
 
-    /** */
+    /**
+     *
+     */
     public String getEmail() {
         return email;
     }
 
-    /** */
+    /**
+     *
+     */
     public List<Account> getAccounts() {
         return accounts;
     }
@@ -78,18 +86,24 @@ public class User {
         return plan.calculateFee(transactionAmount);
     }
 
-    /** */
+    /**
+     *
+     */
     @JsonIgnore
     public Map<String, Account> getCardAccountMap() {
         return cardAccountMap;
     }
-    /** */
+
+    /**
+     *
+     */
     public String getFirstName() {
         return firstName;
     }
 
     /**
      * copy constructor
+     *
      * @param user the user that need to be copied
      */
     public User(final User user) {
@@ -100,13 +114,17 @@ public class User {
         this.birthDate = user.getBirthDate();
         this.plan = user.getPlan();
         this.accounts = new ArrayList<>();
-        for (Account account: user.getAccounts()) {
-            accounts.add(FactoryAccount.createCopyAccount(account));
+        for (Account account : user.getAccounts()) {
+            if (!account.isBusinessAccount())
+                accounts.add(FactoryAccount.createCopyAccount(account));
+            else if (account.getOwner().equals(user))
+                accounts.add(FactoryAccount.createCopyAccount(account));
         }
     }
 
     /**
      * method that find an account by iban
+     *
      * @param iban the iban
      * @return the account find, or a null pointer
      */
@@ -121,6 +139,7 @@ public class User {
 
     /**
      * method that remove a card for the account
+     *
      * @param numberCard the number of the card
      * @return the account where the card was removed
      */
@@ -153,6 +172,7 @@ public class User {
 
     /**
      * method that find a card by is number
+     *
      * @param cardNumber the card number that need to be found
      */
     public Card findCard(final String cardNumber) {
@@ -173,17 +193,17 @@ public class User {
         this.accounts.add(account);
     }
 
-    public Account findAccountForWithdrawSavings(String currency){
+    public Account findAccountForWithdrawSavings(String currency) {
         for (Account account : accounts)
-            if(account.getType().equals("classic") && account.getCurrency().equals(currency))
+            if (!account.isBusinessAccount() && account.getType().equals("classic") && account.getCurrency().equals(currency))
                 return account;
         return null;
     }
 
-    public boolean userCheckUpgradePlan(String newPlan){
+    public boolean userCheckUpgradePlan(String newPlan) {
         if (plan.getName().equals("gold"))
             return false;
-        if(plan.getName().equals("silver") && (newPlan.equals("student") || newPlan.equals("standard")))
+        if (plan.getName().equals("silver") && (newPlan.equals("student") || newPlan.equals("standard")))
             return false;
         return true;
     }

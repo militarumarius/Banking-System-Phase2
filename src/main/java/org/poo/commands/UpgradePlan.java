@@ -18,13 +18,13 @@ import org.poo.transaction.TransactionDescription;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpgradePlan implements Commands{
+public class UpgradePlan implements Commands {
     private final BankDatabase bank;
     private final CommandInput commandInput;
     private final ArrayNode output;
 
     public UpgradePlan(final BankDatabase bank,
-                           final CommandInput commandInput, final ArrayNode output) {
+                       final CommandInput commandInput, final ArrayNode output) {
         this.bank = bank;
         this.commandInput = commandInput;
         this.output = output;
@@ -35,10 +35,10 @@ public class UpgradePlan implements Commands{
         User user = bank.findUserByIban(commandInput.getAccount());
         if (user == null) {
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
-                        ACCOUNT_NOT_FOUND.getMessage(), commandInput.getTimestamp());
+                    ACCOUNT_NOT_FOUND.getMessage(), commandInput.getTimestamp());
             ObjectNode node = errorOutput.toObjectNodeDescription();
             PrintOutput upgradePlan = new PrintOutput("upgradePlan",
-                        node, commandInput.getTimestamp());
+                    node, commandInput.getTimestamp());
             upgradePlan.printCommand(output);
             return;
         }
@@ -50,9 +50,17 @@ public class UpgradePlan implements Commands{
         if (exchangeRate <= 0) {
             return;
         }
-        if(user.getPlan() == null)
+        if (user.getPlan() == null)
             return;
         String planName = user.getPlan().getName();
+        if (user.getPlan().getName().equals(commandInput.getNewPlanType())) {
+            Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
+                    TransactionDescription.PLAN_ALREADY_HAVE.getMessage()
+                            + commandInput.getNewPlanType() + " plan.")
+                    .build();
+            account.getTransactions().add(transaction);
+            return;
+        }
         if (!user.userCheckUpgradePlan(planName))
             return;
         int fee = calculateUpgradeFee(commandInput.getNewPlanType(), planName);
@@ -66,7 +74,7 @@ public class UpgradePlan implements Commands{
             return;
         }
         Plan newPlan = PlansFactory.createPlan(commandInput.getNewPlanType());
-        if(newPlan == null)
+        if (newPlan == null)
             return;
         user.upgradePlan(newPlan);
         account.subBalance(fee * exchangeRate);
@@ -78,7 +86,8 @@ public class UpgradePlan implements Commands{
 
         account.addTransactionList(transaction);
     }
-    public double calculateExchangeRate(Account account){
+
+    public double calculateExchangeRate(Account account) {
         List<String> visited = new ArrayList<>();
         return bank.findExchangeRate("RON",
                 account.getCurrency(), visited);

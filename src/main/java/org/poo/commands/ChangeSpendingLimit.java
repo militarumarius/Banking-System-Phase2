@@ -10,17 +10,18 @@ import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
 import org.poo.fileio.CommandInput;
 
-public class ChangeSpendingLimit implements Commands{
+public class ChangeSpendingLimit implements Commands {
     private final BankDatabase bank;
     private final CommandInput commandInput;
     private final ArrayNode output;
 
     public ChangeSpendingLimit(final BankDatabase bank,
-                      final CommandInput commandInput, final ArrayNode output) {
+                               final CommandInput commandInput, final ArrayNode output) {
         this.bank = bank;
         this.commandInput = commandInput;
         this.output = output;
     }
+
     @Override
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());
@@ -31,7 +32,7 @@ public class ChangeSpendingLimit implements Commands{
         if (account == null) {
             return;
         }
-        if (!account.isBusinessAccount()){
+        if (!account.isBusinessAccount()) {
             return;
         }
         if (!user.getRole().equals("owner")) {

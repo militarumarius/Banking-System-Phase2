@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.poo.actionhandler.CommerciantOutput;
 import org.poo.actionhandler.UserOutput;
 import org.poo.bank.User;
 import org.poo.bank.cards.Card;
@@ -255,9 +256,28 @@ public abstract class Account {
     }
 
     @JsonIgnore
-    public boolean checkPayment(double amount, String type) {
+    public boolean checkPaymentBusiness(double amount, String type) {
         throw new UnsupportedOperationException("Nu este un BusinessAccount");
     }
 
+    @JsonIgnore
+    public List<String> getManagersUsername(List<String> usersnameList) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public List<String> getEmployeesUsername(List<String> usersnameList) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public List<CommerciantOutput> calculateCommerciants(List<Transaction> transactions) {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
+
+    @JsonIgnore
+    public User getOwner() {
+        throw new UnsupportedOperationException("Nu este un BusinessAccount");
+    }
 
 }

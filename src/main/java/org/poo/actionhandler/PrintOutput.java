@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
+import org.poo.bank.accounts.FactoryAccount;
 import org.poo.transaction.Commerciant;
 import org.poo.transaction.Transaction;
 
@@ -55,7 +56,10 @@ public class PrintOutput {
         objectNode.put("command", "printTransactions");
         List<Transaction> copyTransactions = new ArrayList<>();
         for (Account account : user.getAccounts()) {
-            copyTransactions.addAll(account.getTransactions());
+            if (!account.isBusinessAccount())
+                copyTransactions.addAll(account.getTransactions());
+            else if (account.getOwner().equals(user))
+                copyTransactions.addAll(account.getTransactions());
         }
         copyTransactions.sort(Comparator.comparing(Transaction::getTimestamp));
         objectNode.putPOJO("output", copyTransactions);
@@ -117,6 +121,20 @@ public class PrintOutput {
         node.putPOJO("employees", employees);
         node.put("total spent", totalSent);
         node.put("total deposited", totalDeposited);
+        return node;
+    }
+    public static ObjectNode createOutputBusinessReportCommerciant(
+            final Account account,
+            final List<CommerciantOutput> commerciantOutputList) {
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+        node.put("balance", account.getBalance());
+        node.put("currency", account.getCurrency());
+        node.put("IBAN", account.getIBAN());
+        node.put("spending limit", account.getSpendingLimits());
+        node.put("deposit limit", account.getDepositLimits());
+        node.put("statistics type", "commerciant");
+        node.putPOJO("commerciants", commerciantOutputList);
         return node;
     }
 

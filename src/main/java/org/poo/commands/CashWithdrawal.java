@@ -18,17 +18,18 @@ import org.poo.transaction.TransactionDescription;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CashWithdrawal implements Commands{
+public class CashWithdrawal implements Commands {
     private final BankDatabase bank;
     private final CommandInput commandInput;
     private final ArrayNode output;
 
     public CashWithdrawal(final BankDatabase bank,
-                     final CommandInput commandInput, final ArrayNode output) {
+                          final CommandInput commandInput, final ArrayNode output) {
         this.bank = bank;
         this.commandInput = commandInput;
         this.output = output;
     }
+
     @Override
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());
@@ -74,12 +75,13 @@ public class CashWithdrawal implements Commands{
         accountSubCommision(account, user);
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                 TransactionDescription.CASH_WITHDRAWAL.getMessage() + commandInput.getAmount())
-                .amount( commandInput.getAmount())
+                .amount(commandInput.getAmount())
                 .commerciant(commandInput.getCommerciant())
                 .build();
         account.getTransactions().add(transaction);
     }
-    public double calculateExchangeRate(Account account){
+
+    public double calculateExchangeRate(Account account) {
         List<String> visited = new ArrayList<>();
         return bank.findExchangeRate("RON",
                 account.getCurrency(), visited);

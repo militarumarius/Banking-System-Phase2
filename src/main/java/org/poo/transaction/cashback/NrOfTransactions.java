@@ -4,7 +4,7 @@ import org.poo.bank.BankDatabase;
 import org.poo.bank.accounts.Account;
 import org.poo.transaction.Transaction;
 
-public class NrOfTransactions implements CashbackStrategy{
+public class NrOfTransactions implements CashbackStrategy {
     @Override
     public double calculateCashback(BankDatabase bank, Account account, double amount, double totalAmount, String type) {
 //        if (account.getTotalTransaction() == 2) {
@@ -16,6 +16,7 @@ public class NrOfTransactions implements CashbackStrategy{
 //        }
         return 0;
     }
+
     @Override
     public String getName() {
         return "nrOfTransactions";

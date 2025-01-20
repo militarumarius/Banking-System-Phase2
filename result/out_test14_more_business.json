@@ -155,6 +155,38 @@
   },
   "timestamp" : 161
 }, {
+  "command" : "businessReport",
+  "output" : {
+    "balance" : 6713.8886250000005,
+    "currency" : "RON",
+    "IBAN" : "RO69POOB6209498372540635",
+    "spending limit" : 500.0,
+    "deposit limit" : 135.0,
+    "statistics type" : "commerciant",
+    "commerciants" : [ {
+      "commerciant" : "Samsung",
+      "totalReceived" : 342.0,
+      "managers" : [ ],
+      "employees" : [ "Voinea Valentin" ]
+    }, {
+      "commerciant" : "Zara",
+      "totalReceived" : 292.0,
+      "managers" : [ ],
+      "employees" : [ "Voinea Valentin" ]
+    }, {
+      "commerciant" : "Amazon",
+      "totalReceived" : 3639.3,
+      "managers" : [ ],
+      "employees" : [ "Voinea Valentin" ]
+    }, {
+      "commerciant" : "H&M",
+      "totalReceived" : 253.0,
+      "managers" : [ ],
+      "employees" : [ "Stanescu Damian" ]
+    } ]
+  },
+  "timestamp" : 162
+}, {
   "command" : "sendMoney",
   "output" : {
     "timestamp" : 395,

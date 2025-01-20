@@ -15,8 +15,8 @@ public class BusinessReport implements Commands {
     private final ArrayNode output;
 
     public BusinessReport(final BankDatabase bank,
-                  final CommandInput commandInput,
-                  final ArrayNode output) {
+                          final CommandInput commandInput,
+                          final ArrayNode output) {
         this.bank = bank;
         this.commandInput = commandInput;
         this.output = output;
@@ -53,6 +53,12 @@ public class BusinessReport implements Commands {
                             account.totalDepositForReport()),
                     commandInput.getTimestamp());
             businessReport.printCommand(output);
+            return;
         }
+        PrintOutput businessReport = new PrintOutput("businessReport",
+                PrintOutput.createOutputBusinessReportCommerciant(account,
+                        account.calculateCommerciants(account.getTransactionsForBusiness())),
+                commandInput.getTimestamp());
+        businessReport.printCommand(output);
     }
 }
