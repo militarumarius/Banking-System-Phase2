@@ -15,6 +15,7 @@ public enum TransactionDescription {
     CASH_WITHDRAWAL("Cash withdrawal of "),
     INTEREST_RATE_INCOME("Interest rate income"),
     INVALID_WITHDRAW_SAVINGS("You do not have a classic account."),
+    REJECT_SPLIT_PAYMENT("One user rejected the payment."),
     INVALID_AGE("You don't have the minimum age required.");
 
     private final String message;

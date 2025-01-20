@@ -11,13 +11,13 @@ import org.poo.bank.accounts.Account;
 import org.poo.fileio.CommandInput;
 import org.poo.transaction.SplitPaymentTransaction;
 
-public class AcceptSplitPayment implements Commands{
+public class RejectSplitPayment implements Commands{
     private final BankDatabase bank;
     private final CommandInput commandInput;
     private final ArrayNode output;
 
-    public AcceptSplitPayment(final BankDatabase bank,
-                              final CommandInput commandInput, final ArrayNode output) {
+    public RejectSplitPayment(final BankDatabase bank,
+                     final CommandInput commandInput, final ArrayNode output) {
         this.bank = bank;
         this.commandInput = commandInput;
         this.output = output;
@@ -29,24 +29,16 @@ public class AcceptSplitPayment implements Commands{
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
                     USER_NOT_FOUND.getMessage(), commandInput.getTimestamp());
             ObjectNode node = errorOutput.toObjectNodeDescription();
-            PrintOutput acceptSplitPayment = new PrintOutput("acceptSplitPayment",
+            PrintOutput rejectSplitPayment = new PrintOutput("rejectSplitPayment",
                     node, commandInput.getTimestamp());
-            acceptSplitPayment.printCommand(output);
+            rejectSplitPayment.printCommand(output);
             return;
         }
         SplitPaymentTransaction splitPaymentTransaction = bank.findSplitPaymentByUser(user, commandInput.getSplitPaymentType());
         if (splitPaymentTransaction == null) {
             return;
         }
-        Account account = bank.findAccountForSplitPayment(user, commandInput.getSplitPaymentType());
-        if (account == null) {
-            return;
-        }
-        splitPaymentTransaction.getAccountsNotAccept().remove(account);
-        if(splitPaymentTransaction.getAccountsNotAccept().isEmpty()) {
-            splitPaymentTransaction.addTransaction(bank);
-            bank.getSplitPayments().remove(splitPaymentTransaction);
-        }
-
+        splitPaymentTransaction.rejectTransaction(bank);
+        bank.getSplitPayments().remove(splitPaymentTransaction);
     }
 }

@@ -62,6 +62,13 @@
   },
   "timestamp" : 555
 }, {
+  "command" : "upgradePlan",
+  "output" : {
+    "timestamp" : 560,
+    "description" : "Account not found"
+  },
+  "timestamp" : 560
+}, {
   "command" : "printTransactions",
   "output" : [ {
     "timestamp" : 65,
@@ -504,13 +511,13 @@
       "IBAN" : "RO58POOB7344468893732422"
     }, {
       "type" : "savings",
-      "balance" : 1109.0,
+      "balance" : 1108.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
     }, {
       "type" : "classic",
-      "balance" : 173.0,
+      "balance" : 172.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO50POOB3913194831046423"
@@ -538,7 +545,7 @@
       "IBAN" : "RO65POOB8944016386845896"
     }, {
       "type" : "savings",
-      "balance" : 1540.0480952380951,
+      "balance" : 1539.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -560,13 +567,13 @@
     "email" : "Norman_Aane@gmail.ro",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 1158.0,
+      "balance" : 1157.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO37POOB7013767509830666"
     }, {
       "type" : "classic",
-      "balance" : 210.0,
+      "balance" : 209.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO71POOB1634969878734749"
@@ -594,7 +601,7 @@
       "IBAN" : "RO30POOB9523423715747796"
     }, {
       "type" : "savings",
-      "balance" : 1929.0480952380951,
+      "balance" : 1928.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO79POOB3616857825600958"
@@ -611,7 +618,7 @@
       "IBAN" : "RO00POOB5687892910835215"
     }, {
       "type" : "savings",
-      "balance" : 1904.5442857142857,
+      "balance" : 1904.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO96POOB6738272785416988"
@@ -650,13 +657,13 @@
       "IBAN" : "RO98POOB8412955460158769"
     }, {
       "type" : "savings",
-      "balance" : 1683.0,
+      "balance" : 1682.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO32POOB0130532963818359"
     }, {
       "type" : "classic",
-      "balance" : 178.0,
+      "balance" : 177.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO89POOB4455583483378897"
@@ -695,7 +702,7 @@
       "IBAN" : "RO33POOB9999273999620457"
     }, {
       "type" : "classic",
-      "balance" : 385.5442857142857,
+      "balance" : 385.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO09POOB4346339013848470"
@@ -712,7 +719,7 @@
       "IBAN" : "RO38POOB0964823730995794"
     }, {
       "type" : "classic",
-      "balance" : 455.5442857142857,
+      "balance" : 455.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO36POOB6500477412147025"
@@ -733,13 +740,13 @@
       "IBAN" : "RO58POOB7344468893732422"
     }, {
       "type" : "savings",
-      "balance" : 1109.0,
+      "balance" : 1108.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
     }, {
       "type" : "classic",
-      "balance" : 173.0,
+      "balance" : 172.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO50POOB3913194831046423"
@@ -794,7 +801,7 @@
       "IBAN" : "RO65POOB8944016386845896"
     }, {
       "type" : "savings",
-      "balance" : 1540.0480952380951,
+      "balance" : 1539.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -816,13 +823,13 @@
     "email" : "Norman_Aane@gmail.ro",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 1158.0,
+      "balance" : 1157.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO37POOB7013767509830666"
     }, {
       "type" : "classic",
-      "balance" : 210.0,
+      "balance" : 209.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO71POOB1634969878734749"
@@ -850,7 +857,7 @@
       "IBAN" : "RO30POOB9523423715747796"
     }, {
       "type" : "savings",
-      "balance" : 1929.0480952380951,
+      "balance" : 1928.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO79POOB3616857825600958"
@@ -867,7 +874,7 @@
       "IBAN" : "RO00POOB5687892910835215"
     }, {
       "type" : "savings",
-      "balance" : 1904.5442857142857,
+      "balance" : 1904.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO96POOB6738272785416988"
@@ -906,13 +913,13 @@
       "IBAN" : "RO98POOB8412955460158769"
     }, {
       "type" : "savings",
-      "balance" : 1683.0,
+      "balance" : 1682.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO32POOB0130532963818359"
     }, {
       "type" : "classic",
-      "balance" : 178.0,
+      "balance" : 177.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO89POOB4455583483378897"
@@ -951,7 +958,7 @@
       "IBAN" : "RO33POOB9999273999620457"
     }, {
       "type" : "classic",
-      "balance" : 385.5442857142857,
+      "balance" : 385.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO09POOB4346339013848470"
@@ -968,7 +975,7 @@
       "IBAN" : "RO38POOB0964823730995794"
     }, {
       "type" : "classic",
-      "balance" : 455.5442857142857,
+      "balance" : 455.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO36POOB6500477412147025"
@@ -1003,13 +1010,13 @@
       "IBAN" : "RO58POOB7344468893732422"
     }, {
       "type" : "savings",
-      "balance" : 1109.0,
+      "balance" : 1108.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
     }, {
       "type" : "classic",
-      "balance" : 173.0,
+      "balance" : 172.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO50POOB3913194831046423"
@@ -1064,7 +1071,7 @@
       "IBAN" : "RO65POOB8944016386845896"
     }, {
       "type" : "savings",
-      "balance" : 1540.0480952380951,
+      "balance" : 1539.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -1086,13 +1093,13 @@
     "email" : "Norman_Aane@gmail.ro",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 1158.0,
+      "balance" : 1157.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO37POOB7013767509830666"
     }, {
       "type" : "classic",
-      "balance" : 210.0,
+      "balance" : 209.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO71POOB1634969878734749"
@@ -1120,7 +1127,7 @@
       "IBAN" : "RO30POOB9523423715747796"
     }, {
       "type" : "savings",
-      "balance" : 1929.0480952380951,
+      "balance" : 1928.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO79POOB3616857825600958"
@@ -1137,7 +1144,7 @@
       "IBAN" : "RO00POOB5687892910835215"
     }, {
       "type" : "savings",
-      "balance" : 1904.5442857142857,
+      "balance" : 1904.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO96POOB6738272785416988"
@@ -1176,13 +1183,13 @@
       "IBAN" : "RO98POOB8412955460158769"
     }, {
       "type" : "savings",
-      "balance" : 1683.0,
+      "balance" : 1682.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO32POOB0130532963818359"
     }, {
       "type" : "classic",
-      "balance" : 178.0,
+      "balance" : 177.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO89POOB4455583483378897"
@@ -1221,7 +1228,7 @@
       "IBAN" : "RO33POOB9999273999620457"
     }, {
       "type" : "classic",
-      "balance" : 385.5442857142857,
+      "balance" : 385.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO09POOB4346339013848470"
@@ -1238,7 +1245,7 @@
       "IBAN" : "RO38POOB0964823730995794"
     }, {
       "type" : "classic",
-      "balance" : 455.5442857142857,
+      "balance" : 455.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO36POOB6500477412147025"
@@ -1266,13 +1273,13 @@
       "IBAN" : "RO58POOB7344468893732422"
     }, {
       "type" : "savings",
-      "balance" : 1109.0,
+      "balance" : 1108.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
     }, {
       "type" : "classic",
-      "balance" : 173.0,
+      "balance" : 172.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO50POOB3913194831046423"
@@ -1327,7 +1334,7 @@
       "IBAN" : "RO65POOB8944016386845896"
     }, {
       "type" : "savings",
-      "balance" : 1540.0480952380951,
+      "balance" : 1539.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -1349,13 +1356,13 @@
     "email" : "Norman_Aane@gmail.ro",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 1158.0,
+      "balance" : 1157.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO37POOB7013767509830666"
     }, {
       "type" : "classic",
-      "balance" : 210.0,
+      "balance" : 209.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO71POOB1634969878734749"
@@ -1383,7 +1390,7 @@
       "IBAN" : "RO30POOB9523423715747796"
     }, {
       "type" : "savings",
-      "balance" : 1929.0480952380951,
+      "balance" : 1928.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO79POOB3616857825600958"
@@ -1400,7 +1407,7 @@
       "IBAN" : "RO00POOB5687892910835215"
     }, {
       "type" : "savings",
-      "balance" : 1904.5442857142857,
+      "balance" : 1904.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO96POOB6738272785416988"
@@ -1439,13 +1446,13 @@
       "IBAN" : "RO98POOB8412955460158769"
     }, {
       "type" : "savings",
-      "balance" : 1683.0,
+      "balance" : 1682.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO32POOB0130532963818359"
     }, {
       "type" : "classic",
-      "balance" : 178.0,
+      "balance" : 177.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO89POOB4455583483378897"
@@ -1484,7 +1491,7 @@
       "IBAN" : "RO33POOB9999273999620457"
     }, {
       "type" : "classic",
-      "balance" : 385.5442857142857,
+      "balance" : 385.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO09POOB4346339013848470"
@@ -1501,7 +1508,7 @@
       "IBAN" : "RO38POOB0964823730995794"
     }, {
       "type" : "classic",
-      "balance" : 455.5442857142857,
+      "balance" : 455.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO36POOB6500477412147025"
@@ -1522,13 +1529,13 @@
       "IBAN" : "RO58POOB7344468893732422"
     }, {
       "type" : "savings",
-      "balance" : 1109.0,
+      "balance" : 1108.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
     }, {
       "type" : "classic",
-      "balance" : 173.0,
+      "balance" : 172.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO50POOB3913194831046423"
@@ -1592,7 +1599,7 @@
       "IBAN" : "RO65POOB8944016386845896"
     }, {
       "type" : "savings",
-      "balance" : 1540.0480952380951,
+      "balance" : 1539.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -1614,13 +1621,13 @@
     "email" : "Norman_Aane@gmail.ro",
     "accounts" : [ {
       "type" : "classic",
-      "balance" : 1158.0,
+      "balance" : 1157.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO37POOB7013767509830666"
     }, {
       "type" : "classic",
-      "balance" : 210.0,
+      "balance" : 209.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO71POOB1634969878734749"
@@ -1648,7 +1655,7 @@
       "IBAN" : "RO30POOB9523423715747796"
     }, {
       "type" : "savings",
-      "balance" : 1929.0480952380951,
+      "balance" : 1928.81,
       "currency" : "EUR",
       "cards" : [ ],
       "IBAN" : "RO79POOB3616857825600958"
@@ -1665,7 +1672,7 @@
       "IBAN" : "RO00POOB5687892910835215"
     }, {
       "type" : "savings",
-      "balance" : 1904.5442857142857,
+      "balance" : 1904.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO96POOB6738272785416988"
@@ -1704,13 +1711,13 @@
       "IBAN" : "RO98POOB8412955460158769"
     }, {
       "type" : "savings",
-      "balance" : 1683.0,
+      "balance" : 1682.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO32POOB0130532963818359"
     }, {
       "type" : "classic",
-      "balance" : 178.0,
+      "balance" : 177.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO89POOB4455583483378897"
@@ -1749,7 +1756,7 @@
       "IBAN" : "RO33POOB9999273999620457"
     }, {
       "type" : "classic",
-      "balance" : 385.5442857142857,
+      "balance" : 385.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO09POOB4346339013848470"
@@ -1766,7 +1773,7 @@
       "IBAN" : "RO38POOB0964823730995794"
     }, {
       "type" : "classic",
-      "balance" : 455.5442857142857,
+      "balance" : 455.33,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO36POOB6500477412147025"

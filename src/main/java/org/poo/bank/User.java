@@ -179,4 +179,12 @@ public class User {
                 return account;
         return null;
     }
+
+    public boolean userCheckUpgradePlan(String newPlan){
+        if (plan.getName().equals("gold"))
+            return false;
+        if(plan.getName().equals("silver") && (newPlan.equals("student") || newPlan.equals("standard")))
+            return false;
+        return true;
+    }
 }

@@ -29,6 +29,70 @@ public class SplitPaymentTransaction {
         this.transaction = transaction;
     }
     public void addTransaction(BankDatabase bank) {
+        List<Double> amountsPerUser = getAmountPerUser();
+        Account errorAccount = bank.checkSplitPayment(accountsInvolved, bank, currency,
+                    amountsPerUser);
+        if (errorAccount == null) {
+            for (int i =0; i < accountsInvolved.reversed().size(); i++) {
+                List<String> visited = new ArrayList<>();
+                double exchangeRate = bank.findExchangeRate(currency,
+                        accountsInvolved.get(i).getCurrency(), visited);
+                visited.clear();
+                double amountToPayThisAccount = amountsPerUser.get(i) * exchangeRate;
+                accountsInvolved.get(i).subBalance(amountToPayThisAccount);
+            }
+        }
+        for (Account account : accountsInvolved) {
+            String description = "Split payment of "
+                    + String.format("%.2f", amount)
+                    + " " + currency;
+            if (errorAccount != null) {
+                String error = "Account " + errorAccount.getIBAN()
+                        + " has insufficient funds for a split payment.";
+                Transaction errorTransaction = createTransactionError(description, error);
+                account.addTransactionList(errorTransaction);
+            } else {
+                account.addTransactionList(transaction);
+            }
+        }
+    }
+
+    public void rejectTransaction(BankDatabase bank){
+        List<Double> amountsPerUser = getAmountPerUser();
+        for (Account account : accountsInvolved) {
+            String description = "Split payment of "
+                    + String.format("%.2f", amount)
+                    + " " + currency;
+            Transaction errorTransaction = createTransactionError(description,
+                    TransactionDescription.REJECT_SPLIT_PAYMENT.getMessage());
+            account.addTransactionList(errorTransaction);
+        }
+    }
+
+    public Transaction createTransactionError(String description, String error){
+        Transaction errorTransaction = null;
+        if (type.equals("custom")) {
+             errorTransaction = new TransactionBuilder(transaction.getTimestamp(),
+                    description)
+                    .involvedAccounts(transaction.getInvolvedAccounts())
+                     .amountForUsers(transaction.getAmountForUsers())
+                    .error(error)
+                    .currency(currency)
+                    .splitPaymentType(type)
+                    .build();
+        } else {
+            errorTransaction = new TransactionBuilder(transaction.getTimestamp(),
+                    description)
+                    .involvedAccounts(transaction.getInvolvedAccounts())
+                    .amount(transaction.getAmount())
+                    .error(error)
+                    .currency(currency)
+                    .splitPaymentType(type)
+                    .build();
+        }
+        return errorTransaction;
+    }
+    public List<Double> getAmountPerUser(){
         double amountToPay = amount / accountsInvolved.size();
         List<Double> amountsPerUser = new ArrayList<>();
         if (type.equals("equal")) {
@@ -40,43 +104,6 @@ public class SplitPaymentTransaction {
                 amountsPerUser.add(transaction.getAmountForUsers().get(i));
             }
         }
-        Account errorAccount = bank.checkSplitPayment(accountsInvolved, bank, currency,
-                    amountsPerUser);
-        for (Account account : accountsInvolved) {
-            String description = "Split payment of "
-                    + String.format("%.2f", amount)
-                    + " " + currency;
-            if (errorAccount != null) {
-                Transaction errorTransaction = createTransactionError(description, errorAccount.getIBAN());
-                account.addTransactionList(errorTransaction);
-            } else {
-                account.addTransactionList(transaction);
-            }
-        }
-    }
-    public Transaction createTransactionError(String description, String iban){
-        Transaction errorTransaction = null;
-        if (type.equals("custom")) {
-             errorTransaction = new TransactionBuilder(transaction.getTimestamp(),
-                    description)
-                    .involvedAccounts(transaction.getInvolvedAccounts())
-                     .amountForUsers(transaction.getAmountForUsers())
-                    .error("Account " + iban
-                            + " has insufficient funds for a split payment.")
-                    .currency(currency)
-                    .splitPaymentType(type)
-                    .build();
-        } else {
-            errorTransaction = new TransactionBuilder(transaction.getTimestamp(),
-                    description)
-                    .involvedAccounts(transaction.getInvolvedAccounts())
-                    .amount(transaction.getAmount())
-                    .error("Account " + iban
-                            + " has insufficient funds for a split payment.")
-                    .currency(currency)
-                    .splitPaymentType(type)
-                    .build();
-        }
-        return errorTransaction;
+        return amountsPerUser;
     }
 }

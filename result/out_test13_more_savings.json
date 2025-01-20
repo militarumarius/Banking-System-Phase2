@@ -196,7 +196,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 3452.0,
+      "balance" : 3451.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -335,7 +335,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 3452.0,
+      "balance" : 3451.0,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -362,7 +362,7 @@
 }, {
   "command" : "report",
   "output" : {
-    "balance" : 4038.84,
+    "balance" : 4037.67,
     "currency" : "RON",
     "IBAN" : "RO65POOB8944016386845896",
     "transactions" : [ {
@@ -380,17 +380,12 @@
       "newPlanType" : "silver",
       "accountIBAN" : "RO65POOB8944016386845896"
     }, {
-      "timestamp" : 214,
-      "description" : "Upgrade plan",
-      "newPlanType" : "silver",
-      "accountIBAN" : "RO65POOB8944016386845896"
-    }, {
       "timestamp" : 223,
       "description" : "Interest rate of the account changed to 0.17"
     }, {
       "timestamp" : 224,
       "description" : "Interest rate income",
-      "amount" : 586.84,
+      "amount" : 586.6700000000001,
       "currency" : "RON"
     } ]
   },
@@ -445,17 +440,12 @@
     "newPlanType" : "silver",
     "accountIBAN" : "RO65POOB8944016386845896"
   }, {
-    "timestamp" : 214,
-    "description" : "Upgrade plan",
-    "newPlanType" : "silver",
-    "accountIBAN" : "RO65POOB8944016386845896"
-  }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
   }, {
     "timestamp" : 224,
     "description" : "Interest rate income",
-    "amount" : 586.84,
+    "amount" : 586.6700000000001,
     "currency" : "RON"
   } ],
   "timestamp" : 231
@@ -533,17 +523,12 @@
     "newPlanType" : "silver",
     "accountIBAN" : "RO65POOB8944016386845896"
   }, {
-    "timestamp" : 214,
-    "description" : "Upgrade plan",
-    "newPlanType" : "silver",
-    "accountIBAN" : "RO65POOB8944016386845896"
-  }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
   }, {
     "timestamp" : 224,
     "description" : "Interest rate income",
-    "amount" : 586.84,
+    "amount" : 586.6700000000001,
     "currency" : "RON"
   }, {
     "timestamp" : 227,
@@ -660,7 +645,7 @@
     "email" : "Christina_Hudson@outlook.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1672.0,
+      "balance" : 1592.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB7344468893732422"
@@ -671,7 +656,7 @@
     "email" : "Michael_Miles@hotmail.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1313.0,
+      "balance" : 1233.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -692,7 +677,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 6087.84,
+      "balance" : 5730.92,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -703,7 +688,7 @@
     "email" : "Floarea_Dobre@hotmail.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1746.0,
+      "balance" : 1390.25,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
@@ -727,17 +712,12 @@
     "newPlanType" : "silver",
     "accountIBAN" : "RO65POOB8944016386845896"
   }, {
-    "timestamp" : 214,
-    "description" : "Upgrade plan",
-    "newPlanType" : "silver",
-    "accountIBAN" : "RO65POOB8944016386845896"
-  }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
   }, {
     "timestamp" : 224,
     "description" : "Interest rate income",
-    "amount" : 586.84,
+    "amount" : 586.6700000000001,
     "currency" : "RON"
   }, {
     "timestamp" : 227,
@@ -802,7 +782,7 @@
     "email" : "Christina_Hudson@outlook.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1672.0,
+      "balance" : 1592.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB7344468893732422"
@@ -813,7 +793,7 @@
     "email" : "Michael_Miles@hotmail.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1313.0,
+      "balance" : 1233.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -847,7 +827,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 6087.84,
+      "balance" : 5730.92,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -858,7 +838,7 @@
     "email" : "Floarea_Dobre@hotmail.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1746.0,
+      "balance" : 1390.25,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
@@ -962,7 +942,7 @@
     "email" : "Christina_Hudson@outlook.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1672.0,
+      "balance" : 1592.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB7344468893732422"
@@ -973,7 +953,7 @@
     "email" : "Michael_Miles@hotmail.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1313.0,
+      "balance" : 1233.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -1013,7 +993,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 6087.84,
+      "balance" : 5730.92,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -1036,7 +1016,7 @@
     "email" : "Floarea_Dobre@hotmail.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1746.0,
+      "balance" : 1390.25,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
@@ -1097,7 +1077,7 @@
     "email" : "Christina_Hudson@outlook.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1672.0,
+      "balance" : 1592.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB7344468893732422"
@@ -1108,7 +1088,7 @@
     "email" : "Michael_Miles@hotmail.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1313.0,
+      "balance" : 1233.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -1148,7 +1128,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 6087.84,
+      "balance" : 5730.92,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -1171,7 +1151,7 @@
     "email" : "Floarea_Dobre@hotmail.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1746.0,
+      "balance" : 1390.25,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
@@ -1295,7 +1275,7 @@
     "email" : "Christina_Hudson@outlook.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1851.0,
+      "balance" : 1771.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB7344468893732422"
@@ -1306,7 +1286,7 @@
     "email" : "Michael_Miles@hotmail.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1313.0,
+      "balance" : 1233.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -1353,7 +1333,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 6087.84,
+      "balance" : 5730.92,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -1383,7 +1363,7 @@
     "email" : "Floarea_Dobre@hotmail.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1746.0,
+      "balance" : 1390.25,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
@@ -1556,7 +1536,7 @@
     "email" : "Christina_Hudson@outlook.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1851.0,
+      "balance" : 1771.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB7344468893732422"
@@ -1574,7 +1554,7 @@
     "email" : "Michael_Miles@hotmail.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1313.0,
+      "balance" : 1233.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -1621,7 +1601,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 6087.84,
+      "balance" : 5730.92,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -1651,7 +1631,7 @@
     "email" : "Floarea_Dobre@hotmail.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1746.0,
+      "balance" : 1390.25,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"
@@ -1689,17 +1669,12 @@
     "newPlanType" : "silver",
     "accountIBAN" : "RO65POOB8944016386845896"
   }, {
-    "timestamp" : 214,
-    "description" : "Upgrade plan",
-    "newPlanType" : "silver",
-    "accountIBAN" : "RO65POOB8944016386845896"
-  }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
   }, {
     "timestamp" : 224,
     "description" : "Interest rate income",
-    "amount" : 586.84,
+    "amount" : 586.6700000000001,
     "currency" : "RON"
   }, {
     "timestamp" : 227,
@@ -1940,7 +1915,7 @@
     "email" : "Christina_Hudson@outlook.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 2022.0,
+      "balance" : 1942.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB7344468893732422"
@@ -1958,7 +1933,7 @@
     "email" : "Michael_Miles@hotmail.us",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1313.0,
+      "balance" : 1233.9444444444443,
       "currency" : "USD",
       "cards" : [ ],
       "IBAN" : "RO58POOB2721178218599590"
@@ -2005,7 +1980,7 @@
     "email" : "Barbu_Suciu@outlook.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 6087.84,
+      "balance" : 5730.92,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO65POOB8944016386845896"
@@ -2035,7 +2010,7 @@
     "email" : "Floarea_Dobre@hotmail.ro",
     "accounts" : [ {
       "type" : "savings",
-      "balance" : 1746.0,
+      "balance" : 1390.25,
       "currency" : "RON",
       "cards" : [ ],
       "IBAN" : "RO69POOB6209498372540635"

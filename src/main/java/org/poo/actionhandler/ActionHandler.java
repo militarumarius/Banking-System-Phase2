@@ -106,7 +106,7 @@ public final class ActionHandler {
                     withdrawSavings.execute();
                 }
                 case "upgradePlan" -> {
-                    UpgradePlan upgradePlan = new UpgradePlan(bank, commandInput);
+                    UpgradePlan upgradePlan = new UpgradePlan(bank, commandInput, output);
                     upgradePlan.execute();
                 }
                 case "cashWithdrawal" -> {
@@ -114,7 +114,7 @@ public final class ActionHandler {
                     cashWithdrawal.execute();
                 }
                 case "acceptSplitPayment" -> {
-                    AcceptSplitPayment acceptSplitPayment = new AcceptSplitPayment(bank, commandInput);
+                    AcceptSplitPayment acceptSplitPayment = new AcceptSplitPayment(bank, commandInput, output);
                     acceptSplitPayment.execute();
                 }
                 case "addNewBusinessAssociate" -> {
@@ -132,6 +132,10 @@ public final class ActionHandler {
                 case "changeDepositLimit" -> {
                     ChangeDepositLimit changeDepositLimit = new ChangeDepositLimit(bank, commandInput, output);
                     changeDepositLimit.execute();
+                }
+                case "rejectSplitPayment" -> {
+                    RejectSplitPayment rejectSplitPayment = new RejectSplitPayment(bank, commandInput, output);
+                    rejectSplitPayment.execute();
                 }
                 default -> {
                     return;
