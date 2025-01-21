@@ -2740,7 +2740,7 @@
 }, {
   "command" : "businessReport",
   "output" : {
-    "balance" : 15.144971428571404,
+    "balance" : 15.407531428571412,
     "currency" : "EUR",
     "IBAN" : "RO04POOB3492426980939341",
     "spending limit" : 100.0,
@@ -3349,7 +3349,7 @@
       "IBAN" : "RO93POOB6760303931698665"
     }, {
       "type" : "business",
-      "balance" : 15.144971428571404,
+      "balance" : 15.407531428571412,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "2803408755782048",
@@ -3376,7 +3376,7 @@
       "IBAN" : "RO19POOB5993192794373940"
     }, {
       "type" : "business",
-      "balance" : 15.144971428571404,
+      "balance" : 15.407531428571412,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "2803408755782048",
@@ -3385,7 +3385,7 @@
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
-      "balance" : 15.144971428571404,
+      "balance" : 15.407531428571412,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "2803408755782048",
@@ -3927,7 +3927,7 @@
       "IBAN" : "RO93POOB6760303931698665"
     }, {
       "type" : "business",
-      "balance" : 15.144971428571404,
+      "balance" : 15.407531428571412,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "2803408755782048",
@@ -3954,7 +3954,7 @@
       "IBAN" : "RO19POOB5993192794373940"
     }, {
       "type" : "business",
-      "balance" : 15.144971428571404,
+      "balance" : 15.407531428571412,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "2803408755782048",
@@ -3963,7 +3963,7 @@
       "IBAN" : "RO04POOB3492426980939341"
     }, {
       "type" : "business",
-      "balance" : 15.144971428571404,
+      "balance" : 15.407531428571412,
       "currency" : "EUR",
       "cards" : [ {
         "cardNumber" : "2803408755782048",

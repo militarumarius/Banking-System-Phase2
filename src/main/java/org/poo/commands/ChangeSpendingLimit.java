@@ -22,6 +22,7 @@ public class ChangeSpendingLimit implements Commands {
         this.output = output;
     }
 
+    /** */
     @Override
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());
@@ -32,6 +33,19 @@ public class ChangeSpendingLimit implements Commands {
         if (account == null) {
             return;
         }
+        if (errorNotBusinessType(account, commandInput, output)) {
+            return;
+        }
+        if (errorLimitChange(user, commandInput, output)) {
+            return;
+        }
+        account.setSpendingLimits(commandInput.getAmount());
+    }
+
+    /** */
+    static boolean errorNotBusinessType(final Account account,
+                                        final CommandInput commandInput,
+                                        final ArrayNode output) {
         if (!account.isBusinessAccount()) {
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription
                     .ACCOUNT_IS_NOT_BUSINESS_TYPE.getMessage(), commandInput.getTimestamp());
@@ -39,8 +53,14 @@ public class ChangeSpendingLimit implements Commands {
             PrintOutput report = new PrintOutput("businessReport", node,
                     commandInput.getTimestamp());
             report.printCommand(output);
-            return;
+            return true;
         }
+        return false;
+    }
+
+    static boolean errorLimitChange(final User user,
+                                    final CommandInput commandInput,
+                                    final ArrayNode output) {
         if (!user.getRole().equals("owner")) {
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
                     ERROR_BUSINESS_LIMIT_CHANGE.getMessage(), commandInput.getTimestamp());
@@ -48,8 +68,8 @@ public class ChangeSpendingLimit implements Commands {
             PrintOutput changeSpendingLimit = new PrintOutput("changeSpendingLimit",
                     node, commandInput.getTimestamp());
             changeSpendingLimit.printCommand(output);
-            return;
+            return true;
         }
-        account.setSpendingLimits(commandInput.getAmount());
+        return false;
     }
 }

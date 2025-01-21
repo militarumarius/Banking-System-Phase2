@@ -10,7 +10,6 @@ import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.cards.Card;
 import org.poo.fileio.CommandInput;
-import org.poo.transaction.Commerciant;
 import org.poo.transaction.Transaction;
 import org.poo.transaction.TransactionBuilder;
 import org.poo.transaction.TransactionDescription;
@@ -30,6 +29,7 @@ public class CashWithdrawal implements Commands {
         this.output = output;
     }
 
+    /** */
     @Override
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());
@@ -66,18 +66,9 @@ public class CashWithdrawal implements Commands {
         List<String> visited = new ArrayList<>();
         double exchangeRate = bank.findExchangeRate("RON",
                 account.getCurrency(), visited);
-        if (!account.validatePayment(commandInput.getAmount(), exchangeRate)) {
-            Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
-                    TransactionDescription.INSUFFICIENT_FUNDS.getMessage())
-                    .build();
-            account.getTransactions().add(transaction);
+        if (insuficientFundsError(account, exchangeRate, commandInput)) {
             return;
         }
-        if (exchangeRate <= 0) {
-            return;
-        }
-        double totalAmount = commandInput.getAmount() * exchangeRate;
-        account.subBalance(totalAmount);
         accountSubCommision(account, user);
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                 TransactionDescription.CASH_WITHDRAWAL.getMessage() + commandInput.getAmount())
@@ -87,13 +78,35 @@ public class CashWithdrawal implements Commands {
         account.getTransactions().add(transaction);
     }
 
-    public double calculateExchangeRate(Account account) {
+    /** */
+    static boolean insuficientFundsError(final Account account,
+                                         final double exchangeRate,
+                                         final CommandInput commandInput) {
+        if (!account.validatePayment(commandInput.getAmount(), exchangeRate)) {
+            Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
+                    TransactionDescription.INSUFFICIENT_FUNDS.getMessage())
+                    .build();
+            account.getTransactions().add(transaction);
+            return true;
+        }
+        if (exchangeRate <= 0) {
+            return true;
+        }
+        double totalAmount = commandInput.getAmount() * exchangeRate;
+        account.subBalance(totalAmount);
+        return false;
+    }
+
+    /** */
+    public double calculateExchangeRate(final Account account) {
         List<String> visited = new ArrayList<>();
         return bank.findExchangeRate("RON",
                 account.getCurrency(), visited);
     }
 
-    public void accountSubCommision(Account account, User user) {
+    /** */
+    public void accountSubCommision(final Account account,
+                                    final User user) {
         double exchangeRateForCommision = calculateExchangeRate(account);
         double amountForCommisionCalculate = commandInput.getAmount();
         double commision = user.calculateCommision(amountForCommisionCalculate)

@@ -1,21 +1,15 @@
 package org.poo.bank.plans;
 
-import org.poo.bank.accounts.Account;
-import org.poo.bank.accounts.BasicAccount;
-import org.poo.bank.accounts.EconomyAccount;
-import org.poo.fileio.CommandInput;
-
-import static org.poo.utils.Utils.generateIBAN;
-
-public class PlansFactory {
+public final class PlansFactory {
+    /** */
     private PlansFactory() {
         throw new UnsupportedOperationException("Utility class");
     }
 
     /**
-     * method that create an account
+     * method that create a plan
      */
-    public static Plan createPlan(String name) {
+    public static Plan createPlan(final String name) {
 
         switch (name) {
             case "silver" -> {

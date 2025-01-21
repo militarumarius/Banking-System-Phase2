@@ -23,6 +23,7 @@ public class AcceptSplitPayment implements Commands {
         this.output = output;
     }
 
+    /** */
     @Override
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());
@@ -35,7 +36,8 @@ public class AcceptSplitPayment implements Commands {
             acceptSplitPayment.printCommand(output);
             return;
         }
-        SplitPaymentTransaction splitPaymentTransaction = bank.findSplitPaymentByUser(user, commandInput.getSplitPaymentType());
+        SplitPaymentTransaction splitPaymentTransaction =
+                bank.findSplitPaymentByUser(user, commandInput.getSplitPaymentType());
         if (splitPaymentTransaction == null) {
             return;
         }

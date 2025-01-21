@@ -31,8 +31,9 @@ public class ChangeInterestRate implements Commands {
     @Override
     public void execute() {
         Account account = bank.findAccountByIban(commandInput.getAccount());
-        if (account == null)
+        if (account == null) {
             return;
+        }
         if (!bank.checkSaving(account)) {
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription
                     .INVALID_ACCOUNT.getMessage(), commandInput.getTimestamp());

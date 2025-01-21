@@ -31,14 +31,17 @@ public class CreateCard implements Commands {
             return;
         }
         Account account = user.findAccount(commandInput.getAccount());
-        if (account == null)
+        if (account == null) {
             return;
+        }
         Card newCard = new DebitCard(generateCardNumber(), "DebitCard", account);
-        if (account.isBusinessAccount())
-            for (User u : account.getUsersList())
+        if (account.isBusinessAccount()) {
+            for (User u : account.getUsersList()) {
                 u.addCard(account, newCard);
-        else
+            }
+        } else {
             user.addCard(account, newCard);
+        }
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                 TransactionDescription.CARD_CREATION_SUCCESS.getMessage())
                 .account(account.getIBAN())

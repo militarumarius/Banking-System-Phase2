@@ -41,13 +41,7 @@ public class BusinessReport implements Commands {
             report.printCommand(output);
             return;
         }
-        if (!account.isBusinessAccount()) {
-            ErrorOutput errorOutput = new ErrorOutput(ErrorDescription
-                    .ACCOUNT_IS_NOT_BUSINESS_TYPE.getMessage(), commandInput.getTimestamp());
-            ObjectNode node = errorOutput.toObjectNodeDescription();
-            PrintOutput report = new PrintOutput("businessReport", node,
-                    commandInput.getTimestamp());
-            report.printCommand(output);
+        if (ChangeSpendingLimit.errorNotBusinessType(account, commandInput, output)) {
             return;
         }
         if (commandInput.getType().equals("transaction")) {
@@ -66,7 +60,8 @@ public class BusinessReport implements Commands {
                         commandInput.getEndTimestamp());
         PrintOutput businessReport = new PrintOutput("businessReport",
                 PrintOutput.createOutputBusinessReportCommerciant(account,
-                        account.calculateCommerciants(filteredTransactionsForBusiness, ownerUsername)),
+                        account.calculateCommerciants(filteredTransactionsForBusiness,
+                                ownerUsername)),
                 commandInput.getTimestamp());
         businessReport.printCommand(output);
     }

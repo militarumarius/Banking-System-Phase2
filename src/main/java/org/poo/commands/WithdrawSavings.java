@@ -8,7 +8,6 @@ import org.poo.actionhandler.PrintOutput;
 import org.poo.bank.BankDatabase;
 import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
-import org.poo.bank.cards.Card;
 import org.poo.fileio.CommandInput;
 import org.poo.transaction.Transaction;
 import org.poo.transaction.TransactionBuilder;
@@ -18,7 +17,6 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class WithdrawSavings implements Commands {
     private final BankDatabase bank;
@@ -34,13 +32,14 @@ public class WithdrawSavings implements Commands {
     }
 
     /**
-     * method that execute the online payment
+     * method that execute the withdraw of savings
      */
     @Override
     public void execute() {
         User user = bank.findUserByIban(commandInput.getAccount());
-        if (user == null)
+        if (user == null) {
             return;
+        }
         Account account = user.findAccount(commandInput.getAccount());
         if (account == null) {
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
@@ -68,8 +67,9 @@ public class WithdrawSavings implements Commands {
             return;
         }
         double exchangeRate = calculateExchangeRate(account.getCurrency());
-        if (exchangeRate < 0)
+        if (exchangeRate < 0) {
             return;
+        }
         if (account.getBalance() < commandInput.getAmount()) {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.INSUFFICIENT_FUNDS.getMessage())
@@ -89,7 +89,8 @@ public class WithdrawSavings implements Commands {
         withdrawAccount.getTransactions().add(transaction);
 
     }
-    public double calculateExchangeRate(String currency) {
+    /** */
+    public double calculateExchangeRate(final String currency) {
         List<String> visited = new ArrayList<>();
         return bank.findExchangeRate(currency,
                  commandInput.getCurrency(), visited);

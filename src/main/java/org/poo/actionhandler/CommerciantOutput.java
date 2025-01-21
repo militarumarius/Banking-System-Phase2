@@ -11,7 +11,10 @@ public class CommerciantOutput {
     @JsonProperty("total received")
     private double totalReceived;
 
-    public CommerciantOutput(double totalReceived, List<String> managers, List<String> employees, String commerciant) {
+    public CommerciantOutput(final double totalReceived,
+                             final List<String> managers,
+                             final List<String> employees,
+                             final String commerciant) {
         this.totalReceived = totalReceived;
         this.managers = managers;
         this.employees = employees;

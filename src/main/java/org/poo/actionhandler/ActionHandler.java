@@ -114,15 +114,18 @@ public final class ActionHandler {
                     cashWithdrawal.execute();
                 }
                 case "acceptSplitPayment" -> {
-                    AcceptSplitPayment acceptSplitPayment = new AcceptSplitPayment(bank, commandInput, output);
+                    AcceptSplitPayment acceptSplitPayment = new
+                            AcceptSplitPayment(bank, commandInput, output);
                     acceptSplitPayment.execute();
                 }
                 case "addNewBusinessAssociate" -> {
-                    AddNewBusinessAssociate addNewBusinessAssociate = new AddNewBusinessAssociate(bank, commandInput, output);
+                    AddNewBusinessAssociate addNewBusinessAssociate = new
+                            AddNewBusinessAssociate(bank, commandInput);
                     addNewBusinessAssociate.execute();
                 }
                 case "changeSpendingLimit" -> {
-                    ChangeSpendingLimit changeSpendingLimit = new ChangeSpendingLimit(bank, commandInput, output);
+                    ChangeSpendingLimit changeSpendingLimit = new
+                            ChangeSpendingLimit(bank, commandInput, output);
                     changeSpendingLimit.execute();
                 }
                 case "businessReport" -> {
@@ -130,11 +133,13 @@ public final class ActionHandler {
                     businessReport.execute();
                 }
                 case "changeDepositLimit" -> {
-                    ChangeDepositLimit changeDepositLimit = new ChangeDepositLimit(bank, commandInput, output);
+                    ChangeDepositLimit changeDepositLimit = new
+                            ChangeDepositLimit(bank, commandInput, output);
                     changeDepositLimit.execute();
                 }
                 case "rejectSplitPayment" -> {
-                    RejectSplitPayment rejectSplitPayment = new RejectSplitPayment(bank, commandInput, output);
+                    RejectSplitPayment rejectSplitPayment = new
+                            RejectSplitPayment(bank, commandInput, output);
                     rejectSplitPayment.execute();
                 }
                 default -> {

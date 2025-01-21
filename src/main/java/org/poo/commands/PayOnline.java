@@ -42,8 +42,9 @@ public class PayOnline implements Commands {
             return;
         }
         Account account = user.getCardAccountMap().get(commandInput.getCardNumber());
-        if (commandInput.getAmount() == 0.0)
+        if (commandInput.getAmount() == 0.0) {
             return;
+        }
         if (account == null) {
             ErrorOutput errorOutput = new ErrorOutput(ErrorDescription.
                     CARD_NOT_FOUND.getMessage(), commandInput.getTimestamp());
@@ -67,26 +68,21 @@ public class PayOnline implements Commands {
         List<String> visited = new ArrayList<>();
         double exchangeRate = bank.findExchangeRate(commandInput.getCurrency(),
                 account.getCurrency(), visited);
-        if (!account.validatePayment(commandInput.getAmount(), exchangeRate)) {
-            Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
-                    TransactionDescription.INSUFFICIENT_FUNDS.getMessage())
-                    .build();
-            account.getTransactions().add(transaction);
-            return;
-        }
-        if (exchangeRate <= 0) {
+        if (CashWithdrawal.insuficientFundsError(account, exchangeRate, commandInput)) {
             return;
         }
         double totalAmount = commandInput.getAmount() * exchangeRate;
-        account.subBalance(totalAmount);
         accountSubCommision(account, user, totalAmount);
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                 TransactionDescription.CARD_PAYMENT.getMessage())
                 .amount(totalAmount)
                 .commerciant(commandInput.getCommerciant())
                 .build();
-        if ((account.isBusinessAccount() && !account.getOwner().equals(user)) || (!account.isBusinessAccount()))
+        if ((account.isBusinessAccount()
+                && !account.getOwner().equals(user))
+                || (!account.isBusinessAccount())) {
             account.getTransactions().add(transaction);
+        }
         if (card.getType().equals("OneTimeCard")) {
             DeleteCard deleteCard = new DeleteCard(bank, commandInput, card.getCardNumber());
             deleteCard.execute();
@@ -94,8 +90,6 @@ public class PayOnline implements Commands {
                     account.getIBAN());
             command.execute();
         }
-        accountAddCashback(account, totalAmount);
-        account.addTransaction();
         if (account.isBusinessAccount()) {
             Transaction businessTransaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.CARD_PAYMENT.getMessage())
@@ -106,23 +100,37 @@ public class PayOnline implements Commands {
                     .build();
             account.getTransactionsForBusiness().add(businessTransaction);
         }
+        accountAddCashback(account, totalAmount);
+        account.addTransaction();
         upgradeGoldPlan(account, user, totalAmount);
     }
 
-    public double calculateExchangeRate(String currency) {
+    /**
+     *
+     */
+    public double calculateExchangeRate(final String currency) {
         List<String> visited = new ArrayList<>();
         return bank.findExchangeRate(currency,
                 "RON", visited);
     }
 
-    public void accountSubCommision(Account account, User user, double amount) {
+    /**
+     *
+     */
+    public void accountSubCommision(final Account account,
+                                    final User user,
+                                    final double amount) {
         double exchangeRateForCommision = calculateExchangeRate(commandInput.getCurrency());
         double amountForCommisionCalculate = amount * exchangeRateForCommision;
         double commision = user.calculateCommision(amountForCommisionCalculate) * amount;
         account.subBalance(commision);
     }
 
-    public void accountAddCashback(Account account, double totalAmount) {
+    /**
+     *
+     */
+    public void accountAddCashback(final Account account,
+                                   final double totalAmount) {
         Commerciant commerciant = bank.findCommerciant(commandInput.getCommerciant());
         double exchangeRateForCommision = calculateExchangeRate(commandInput.getCurrency());
         double amountForCommisionCalculate = commandInput.getAmount() * exchangeRateForCommision;
@@ -131,13 +139,19 @@ public class PayOnline implements Commands {
                         amountForCommisionCalculate, totalAmount, commerciant.getType()));
     }
 
-    public void upgradeGoldPlan(Account account, User user, double amount){
+    /**
+     *
+     */
+    public void upgradeGoldPlan(final Account account,
+                                final User user,
+                                final double amount) {
         double exchangeRateForCommision = calculateExchangeRate(commandInput.getCurrency());
         double amountForCommisionCalculate = amount * exchangeRateForCommision;
-        if (user.checkUpgradeGoldPlan(amountForCommisionCalculate)){
+        if (user.checkUpgradeGoldPlan(amountForCommisionCalculate)) {
             Plan newPlan = PlansFactory.createPlan("gold");
-            if (newPlan == null)
+            if (newPlan == null) {
                 return;
+            }
             user.upgradePlan(newPlan);
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.UPGRADE_PLAN.getMessage())

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.poo.bank.User;
 import org.poo.bank.accounts.Account;
-import org.poo.bank.accounts.FactoryAccount;
 import org.poo.transaction.Commerciant;
 import org.poo.transaction.Transaction;
 
@@ -56,10 +55,11 @@ public class PrintOutput {
         objectNode.put("command", "printTransactions");
         List<Transaction> copyTransactions = new ArrayList<>();
         for (Account account : user.getAccounts()) {
-            if (!account.isBusinessAccount())
+            if (!account.isBusinessAccount()) {
                 copyTransactions.addAll(account.getTransactions());
-            else if (account.getOwner().equals(user))
+            } else if (account.getOwner().equals(user)) {
                 copyTransactions.addAll(account.getTransactions());
+            }
         }
         copyTransactions.sort(Comparator.comparing(Transaction::getTimestamp));
         objectNode.putPOJO("output", copyTransactions);
@@ -103,6 +103,10 @@ public class PrintOutput {
         node.putPOJO("transactions", filteredTransactions);
         return node;
     }
+
+    /**
+     * method that create an ObjectNode for the business report command
+     */
     public static ObjectNode createOutputBusinessReportTransactions(
             final List<UserOutput> managers,
             final List<UserOutput> employees,
@@ -123,6 +127,10 @@ public class PrintOutput {
         node.put("total deposited", totalDeposited);
         return node;
     }
+
+    /**
+     * method that create an ObjectNode for the business report command
+     */
     public static ObjectNode createOutputBusinessReportCommerciant(
             final Account account,
             final List<CommerciantOutput> commerciantOutputList) {

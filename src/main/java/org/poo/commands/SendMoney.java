@@ -55,9 +55,6 @@ public class SendMoney implements Commands {
         if (sender == null) {
             return;
         }
-        if (!sender.getIBAN().startsWith("RO")) {
-            return;
-        }
         double commision = accountSubCommision(sender, user);
         if (sender.getBalance() - commision < commandInput.getAmount()) {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
@@ -73,8 +70,9 @@ public class SendMoney implements Commands {
             double exchangeRate = bank.findExchangeRate(sender.getCurrency(),
                     receiver.getCurrency(), visited);
             visited.clear();
-            if (exchangeRate < 0)
+            if (exchangeRate < 0) {
                 return;
+            }
             receiver.addBalance(exchangeRate * commandInput.getAmount());
             String amountReceiver = String.valueOf(exchangeRate
                     * commandInput.getAmount()) + " " + receiver.getCurrency();
@@ -87,6 +85,7 @@ public class SendMoney implements Commands {
                     .build();
             receiver.addTransactionList(transactionReceiver);
         } else {
+            sender.addTransaction();
             accountAddCashback(sender, commandInput.getAmount());
         }
         String amountSender = String.valueOf(commandInput.getAmount())
@@ -98,34 +97,30 @@ public class SendMoney implements Commands {
                 .amount(amountSender)
                 .transferType("sent")
                 .build();
-        if (sender.isBusinessAccount() && !sender.getOwner().equals(user))
+        if (sender.isBusinessAccount() && !sender.getOwner().equals(user)) {
             return;
+        }
         sender.addTransactionList(transactionSender);
-//        if (bank.checkCommerciantAccount(commandInput.getReceiver()) && sender.isBusinessAccount()) {
-//            Transaction businessTransaction = new TransactionBuilder(commandInput.getTimestamp(),
-//                    TransactionDescription.CARD_PAYMENT.getMessage())
-//                    .cardHolder(user.getLastName() + " " + user.getFirstName())
-//                    .amount(commandInput.getAmount())
-//                    .role(user.getRole())
-//                    .commerciant(bank.getCommerciantByIban(commandInput.getReceiver()).getCommerciant())
-//                    .build();
-//            sender.getTransactionsForBusiness().add(businessTransaction);
-//        }
     }
 
-    public double calculateExchangeRate(String currency) {
+    /** */
+    public double calculateExchangeRate(final String currency) {
         List<String> visited = new ArrayList<>();
         return bank.findExchangeRate(currency,
                 "RON", visited);
     }
 
-    public double accountSubCommision(Account account, User user) {
+    /** */
+    public double accountSubCommision(final Account account,
+                                      final User user) {
         double exchangeRateForCommision = calculateExchangeRate(account.getCurrency());
         double amountForCommisionCalculate = commandInput.getAmount() * exchangeRateForCommision;
         return user.calculateCommision(amountForCommisionCalculate) * commandInput.getAmount();
     }
 
-    public void accountAddCashback(Account account, double totalAmount) {
+    /** */
+    public void accountAddCashback(final Account account,
+                                   final double totalAmount) {
         Commerciant commerciant = bank.getCommerciantByIban(commandInput.getReceiver());
         double exchangeRateForCommision = calculateExchangeRate(account.getCurrency());
         double amountForCommisionCalculate = commandInput.getAmount() * exchangeRateForCommision;

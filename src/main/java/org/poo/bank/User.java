@@ -6,7 +6,6 @@ import lombok.Setter;
 import org.poo.bank.accounts.Account;
 import org.poo.bank.accounts.FactoryAccount;
 import org.poo.bank.cards.Card;
-import org.poo.bank.plans.GoldPlan;
 import org.poo.bank.plans.Plan;
 import org.poo.bank.plans.StandardPlan;
 import org.poo.bank.plans.StudentPlan;
@@ -35,6 +34,10 @@ public class User {
     private String role = "";
     @JsonIgnore @Getter @Setter
     private int numberOfPayments = 0;
+    @JsonIgnore
+    private static final int AMOUNT_THRESHOLD = 300;
+    @JsonIgnore
+    private static final int PAYMENTS_FOR_GOLD_UPGRADE = 5;
 
     public User(final UserInput user) {
         accounts = new ArrayList<>();
@@ -46,49 +49,48 @@ public class User {
         this.plan = occupation.equals("student") ? new StudentPlan() : new StandardPlan();
     }
 
-    /**
-     *
-     */
+    /** */
     public String getLastName() {
         return lastName;
     }
 
+    /** */
     public Plan getPlan() {
         return plan;
     }
 
-    /**
-     *
-     */
+    /** */
     public String getEmail() {
         return email;
     }
 
     /**
-     *
      */
     public List<Account> getAccounts() {
         return accounts;
     }
 
+    /** */
     public String getBirthDate() {
         return birthDate;
     }
 
+    /** */
     public String getOccupation() {
         return occupation;
     }
 
-    public void upgradePlan(Plan newPlan) {
+    /** */
+    public void upgradePlan(final Plan newPlan) {
         this.plan = newPlan;
     }
 
-    public double calculateCommision(double transactionAmount) {
+    /** */
+    public double calculateCommision(final double transactionAmount) {
         return plan.calculateFee(transactionAmount);
     }
 
     /**
-     *
      */
     @JsonIgnore
     public Map<String, Account> getCardAccountMap() {
@@ -96,7 +98,6 @@ public class User {
     }
 
     /**
-     *
      */
     public String getFirstName() {
         return firstName;
@@ -116,16 +117,16 @@ public class User {
         this.plan = user.getPlan();
         this.accounts = new ArrayList<>();
         for (Account account : user.getAccounts()) {
-            if (!account.isBusinessAccount())
+            if (!account.isBusinessAccount()) {
                 accounts.add(FactoryAccount.createCopyAccount(account));
-            else if (account.getOwner().equals(user))
+            } else if (account.getOwner().equals(user)) {
                 accounts.add(FactoryAccount.createCopyAccount(account));
+            }
         }
     }
 
     /**
      * method that find an account by iban
-     *
      * @param iban the iban
      * @return the account find, or a null pointer
      */
@@ -140,7 +141,6 @@ public class User {
 
     /**
      * method that remove a card for the account
-     *
      * @param numberCard the number of the card
      * @return the account where the card was removed
      */
@@ -167,6 +167,7 @@ public class User {
         cardAccountMap.putIfAbsent(card.getCardNumber(), account);
     }
 
+    /** */
     public void addCardforBusiness(final Account account, final Card card) {
         cardAccountMap.put(card.getCardNumber(), account);
     }
@@ -194,25 +195,38 @@ public class User {
         this.accounts.add(account);
     }
 
-    public Account findAccountForWithdrawSavings(String currency) {
-        for (Account account : accounts)
-            if (!account.isBusinessAccount() && account.getType().equals("classic") && account.getCurrency().equals(currency))
+    /** */
+    public Account findAccountForWithdrawSavings(final String currency) {
+        for (Account account : accounts) {
+            if (!account.isBusinessAccount()
+                    && account.getType().equals("classic")
+                    && account.getCurrency().equals(currency)) {
                 return account;
+            }
+        }
         return null;
     }
 
-    public boolean userCheckUpgradePlan(String newPlan) {
-        if (plan.getName().equals("gold"))
+    /** */
+    public boolean userCheckUpgradePlan(final String newPlan) {
+        if (plan.getName().equals("gold")) {
             return false;
-        if (plan.getName().equals("silver") && (newPlan.equals("student") || newPlan.equals("standard")))
+        }
+        if (plan.getName().equals("silver")
+                && (newPlan.equals("student")
+                || newPlan.equals("standard"))) {
             return false;
+        }
         return true;
     }
 
-    public boolean checkUpgradeGoldPlan(double amount){
-        if (plan.getName().equals("silver") && amount >= 300)
-            numberOfPayments ++;
-        if (numberOfPayments == 5 && plan.getName().equals("silver")) {
+    /** */
+    public boolean checkUpgradeGoldPlan(final double amount) {
+        if (plan.getName().equals("silver") && amount >= AMOUNT_THRESHOLD) {
+            numberOfPayments++;
+        }
+        if (numberOfPayments == PAYMENTS_FOR_GOLD_UPGRADE
+                && plan.getName().equals("silver")) {
             return true;
         }
         return false;

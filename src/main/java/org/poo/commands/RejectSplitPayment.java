@@ -7,7 +7,6 @@ import org.poo.actionhandler.ErrorOutput;
 import org.poo.actionhandler.PrintOutput;
 import org.poo.bank.BankDatabase;
 import org.poo.bank.User;
-import org.poo.bank.accounts.Account;
 import org.poo.fileio.CommandInput;
 import org.poo.transaction.SplitPaymentTransaction;
 
@@ -23,6 +22,7 @@ public class RejectSplitPayment implements Commands {
         this.output = output;
     }
 
+    /** */
     @Override
     public void execute() {
         User user = bank.getUserMap().get(commandInput.getEmail());
@@ -35,7 +35,8 @@ public class RejectSplitPayment implements Commands {
             rejectSplitPayment.printCommand(output);
             return;
         }
-        SplitPaymentTransaction splitPaymentTransaction = bank.findSplitPaymentByUser(user, commandInput.getSplitPaymentType());
+        SplitPaymentTransaction splitPaymentTransaction =
+                bank.findSplitPaymentByUser(user, commandInput.getSplitPaymentType());
         if (splitPaymentTransaction == null) {
             return;
         }

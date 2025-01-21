@@ -16,12 +16,12 @@ public class SplitPaymentTransaction {
     private double amount;
     private Transaction transaction;
 
-    public SplitPaymentTransaction(List<Account> accountsInvolved,
-                                   List<Account> accountsNotAccept,
-                                   String currency,
-                                   String type,
-                                   double amount,
-                                   Transaction transaction) {
+    public SplitPaymentTransaction(final List<Account> accountsInvolved,
+                                   final List<Account> accountsNotAccept,
+                                   final String currency,
+                                   final String type,
+                                   final double amount,
+                                   final Transaction transaction) {
         this.accountsInvolved = accountsInvolved;
         this.accountsNotAccept = accountsNotAccept;
         this.currency = currency;
@@ -30,7 +30,10 @@ public class SplitPaymentTransaction {
         this.transaction = transaction;
     }
 
-    public void addTransaction(BankDatabase bank) {
+    /**
+     * method that add transaction when all the users accept the split payment method
+     * */
+    public void addTransaction(final BankDatabase bank) {
         List<Double> amountsPerUser = getAmountPerUser();
         Account errorAccount = bank.checkSplitPayment(accountsInvolved, bank, currency,
                 amountsPerUser);
@@ -59,7 +62,10 @@ public class SplitPaymentTransaction {
         }
     }
 
-    public void rejectTransaction(BankDatabase bank) {
+    /**
+     * method that add transaction when one  user reject the split payment method
+     * */
+    public void rejectTransaction(final BankDatabase bank) {
         List<Double> amountsPerUser = getAmountPerUser();
         for (Account account : accountsInvolved) {
             String description = "Split payment of "
@@ -71,7 +77,11 @@ public class SplitPaymentTransaction {
         }
     }
 
-    public Transaction createTransactionError(String description, String error) {
+    /**
+     * create a transaction
+     * */
+    public Transaction createTransactionError(final String description,
+                                              final String error) {
         Transaction errorTransaction = null;
         if (type.equals("custom")) {
             errorTransaction = new TransactionBuilder(transaction.getTimestamp(),
@@ -95,6 +105,7 @@ public class SplitPaymentTransaction {
         return errorTransaction;
     }
 
+    /** */
     public List<Double> getAmountPerUser() {
         double amountToPay = amount / accountsInvolved.size();
         List<Double> amountsPerUser = new ArrayList<>();

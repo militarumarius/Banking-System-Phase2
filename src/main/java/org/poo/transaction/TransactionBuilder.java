@@ -129,41 +129,57 @@ public class TransactionBuilder {
     /**
      *
      */
-    public TransactionBuilder accountIBAN(final String accountIBAN) {
-        this.accountIBAN = accountIBAN;
+    public TransactionBuilder accountIBAN(final String newAccountIBAN) {
+        this.accountIBAN = newAccountIBAN;
         return this;
     }
 
     /**
      *
      */
-    public TransactionBuilder newPlanType(final String newPlanType) {
-        this.newPlanType = newPlanType;
+    public TransactionBuilder newPlanType(final String planType) {
+        this.newPlanType = planType;
         return this;
     }
 
-    public TransactionBuilder amountForUsers(final List<Double> amountForUsers) {
-        this.amountForUsers = amountForUsers;
+
+    /**
+     *
+     */
+    public TransactionBuilder amountForUsers(final List<Double> newAmountForUsers) {
+        this.amountForUsers = newAmountForUsers;
         return this;
     }
 
-    public TransactionBuilder splitPaymentType(final String splitPaymentType) {
-        this.splitPaymentType = splitPaymentType;
+    /**
+     *
+     */
+    public TransactionBuilder splitPaymentType(final String newSplitPaymentType) {
+        this.splitPaymentType = newSplitPaymentType;
         return this;
     }
 
-    public TransactionBuilder role(final String role) {
-        this.role = role;
+    /**
+     *
+     */
+    public TransactionBuilder role(final String newRole) {
+        this.role = newRole;
         return this;
     }
 
-    public TransactionBuilder classicAccountIBAN(final String classicAccountIBAN) {
-        this.classicAccountIBAN = classicAccountIBAN;
+    /**
+     *
+     */
+    public TransactionBuilder classicAccountIBAN(final String newClassicAccountIBAN) {
+        this.classicAccountIBAN = newClassicAccountIBAN;
         return this;
     }
 
-    public TransactionBuilder savingsAccountIBAN(final String savingsAccountIBAN) {
-        this.savingsAccountIBAN = savingsAccountIBAN;
+    /**
+     *
+     */
+    public TransactionBuilder savingsAccountIBAN(final String newSavingsAccountIBAN) {
+        this.savingsAccountIBAN = newSavingsAccountIBAN;
         return this;
     }
 

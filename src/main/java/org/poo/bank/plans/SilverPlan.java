@@ -5,32 +5,42 @@ import lombok.Getter;
 @Getter
 public class SilverPlan implements Plan {
 
+    private static final double THIRD_CASHBACK_RATE = 0.005;
+    private static final double SECOND_CASHBACK_RATE = 0.004;
+    private static final double FIRST_CASHBACK_RATE = 0.003;
+    private static final double FEE = 0.001;
+    private static final double AMOUNT = 500;
+
+    /** */
     @Override
-    public double calculateFee(double transactionAmount) {
-        if (transactionAmount < 500) {
+    public double calculateFee(final double transactionAmount) {
+        if (transactionAmount < AMOUNT) {
             return 0;
         }
-        return 0.001;
+        return FEE;
     }
 
+    /** */
     @Override
     public double getThirdCashback() {
-        return 0.005;
+        return THIRD_CASHBACK_RATE;
     }
 
+    /** */
     @Override
     public double getSecondCashback() {
-        return 0.004;
+        return SECOND_CASHBACK_RATE;
     }
 
+    /** */
     @Override
     public double getFirstCashback() {
-        return 0.003;
+        return FIRST_CASHBACK_RATE;
     }
 
+    /** */
     @Override
     public String getName() {
         return "silver";
     }
-
 }

@@ -1,7 +1,6 @@
 package org.poo.transaction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.errorprone.annotations.Keep;
 import lombok.Getter;
 import lombok.Setter;
 import org.poo.fileio.CommerciantInput;
@@ -33,9 +32,10 @@ public class Commerciant {
         this.id = commerciantInput.getId();
         this.account = commerciantInput.getAccount();
         this.type = commerciantInput.getType();
-        if (commerciantInput.getCashbackStrategy().equals("nrOfTransactions"))
+        if (commerciantInput.getCashbackStrategy().equals("nrOfTransactions")) {
             cashbackStrategy = new NrOfTransactions();
-        else
+        } else {
             cashbackStrategy = new SpendingThreshold();
+        }
     }
 }

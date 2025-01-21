@@ -22,6 +22,10 @@ public class UpgradePlan implements Commands {
     private final BankDatabase bank;
     private final CommandInput commandInput;
     private final ArrayNode output;
+    private static final int SILVER_FEE = 250;
+    private static final int GOLD_FEE = 350;
+    private static final int SILVER_FEE_LOWER = 100;
+
 
     public UpgradePlan(final BankDatabase bank,
                        final CommandInput commandInput, final ArrayNode output) {
@@ -30,6 +34,7 @@ public class UpgradePlan implements Commands {
         this.output = output;
     }
 
+    /** */
     @Override
     public void execute() {
         User user = bank.findUserByIban(commandInput.getAccount());
@@ -50,8 +55,9 @@ public class UpgradePlan implements Commands {
         if (exchangeRate <= 0) {
             return;
         }
-        if (user.getPlan() == null)
+        if (user.getPlan() == null) {
             return;
+        }
         String planName = user.getPlan().getName();
         if (user.getPlan().getName().equals(commandInput.getNewPlanType())) {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
@@ -61,11 +67,13 @@ public class UpgradePlan implements Commands {
             account.getTransactions().add(transaction);
             return;
         }
-        if (!user.userCheckUpgradePlan(planName))
+        if (!user.userCheckUpgradePlan(planName)) {
             return;
+        }
         int fee = calculateUpgradeFee(commandInput.getNewPlanType(), planName);
-        if (fee <= 0)
+        if (fee <= 0) {
             return;
+        }
         if (!account.validatePayment(fee, exchangeRate)) {
             Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
                     TransactionDescription.INSUFFICIENT_FUNDS.getMessage())
@@ -74,8 +82,9 @@ public class UpgradePlan implements Commands {
             return;
         }
         Plan newPlan = PlansFactory.createPlan(commandInput.getNewPlanType());
-        if (newPlan == null)
+        if (newPlan == null) {
             return;
+        }
         user.upgradePlan(newPlan);
         account.subBalance(fee * exchangeRate);
         Transaction transaction = new TransactionBuilder(commandInput.getTimestamp(),
@@ -87,20 +96,23 @@ public class UpgradePlan implements Commands {
         account.addTransactionList(transaction);
     }
 
-    public double calculateExchangeRate(Account account) {
+    /** */
+    public double calculateExchangeRate(final Account account) {
         List<String> visited = new ArrayList<>();
         return bank.findExchangeRate("RON",
                 account.getCurrency(), visited);
     }
 
-    public int calculateUpgradeFee(String newPlan, String oldPlan) {
+    /** */
+    public int calculateUpgradeFee(final String newPlan,
+                                   final String oldPlan) {
         return switch (oldPlan) {
             case "standard", "student" -> switch (newPlan) {
-                case "silver" -> 100;
-                case "gold" -> 350;
+                case "silver" -> SILVER_FEE_LOWER;
+                case "gold" -> GOLD_FEE;
                 default -> -1;
             };
-            case "silver" -> newPlan.equals("gold") ? 250 : -1;
+            case "silver" -> newPlan.equals("gold") ? SILVER_FEE : -1;
             default -> -1;
         };
     }

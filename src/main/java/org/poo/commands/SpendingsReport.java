@@ -53,21 +53,28 @@ public class SpendingsReport implements Commands {
                 getSpendingTransaction(commandInput.getStartTimestamp(),
                         commandInput.getEndTimestamp());
         List<Commerciant> commerciantsFiltered
-                = createFilteredCommerciants(account,filteredTransactions);
+                = createFilteredCommerciants(account, filteredTransactions);
         PrintOutput spendingsReport = new PrintOutput("spendingsReport",
                 PrintOutput.createOutputSpendingTransactionObject(filteredTransactions,
                         commerciantsFiltered, account),
                 commandInput.getTimestamp());
         spendingsReport.printCommand(output);
     }
-    public List<Commerciant> createFilteredCommerciants(Account account, List<Transaction> filteredTransactions){
+
+    /**
+     *
+     */
+    public List<Commerciant>
+    createFilteredCommerciants(final Account account,
+                               final  List<Transaction> filteredTransactions) {
         List<Commerciant> commerciants = account.
                 getCommerciants(filteredTransactions);
         Map<String, Double> commerciantsMap = new HashMap<>();
         for (Commerciant commerciant : commerciants) {
             commerciantsMap.put(
                     commerciant.getCommerciant(),
-                    commerciantsMap.getOrDefault(commerciant.getCommerciant(), 0.0) + commerciant.getTotal()
+                    commerciantsMap.getOrDefault(commerciant.getCommerciant(),
+                            0.0) + commerciant.getTotal()
             );
         }
         List<Commerciant> commerciantsFiltered = new ArrayList<>();

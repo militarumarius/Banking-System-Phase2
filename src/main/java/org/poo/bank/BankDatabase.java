@@ -41,18 +41,21 @@ public class BankDatabase {
     }
 
     /**
+     *
      */
     public Map<String, User> getUserMap() {
         return userMap;
     }
 
     /**
+     *
      */
     public List<User> getUsers() {
         return users;
     }
 
     /**
+     *
      */
     public List<ExchangeRate> getExchangeRates() {
         return exchangeRates;
@@ -70,8 +73,8 @@ public class BankDatabase {
     }
 
     /**
-     * method that create the email hasmap
-     * */
+     * method that create the email hashmap
+     */
     public void createEmailMap() {
         for (User user : users) {
             userMap.put(user.getEmail(), user);
@@ -91,7 +94,7 @@ public class BankDatabase {
      * method that find the exchange rate from two currency , using a dfs recursive algorithm
      */
     public double findExchangeRate(final String from,
-                                   final  String to,
+                                   final String to,
                                    final List<String> visited) {
         if (from.equals(to)) {
             return 1;
@@ -135,7 +138,9 @@ public class BankDatabase {
         return null;
     }
 
-    /** */
+    /**
+     *
+     */
     public Map<String, Account> getAliasMap() {
         return aliasMap;
     }
@@ -167,7 +172,7 @@ public class BankDatabase {
                                      final BankDatabase bank,
                                      final String currency,
                                      final List<Double> amountToPay) {
-        for (int i =0; i < accounts.reversed().size(); i++) {
+        for (int i = 0; i < accounts.reversed().size(); i++) {
             List<String> visited = new ArrayList<>();
             double exchangeRate = bank.findExchangeRate(currency,
                     accounts.get(i).getCurrency(), visited);
@@ -191,41 +196,61 @@ public class BankDatabase {
         return accounts;
     }
 
-    public Commerciant findCommerciant(String name){
-        for (Commerciant commerciant : commerciants)
-            if(commerciant.getCommerciant().equals(name))
+    /** */
+    public Commerciant findCommerciant(final String name) {
+        for (Commerciant commerciant : commerciants) {
+            if (commerciant.getCommerciant().equals(name)) {
                 return commerciant;
+            }
+        }
         return null;
     }
 
-    public SplitPaymentTransaction findSplitPaymentByUser(User user, String type){
+    /** */
+    public SplitPaymentTransaction findSplitPaymentByUser(final User user,
+                                                          final String type) {
         for (SplitPaymentTransaction splitPaymentTransaction : splitPayments) {
-            for (Account account : splitPaymentTransaction.getAccountsNotAccept())
-                if (user.findAccount(account.getIBAN()) != null && splitPaymentTransaction.getType().equals(type))
+            for (Account account : splitPaymentTransaction.getAccountsNotAccept()) {
+                if (user.findAccount(account.getIBAN()) != null
+                        && splitPaymentTransaction.getType().equals(type)) {
                     return splitPaymentTransaction;
-        }
-        return null;
-    }
-    public Account findAccountForSplitPayment(User user, String type) {
-        for (SplitPaymentTransaction splitPaymentTransaction : splitPayments) {
-            for (Account account : splitPaymentTransaction.getAccountsNotAccept())
-                if (user.findAccount(account.getIBAN()) != null && splitPaymentTransaction.getType().equals(type))
-                    return account;
+                }
+            }
         }
         return null;
     }
 
-    public boolean checkCommerciantAccount(String iban){
-        for (Commerciant commerciant : commerciants)
-            if (commerciant.getAccount().equals(iban))
+    /** */
+    public Account findAccountForSplitPayment(final User user,
+                                              final String type) {
+        for (SplitPaymentTransaction splitPaymentTransaction : splitPayments) {
+            for (Account account : splitPaymentTransaction.getAccountsNotAccept()) {
+                if (user.findAccount(account.getIBAN()) != null
+                        && splitPaymentTransaction.getType().equals(type)) {
+                    return account;
+                }
+            }
+        }
+        return null;
+    }
+
+    /** */
+    public boolean checkCommerciantAccount(final String iban) {
+        for (Commerciant commerciant : commerciants) {
+            if (commerciant.getAccount().equals(iban)) {
                 return true;
+            }
+        }
         return false;
     }
 
-    public Commerciant getCommerciantByIban(String iban){
-        for (Commerciant commerciant : commerciants)
-            if (commerciant.getAccount().equals(iban))
+    /** */
+    public Commerciant getCommerciantByIban(final String iban) {
+        for (Commerciant commerciant : commerciants) {
+            if (commerciant.getAccount().equals(iban)) {
                 return commerciant;
+            }
+        }
         return null;
     }
 }

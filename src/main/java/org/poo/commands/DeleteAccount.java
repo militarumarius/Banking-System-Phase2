@@ -41,7 +41,8 @@ public class DeleteAccount implements Commands {
             return;
         }
         boolean check = user.getAccounts().removeIf(accountToRemove ->
-                accountToRemove.getIBAN().equals(commandInput.getAccount()) && accountToRemove.getBalance() == 0);
+                accountToRemove.getIBAN().equals(commandInput.getAccount())
+                        && accountToRemove.getBalance() == 0);
 
         if (check) {
             errorOutput = new ErrorOutput(ErrorDescription.ACCOUNT_DELETED.getMessage(),
