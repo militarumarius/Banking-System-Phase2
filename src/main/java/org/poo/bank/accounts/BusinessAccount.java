@@ -283,7 +283,7 @@ public class BusinessAccount extends Account {
                 userCommerciant.computeIfAbsent(commerciant, k -> new ArrayList<>()).add(username);
             }
         }
-        List<CommerciantOutput> outputList = new ArrayList<>();
+        List<CommerciantOutput> CommerciantList = new ArrayList<>();
         for (Map.Entry<String, List<String>> entry : userCommerciant.entrySet()) {
             List<String> usersList = entry.getValue();
             List<String> managers = getManagersUsername(usersList);
@@ -299,10 +299,10 @@ public class BusinessAccount extends Account {
             Collections.sort(allEmployees);
             CommerciantOutput output =
                     new CommerciantOutput(totalReceived, allManagers, allEmployees, entry.getKey());
-            outputList.add(output);
+            CommerciantList.add(output);
         }
-        outputList.sort((a, b) -> a.getCommerciant().compareTo(b.getCommerciant()));
-        return outputList;
+        CommerciantList.sort((a, b) -> a.getCommerciant().compareTo(b.getCommerciant()));
+        return CommerciantList;
     }
 
     /** */

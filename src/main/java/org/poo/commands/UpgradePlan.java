@@ -70,7 +70,7 @@ public class UpgradePlan implements Commands {
         if (!user.userCheckUpgradePlan(planName)) {
             return;
         }
-        int fee = calculateUpgradeFee(commandInput.getNewPlanType(), planName);
+        int fee = calculateUpgradeFee(commandInput.getNewPlanType(), user.getPlan());
         if (fee <= 0) {
             return;
         }
@@ -105,14 +105,10 @@ public class UpgradePlan implements Commands {
 
     /** */
     public int calculateUpgradeFee(final String newPlan,
-                                   final String oldPlan) {
-        return switch (oldPlan) {
-            case "standard", "student" -> switch (newPlan) {
-                case "silver" -> SILVER_FEE_LOWER;
-                case "gold" -> GOLD_FEE;
-                default -> -1;
-            };
-            case "silver" -> newPlan.equals("gold") ? SILVER_FEE : -1;
+                                   final Plan oldPlan) {
+        return switch (newPlan) {
+            case "gold" -> oldPlan.getFeeUpgradeGold();
+            case "silver" -> oldPlan.getFeeUpgradeSilver();
             default -> -1;
         };
     }

@@ -10,6 +10,7 @@ public class SilverPlan implements Plan {
     private static final double FIRST_CASHBACK_RATE = 0.003;
     private static final double FEE = 0.001;
     private static final double AMOUNT = 500;
+    private static final int SILVER_FEE = 250;
 
     /** */
     @Override
@@ -36,6 +37,18 @@ public class SilverPlan implements Plan {
     @Override
     public double getFirstCashback() {
         return FIRST_CASHBACK_RATE;
+    }
+
+    /** */
+    @Override
+    public int getFeeUpgradeSilver() {
+        return -1;
+    }
+
+    /** */
+    @Override
+    public int getFeeUpgradeGold() {
+        return SILVER_FEE;
     }
 
     /** */

@@ -36,6 +36,18 @@ public class GoldPlan implements Plan {
 
     /** */
     @Override
+    public int getFeeUpgradeSilver() {
+        return -1;
+    }
+
+    /** */
+    @Override
+    public int getFeeUpgradeGold() {
+        return -1;
+    }
+
+    /** */
+    @Override
     public String getName() {
         return "gold";
     }

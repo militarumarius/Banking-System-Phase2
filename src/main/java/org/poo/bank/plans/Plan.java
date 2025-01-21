@@ -14,5 +14,11 @@ public interface Plan {
     double getFirstCashback();
 
     /** */
+    int getFeeUpgradeSilver();
+
+    /** */
+    int  getFeeUpgradeGold();
+
+    /** */
     String getName();
 }

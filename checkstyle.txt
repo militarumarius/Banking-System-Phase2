@@ -1,9 +1,10 @@
 Starting audit...
 [ERROR] /home/marus/Facultate/Anul2/POO/oop_homework3/./src/main/java/org/poo/actionhandler/ActionHandler.java:5:24: Using the '.*' form of import should be avoided - org.poo.commands.*. [AvoidStarImport]
 [ERROR] /home/marus/Facultate/Anul2/POO/oop_homework3/./src/main/java/org/poo/bank/accounts/BusinessAccount.java:13:17: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
+[ERROR] /home/marus/Facultate/Anul2/POO/oop_homework3/./src/main/java/org/poo/bank/accounts/BusinessAccount.java:286:33: Name 'CommerciantList' must match pattern '^([a-z][a-zA-Z0-9]*|_)$'. [LocalVariableName]
 [ERROR] /home/marus/Facultate/Anul2/POO/oop_homework3/./src/main/java/org/poo/bank/accounts/Account.java:14:17: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
 [ERROR] /home/marus/Facultate/Anul2/POO/oop_homework3/./src/main/java/org/poo/bank/accounts/Account.java:18:26: Name 'IBAN' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
 [ERROR] /home/marus/Facultate/Anul2/POO/oop_homework3/./src/main/java/org/poo/bank/BankDatabase.java:6:22: Using the '.*' form of import should be avoided - org.poo.fileio.*. [AvoidStarImport]
 [ERROR] /home/marus/Facultate/Anul2/POO/oop_homework3/./src/main/java/org/poo/commands/SpendingsReport.java:14:17: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
 Audit done.
-Checkstyle ends with 6 errors.
+Checkstyle ends with 7 errors.
